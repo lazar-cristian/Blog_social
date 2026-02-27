@@ -95,9 +95,32 @@ header nav a.active {
    HERO SECTION
    ========================== */
 .hero {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    padding: 120px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero .container {
@@ -105,6 +128,8 @@ header nav a.active {
     flex-direction: column;
     align-items: center;
     max-width: 900px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
@@ -115,32 +140,33 @@ header nav a.active {
     font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
-    color: #1a3a52;
+    color: #ffffff;
     margin-bottom: 25px;
     letter-spacing: -1.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
     font-size: 22px;
-    color: #555;
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 40px;
     line-height: 1.6;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.95);
+    color: #667eea;
     padding: 18px 45px;
     border-radius: 50px;
     font-size: 18px;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -152,7 +178,7 @@ header nav a.active {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     transition: left 0.5s ease;
 }
 
@@ -162,27 +188,17 @@ header nav a.active {
 
 .cta-button:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 25px rgba(0, 102, 204, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    background: #ffffff;
 }
 
 .cta-button:active {
     transform: translateY(-1px) scale(1.02);
 }
 
+/* Nascondi immagine hero */
 .hero-image {
-    width: 100%;
-    max-width: 600px;
-}
-
-.hero-image img {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-}
-
-.hero-image img:hover {
-    transform: scale(1.02);
+    display: none;
 }
 
 /* ==========================
@@ -198,7 +214,7 @@ header nav a.active {
 }
 
 .other-articles {
-    background-color: #f2f2f2;
+    background-color: #f8f9fa;
 }
 
 .section-title {
@@ -219,13 +235,15 @@ header nav a.active {
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #e3e8ff;
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .main-article:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+    border-color: #667eea;
 }
 
 .main-article img {
@@ -262,7 +280,7 @@ header nav a.active {
 }
 
 .read-more {
-    color: #0066cc;
+    color: #667eea;
     font-weight: 600;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -277,7 +295,7 @@ header nav a.active {
 }
 
 .read-more:hover {
-    color: #0052a3;
+    color: #764ba2;
     gap: 10px;
 }
 
@@ -298,13 +316,15 @@ header nav a.active {
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #e3e8ff;
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .article-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
 }
 
 .article-card img {
@@ -365,13 +385,15 @@ header nav a.active {
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    border: 3px solid #e3e8ff;
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
     margin-bottom: 60px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .full-article:hover {
     transform: translateY(-5px);
+    border-color: #667eea;
 }
 
 .full-article img {
@@ -410,14 +432,16 @@ header nav a.active {
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 3px solid #e3e8ff;
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.12);
     margin-bottom: 40px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .article-preview:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 35px rgba(102, 126, 234, 0.18);
+    border-color: #667eea;
 }
 
 .article-preview img {
@@ -470,12 +494,14 @@ header nav a.active {
 .about-image img {
     width: 100%;
     border-radius: 16px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border: 3px solid #e3e8ff;
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .about-image img:hover {
     transform: scale(1.02);
+    border-color: #667eea;
 }
 
 .about-text h3 {
@@ -511,7 +537,8 @@ header nav a.active {
     background-color: #fff;
     padding: 50px;
     border-radius: 16px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    border: 3px solid #e3e8ff;
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
 }
 
 .form-group {
@@ -531,7 +558,7 @@ header nav a.active {
     width: 100%;
     padding: 14px 18px;
     font-size: 16px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #e3e8ff;
     border-radius: 8px;
     font-family: inherit;
     transition: all 0.3s ease;
@@ -541,8 +568,8 @@ header nav a.active {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #0066cc;
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .form-group textarea {
@@ -552,7 +579,7 @@ header nav a.active {
 .submit-button {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #fff;
     border: none;
     border-radius: 50px;
@@ -560,12 +587,12 @@ header nav a.active {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
 }
 
 .submit-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(0, 102, 204, 0.4);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
 }
 
 .submit-button:active {
@@ -617,7 +644,7 @@ footer a:hover {
     
     /* Hero mobile */
     .hero {
-        padding: 60px 0;
+        padding: 80px 0;
     }
     
     .hero-content h2 {
