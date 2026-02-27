@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tra Rete e Realtà - Blog su Social Media e Tecnologia</title>
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
     <header>
@@ -21,7 +21,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
                 <h2>Scopri il confine tra mondo digitale e vita reale</h2>
@@ -72,6 +72,25 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // Effetto parallax scroll per hero background
+        window.addEventListener('scroll', function() {
+            const hero = document.getElementById('hero');
+            const scrolled = window.pageYOffset;
+            const heroHeight = hero.offsetHeight;
+            
+            if (scrolled < heroHeight) {
+                const parallax = scrolled * 0.5;
+                hero.style.setProperty('--scroll-y', parallax + 'px');
+                
+                // Zoom out effect
+                const scale = 1 + (scrolled / heroHeight) * 0.2;
+                hero.querySelector('::before, .hero::before');
+                document.querySelector('.hero::before');
+            }
+        });
+    </script>
 
     <footer>
         <div class="container">
