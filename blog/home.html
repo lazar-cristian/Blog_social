@@ -3,229 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tra Rete e Realtà — Blog</title>
-    <!-- Unico foglio di stile del sito -->
-    <link rel="stylesheet" href="stile.css">
+    <title>Tra Rete e Realtà - Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- =====================================================
-     HEADER — Fixed, glass blur, logo serif + nav
-     Identico in tutte e 4 le pagine
-     ===================================================== -->
-<header>
-    <div class="wrap">
-        <!-- Logo: serif italic, "Realtà" in accent -->
-        <a href="home.html" class="logo">
-            Tra Rete e <strong>Realtà</strong>
-        </a>
-
-        <!-- Menu principale -->
-        <nav>
-            <ul>
-                <li><a href="home.html" class="on">Home</a></li>
-                <li><a href="articoli.html">Articoli</a></li>
-                <li><a href="chisiamo.html">Chi siamo</a></li>
-                <li><a href="contatti.html">Contatti</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-
-<!-- =====================================================
-     HERO — grande titolo editoriale
-     Numero decorativo gigante in background (CSS)
-     ===================================================== -->
-<section class="hero page-start">
-
-    <!-- Numero decorativo (non semantico) -->
-    <div class="hero-bg-num" aria-hidden="true">01</div>
-
-    <div class="wrap">
-
-        <!-- Eyebrow in monospace -->
-        <span class="eyebrow fade-in delay-1">Blog · Tecnologia &amp; Società · 2026</span>
-
-        <!-- Titolo principale Cormorant italic -->
-        <h1 class="hero-title fade-in delay-2">
-            Siamo noi,<br>
-            o i nostri<br>
-            <mark>profili</mark>?
-        </h1>
-
-        <!-- Descrizione -->
-        <p class="hero-sub fade-in delay-3">
-            Un blog che esplora il confine tra identità digitale e vita
-            reale. Algoritmi, social media e consapevolezza nell'era
-            della connessione permanente.
-        </p>
-
-        <!-- CTA -->
-        <div class="hero-actions fade-in delay-4">
-            <a href="articoli.html" class="btn btn-solid">Leggi l'articolo</a>
-            <a href="chisiamo.html" class="btn btn-ghost">Il progetto &rarr;</a>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Tra Rete e Realtà</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                    <li><a href="chisiamo.html">Chi siamo</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-    </div>
-
-    <!-- Indicatore scroll -->
-    <div class="hero-scroll" aria-hidden="true">
-        <span>Scroll</span>
-    </div>
-
-</section>
-<!-- Fine hero -->
-
-
-<!-- =====================================================
-     ARTICOLO IN EVIDENZA — card orizzontale
-     Immagine a sinistra, testo a destra
-     ===================================================== -->
-<section class="featured">
-    <div class="wrap">
-
-        <!-- Intestazione sezione con numero -->
-        <div class="section-head">
-            <span class="section-num">— 01</span>
-            <span class="section-label">Articolo in evidenza</span>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Scopri il confine tra mondo digitale e vita reale</h2>
+            <p>Un blog dedicato alla consapevolezza nell'uso dei social media e alla riflessione sul nostro rapporto con la tecnologia.</p>
+            <a href="articoli.html" class="cta-button">Esplora gli articoli</a>
         </div>
+        <div class="hero-image">
+            <img src="immagini/hero-image.jpg" alt="Social media e vita reale">
+        </div>
+    </section>
 
-        <!-- Card featured -->
-        <div class="featured-card">
+    <!-- ARTICOLO IN EVIDENZA -->
+    <section class="featured-article">
+        <div class="container">
+            <h3 class="section-title">In evidenza</h3>
+            <article class="main-article">
+                <img src="immagini/featured-article.jpg" alt="Immagine articolo in evidenza">
+                <div class="article-content">
+                    <h4>Il paradosso della connessione: più social, meno sociali?</h4>
+                    <p>Esploriamo come i social media abbiano trasformato le nostre relazioni, creando una rete globale di connessioni virtuali ma distanziandoci dalle persone che ci stanno accanto fisicamente.</p>
+                    <a href="articoli.html" class="read-more">Leggi l'articolo</a>
+                </div>
+            </article>
+        </div>
+    </section>
 
-            <!-- Immagine lato sinistro con hover zoom -->
-            <div class="img-side">
-                <img
-                    src="immagini/copertina-articolo.svg"
-                    alt="Illustrazione editoriale: schermo e identità"
-                >
+    <!-- ALTRI ARTICOLI -->
+    <section class="other-articles">
+        <div class="container">
+            <h3 class="section-title">Altri articoli</h3>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <img src="immagini/article-2.jpg" alt="Identità digitale">
+                    <div class="card-content">
+                        <h4>L'identità digitale: chi siamo online?</h4>
+                        <p>Un'analisi sul modo in cui costruiamo e gestiamo la nostra persona digitale attraverso i social media.</p>
+                        <a href="articoli.html" class="read-more">Leggi di più</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="immagini/article-3.jpg" alt="Tempo libero e social">
+                    <div class="card-content">
+                        <h4>Quanto tempo passiamo davvero sui social?</h4>
+                        <p>Dati e riflessioni sull'uso quotidiano delle piattaforme social e il loro impatto sul nostro tempo.</p>
+                        <a href="articoli.html" class="read-more">Leggi di più</a>
+                    </div>
+                </article>
             </div>
-
-            <!-- Testo lato destro -->
-            <div class="text-side">
-                <!-- Tag categoria monospace -->
-                <span class="art-tag">Identità digitale</span>
-
-                <!-- Titolo articolo serif italic -->
-                <h2>La vita filtrata: siamo noi o i nostri profili?</h2>
-
-                <!-- Data monospace -->
-                <span class="art-date">20 Febbraio 2026</span>
-
-                <!-- Anteprima -->
-                <p>
-                    Ogni mattina, prima ancora di alzarci dal letto, la maggior parte
-                    di noi sblocca lo schermo del telefono. Non per leggere notizie —
-                    ma per controllare notifiche, like e storie. Un gesto automatico.
-                    Ma cosa ci fa alle nostre menti e alle nostre relazioni?
-                </p>
-
-                <!-- CTA -->
-                <a href="articoli.html" class="btn btn-solid">
-                    Continua a leggere &rarr;
-                </a>
-            </div>
-
         </div>
-        <!-- Fine card featured -->
+    </section>
 
-    </div>
-</section>
-<!-- Fine featured -->
-
-
-<!-- =====================================================
-     ALTRI ARTICOLI — griglia 2 colonne
-     ===================================================== -->
-<section class="more-articles">
-    <div class="wrap">
-
-        <!-- Intestazione sezione -->
-        <div class="section-head">
-            <span class="section-num">— 02</span>
-            <span class="section-label">Altri articoli</span>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tra Rete e Realtà | Email: <a href="mailto:info@trareterealta.it">info@trareterealta.it</a></p>
+            <p>Un progetto per promuovere la consapevolezza digitale.</p>
         </div>
-
-        <!-- Griglia due card -->
-        <div class="grid-2">
-
-            <!-- Card 1 -->
-            <a href="articoli.html" class="card">
-                <div class="img-wrap">
-                    <img
-                        src="immagini/card1.svg"
-                        alt="Dipendenza digitale: notifiche e smartphone"
-                    >
-                </div>
-                <div class="card-body">
-                    <span class="art-tag">Dipendenza</span>
-                    <h3>Quando lo smartphone diventa una gabbia</h3>
-                    <p>
-                        Quante volte al giorno controlli il telefono? La dipendenza
-                        digitale è un fenomeno in crescita tra i giovani. Segnali,
-                        cause e strategie per un uso più consapevole.
-                    </p>
-                </div>
-            </a>
-
-            <!-- Card 2 -->
-            <a href="articoli.html" class="card">
-                <div class="img-wrap">
-                    <img
-                        src="immagini/card2.svg"
-                        alt="Algoritmi e bolle informative"
-                    >
-                </div>
-                <div class="card-body">
-                    <span class="art-tag">Algoritmi</span>
-                    <h3>Gli algoritmi decidono cosa pensiamo?</h3>
-                    <p>
-                        Le piattaforme mostrano solo contenuti che ci tengono online
-                        più a lungo. Questo crea bolle informative che distorcono
-                        la visione del mondo. Siamo davvero liberi di scegliere?
-                    </p>
-                </div>
-            </a>
-
-        </div>
-        <!-- Fine grid-2 -->
-
-    </div>
-</section>
-<!-- Fine altri articoli -->
-
-
-<!-- =====================================================
-     FOOTER — Minimal, identico in tutte le pagine
-     ===================================================== -->
-<footer>
-    <div class="wrap">
-
-        <!-- Logo + nav -->
-        <div class="footer-top">
-            <a href="home.html" class="footer-logo">
-                Tra Rete e <strong>Realtà</strong>
-            </a>
-            <ul class="footer-nav">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="articoli.html">Articoli</a></li>
-                <li><a href="chisiamo.html">Chi siamo</a></li>
-                <li><a href="contatti.html">Contatti</a></li>
-            </ul>
-        </div>
-
-        <!-- Copyright e nota scolastica -->
-        <div class="footer-bottom">
-            <p>
-                &copy; 2026 Tra Rete e Realtà &nbsp;·&nbsp;
-                <a href="mailto:trareterealta@email.com">trareterealta@email.com</a>
-            </p>
-            <p class="nota-scolastica">Progetto scolastico di Web Design</p>
-        </div>
-
-    </div>
-</footer>
-
+    </footer>
 </body>
 </html>

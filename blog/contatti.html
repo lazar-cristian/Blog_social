@@ -1,111 +1,61 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contatti — Tra Rete e Realtà</title>
-  <link rel="stylesheet" href="stile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Tra Rete e Realtà</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <div class="inner">
-      <a class="logo" href="home.html">Tra Rete e <em>Realtà</em></a>
-      <nav>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="articoli.html">Articoli</a></li>
-          <li><a href="chisiamo.html">Chi siamo</a></li>
-          <li><a href="contatti.html" class="on">Contatti</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<main class="pag-contatti">
-  <div class="wrap">
-    <div class="contatti-layout">
-
-      <div class="contatti-info fade-in">
-        <span class="eyebrow">Contatti</span>
-        <h1>Parliamo<br>di <em>digitale.</em></h1>
-        <p class="lead">Hai domande sul progetto, vuoi collaborare, o hai semplicemente
-        un'opinione da condividere? Scrivici: risponderemo il prima possibile.</p>
-
-        <div class="info-item">
-          <span class="lbl">Email</span>
-          <a href="mailto:trareterealta@email.com">trareterealta@email.com</a>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Tra Rete e Realtà</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                    <li><a href="chisiamo.html">Chi siamo</a></li>
+                    <li><a href="contatti.html" class="active">Contatti</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="info-item">
-          <span class="lbl">Istituto</span>
-          <span>[Nome Scuola] — Classe 4F</span>
-        </div>
-        <div class="info-item">
-          <span class="lbl">Anno scolastico</span>
-          <span>2025 / 2026</span>
-        </div>
-      </div>
+    </header>
 
-      <div class="contatti-form-box fade-in-2">
-        <h3>Invia un messaggio</h3>
-        <form action="#" method="post">
-          <div class="form-field">
-            <label for="nome">Nome e Cognome</label>
-            <input type="text" id="nome" name="nome" placeholder="Il tuo nome...">
-          </div>
-          <div class="form-field">
-            <label for="email">Indirizzo email</label>
-            <input type="email" id="email" name="email" placeholder="la.tua@email.com">
-          </div>
-          <div class="form-field">
-            <label for="msg">Messaggio</label>
-            <textarea id="msg" name="messaggio" placeholder="Scrivi qui il tuo messaggio..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-solid" style="width:100%;justify-content:center;">
-            Invia messaggio →
-          </button>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="logo" href="home.html">Tra Rete e <em>Realtà</em></a>
-        <p>Un blog sulla consapevolezza digitale e il rapporto tra mondo online e vita reale.</p>
-      </div>
-      <nav class="footer-nav">
-        <div class="footer-col">
-          <h4>Naviga</h4>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="articoli.html">Articoli</a></li>
-            <li><a href="chisiamo.html">Chi siamo</a></li>
-            <li><a href="contatti.html">Contatti</a></li>
-          </ul>
+    <!-- PAGINA CONTATTI -->
+    <main class="contact-page">
+        <div class="container">
+            <h2 class="page-title">Contattaci</h2>
+            <p class="page-intro">Hai domande, suggerimenti o vuoi condividere la tua esperienza? Scrivici, saremo felici di risponderti!</p>
+            
+            <!-- FORM CONTATTI -->
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tua@email.it" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="messaggio">Messaggio</label>
+                    <textarea id="messaggio" name="messaggio" rows="8" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Invia messaggio</button>
+            </form>
         </div>
-        <div class="footer-col">
-          <h4>Social</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">YouTube</a></li>
-            <li><a href="#">LinkedIn</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Tra Rete e Realtà · <a href="mailto:trareterealta@email.com" style="color:var(--grigio);text-decoration:none;">trareterealta@email.com</a></p>
-      <p><em>Progetto scolastico di Web Design — Classe 4F</em></p>
-    </div>
-  </div>
-</footer>
+    </main>
 
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tra Rete e Realtà | Email: <a href="mailto:info@trareterealta.it">info@trareterealta.it</a></p>
+            <p>Un progetto per promuovere la consapevolezza digitale.</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -3,127 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Progetto — Tra Rete e Realtà</title>
-    <link rel="stylesheet" href="stile.css">
+    <title>Chi siamo - Tra Rete e Realtà</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- HEADER — fixed, identico in tutte le pagine -->
-<header>
-    <div class="wrap">
-        <a href="home.html" class="logo">Tra Rete e <strong>Realtà</strong></a>
-        <nav><ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="articoli.html">Articoli</a></li>
-            <li><a href="chisiamo.html" class="on">Chi siamo</a></li>
-            <li><a href="contatti.html">Contatti</a></li>
-        </ul></nav>
-    </div>
-</header>
-
-<!-- PAGINA CHI SIAMO
-     Page hero con titolo enorme + layout 2 colonne (foto + testo) -->
-<main class="about-page page-start">
-<div class="wrap">
-
-    <!-- Page hero: eyebrow + titolo serif gigante -->
-    <div class="page-hero fade-in delay-1">
-        <span class="eyebrow">Il progetto · 2025/2026</span>
-        <h1>Chi c'è dietro<br>questo blog</h1>
-        <p class="page-sub">
-            Un progetto scolastico nato dalla curiosità di capire cosa fa
-            davvero la tecnologia alle nostre vite.
-        </p>
-    </div>
-
-    <!-- Layout 2 colonne: foto a sx, testo a dx -->
-    <div class="about-grid fade-in delay-2">
-
-        <!-- Immagine profilo — colonna sinistra -->
-        <div class="about-img">
-            <img src="immagini/profilo.svg" alt="Foto profilo autore">
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Tra Rete e Realtà</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                    <li><a href="chisiamo.html" class="active">Chi siamo</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- Testo — colonna destra diviso in sezioni -->
-        <div class="about-text">
-
-            <!-- Sezione 1: chi ha realizzato -->
-            <section>
-                <h2>Chi ha realizzato questo blog</h2>
-                <p>
-                    Mi chiamo <strong>[Nome Alunno]</strong>, frequento la classe 4F
-                    dell'Istituto [Nome Scuola]. Questo blog è stato realizzato come
-                    progetto scolastico nell'ambito del corso di Informatica e Web Design,
-                    durante l'anno scolastico 2025/2026.
-                </p>
-            </section>
-
-            <!-- Sezione 2: perché questo tema -->
-            <section>
-                <h2>Perché questo tema</h2>
-                <p>
-                    Ho scelto di affrontare il tema della consapevolezza nell'uso dei
-                    social media perché è qualcosa che mi riguarda da vicino, come credo
-                    riguardi chiunque della mia generazione. Cresciamo in un mondo in cui
-                    i social fanno parte della quotidianità: comunicazione, informazione,
-                    intrattenimento e persino la nostra identità passano attraverso gli
-                    schermi.
-                </p>
-                <p>
-                    Spesso però non ci fermiamo a riflettere su come tutto questo ci
-                    influenzi: come cambia il modo in cui ci vediamo, come modifica le
-                    nostre relazioni, come orienta le nostre opinioni. "Tra Rete e Realtà"
-                    vuole essere uno spazio di riflessione critica, non di condanna
-                    tecnologica.
-                </p>
-            </section>
-
-            <!-- Sezione 3: percorso scolastico -->
-            <section>
-                <h2>Il collegamento con il percorso scolastico</h2>
-                <p>
-                    Questo progetto nasce anche da un collegamento interdisciplinare con
-                    la materia di Italiano, dove abbiamo affrontato temi legati alla
-                    comunicazione, all'identità e alla società contemporanea. Il professore
-                    di Italiano ci ha invitato a riflettere su come il linguaggio digitale
-                    stia trasformando non solo il modo in cui comunichiamo, ma anche il
-                    modo in cui pensiamo e costruiamo il senso di noi stessi.
-                </p>
-                <p>
-                    Il blog unisce le competenze tecniche acquisite in Informatica con la
-                    riflessione critica sviluppata durante le ore di Italiano e Educazione
-                    Civica: crediamo che la tecnologia debba essere studiata non solo per
-                    come funziona, ma anche per come ci cambia.
-                </p>
-                <!-- CTA contatti -->
-                <a href="contatti.html" class="btn btn-solid" style="margin-top:8px">Scrivici &rarr;</a>
-            </section>
-
-        </div><!-- fine about-text -->
-
-    </div><!-- fine about-grid -->
-
-</div>
-</main>
-
-<!-- FOOTER — identico in tutte le pagine -->
-<footer>
-    <div class="wrap">
-        <div class="footer-top">
-            <a href="home.html" class="footer-logo">Tra Rete e <strong>Realtà</strong></a>
-            <ul class="footer-nav">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="articoli.html">Articoli</a></li>
-                <li><a href="chisiamo.html">Chi siamo</a></li>
-                <li><a href="contatti.html">Contatti</a></li>
-            </ul>
+    <!-- PAGINA CHI SIAMO -->
+    <main class="about-page">
+        <div class="container">
+            <h2 class="page-title">Chi siamo</h2>
+            
+            <div class="about-content">
+                <!-- COLONNA IMMAGINE -->
+                <div class="about-image">
+                    <img src="immagini/profile.jpg" alt="Il team di Tra Rete e Realtà">
+                </div>
+                
+                <!-- COLONNA TESTO -->
+                <div class="about-text">
+                    <h3>Il nostro progetto</h3>
+                    <p>"Tra Rete e Realtà" nasce come progetto scolastico con l'obiettivo di esplorare e promuovere una maggiore consapevolezza nell'uso dei social media e delle tecnologie digitali.</p>
+                    
+                    <p>Viviamo in un'epoca in cui il confine tra mondo digitale e vita reale è sempre più sottile. I social media sono diventati parte integrante della nostra quotidianità, influenzando il modo in cui comunichiamo, ci informiamo e costruiamo relazioni. Ma quanto siamo davvero consapevoli dell'impatto che queste piattaforme hanno sulle nostre vite?</p>
+                    
+                    <p>Questo blog è nato dalla volontà di riflettere criticamente sul nostro rapporto con la tecnologia, senza demonizzarla né esaltarla acriticamente. Crediamo che i social media siano strumenti potenti che, se utilizzati consapevolmente, possono arricchire le nostre esperienze e connetterci con il mondo. Allo stesso tempo, riconosciamo i rischi legati a un uso eccessivo o inconsapevole: dalla dipendenza digitale all'ansia sociale, dalla perdita di privacy alla difficoltà di distinguere realtà da finzione.</p>
+                    
+                    <h3>La nostra missione</h3>
+                    <p>Attraverso articoli, riflessioni e analisi, vogliamo stimolare un dialogo aperto su temi cruciali: come i social media influenzano la nostra identità, quali sono i meccanismi che ci tengono incollati agli schermi, come possiamo ritrovare un equilibrio sano tra vita online e offline.</p>
+                    
+                    <p>Il nostro obiettivo non è dare risposte definitive, ma porre domande che ci aiutino a diventare utenti più consapevoli e critici. Perché solo attraverso la consapevolezza possiamo scegliere come, quando e perché utilizzare questi strumenti, senza lasciare che siano loro a scegliere per noi.</p>
+                    
+                    <p>Questo blog è pensato per studenti, giovani e chiunque voglia approfondire il tema del digitale consapevole. Speriamo che possa essere uno spazio di confronto e riflessione, un piccolo contributo per navigare con maggiore saggezza nel complesso mondo che si trova tra rete e realtà.</p>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Tra Rete e Realtà &nbsp;·&nbsp; <a href="mailto:trareterealta@email.com">trareterealta@email.com</a></p>
-            <p class="nota-scolastica">Progetto scolastico di Web Design</p>
-        </div>
-    </div>
-</footer>
+    </main>
 
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tra Rete e Realtà | Email: <a href="mailto:info@trareterealta.it">info@trareterealta.it</a></p>
+            <p>Un progetto per promuovere la consapevolezza digitale.</p>
+        </div>
+    </footer>
 </body>
 </html>

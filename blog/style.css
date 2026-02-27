@@ -1,0 +1,564 @@
+/* ==========================
+   RESET E CONFIGURAZIONE BASE
+   ========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================
+   CONTAINER E LAYOUT
+   ========================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================
+   HEADER
+   ========================== */
+header {
+    background-color: #1a3a52;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+    opacity: 0.7;
+}
+
+/* ==========================
+   HERO SECTION
+   ========================== */
+.hero {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a3a52;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0052a3;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================
+   SEZIONI GENERALI
+   ========================== */
+.featured-article,
+.other-articles {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a3a52;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+/* ==========================
+   ARTICOLO IN EVIDENZA
+   ========================== */
+.main-article {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.main-article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-article .article-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-article h4 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a3a52;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.main-article p {
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.read-more {
+    color: #0066cc;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #0052a3;
+}
+
+/* ==========================
+   ALTRI ARTICOLI - GRIGLIA
+   ========================== */
+.other-articles {
+    background-color: #f8f9fa;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.article-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.article-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.article-card .card-content {
+    padding: 30px;
+}
+
+.article-card h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a3a52;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.article-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* ==========================
+   PAGINA ARTICOLI
+   ========================== */
+.articles-page {
+    padding: 60px 0;
+}
+
+.page-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a3a52;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.page-intro {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 60px;
+    max-width: 800px;
+}
+
+/* Articolo completo */
+.full-article {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 60px;
+}
+
+.full-article img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.full-article .article-meta {
+    padding: 20px 40px 0;
+    color: #999;
+    font-size: 14px;
+}
+
+.full-article h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a3a52;
+    padding: 20px 40px;
+    line-height: 1.3;
+}
+
+.full-article .article-body {
+    padding: 0 40px 40px;
+}
+
+.full-article .article-body p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Articoli anteprima */
+.article-preview {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+
+.article-preview:hover {
+    transform: translateY(-5px);
+}
+
+.article-preview img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.article-preview .article-meta {
+    padding: 20px 30px 0;
+    color: #999;
+    font-size: 14px;
+}
+
+.article-preview h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a3a52;
+    padding: 15px 30px;
+    line-height: 1.3;
+}
+
+.article-preview p {
+    font-size: 17px;
+    color: #666;
+    padding: 0 30px 30px;
+    line-height: 1.6;
+}
+
+/* ==========================
+   PAGINA CHI SIAMO
+   ========================== */
+.about-page {
+    padding: 60px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-text h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a3a52;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.about-text h3:first-child {
+    margin-top: 0;
+}
+
+.about-text p {
+    font-size: 17px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* ==========================
+   PAGINA CONTATTI
+   ========================== */
+.contact-page {
+    padding: 60px 0;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 40px auto 0;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0052a3;
+}
+
+/* ==========================
+   FOOTER
+   ========================== */
+footer {
+    background-color: #1a3a52;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #6cb2eb;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* ==========================
+   RESPONSIVE - MOBILE
+   ========================== */
+@media (max-width: 768px) {
+    /* Header mobile */
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header nav ul {
+        gap: 15px;
+        font-size: 14px;
+    }
+    
+    /* Hero mobile */
+    .hero .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .hero-content p {
+        font-size: 17px;
+    }
+    
+    /* Articolo in evidenza mobile */
+    .main-article {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-article .article-content {
+        padding: 30px;
+    }
+    
+    /* Griglia articoli mobile */
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Pagina articoli mobile */
+    .page-title {
+        font-size: 32px;
+    }
+    
+    .page-intro {
+        font-size: 17px;
+    }
+    
+    .full-article h3 {
+        font-size: 28px;
+        padding: 20px 25px;
+    }
+    
+    .full-article .article-body {
+        padding: 0 25px 30px;
+    }
+    
+    /* Chi siamo mobile */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Contatti mobile */
+    .contact-form {
+        padding: 30px 25px;
+    }
+    
+    /* Sezioni padding ridotto */
+    .featured-article,
+    .other-articles,
+    .articles-page,
+    .about-page,
+    .contact-page {
+        padding: 40px 0;
+    }
+}
