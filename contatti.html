@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Tra Rete e Realtà</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Tra Rete e Realtà</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                    <li><a href="chisiamo.html">Chi siamo</a></li>
+                    <li><a href="contatti.html" class="active">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGINA CONTATTI -->
+    <main class="contact-page">
+        <div class="container">
+            <h2 class="page-title">Contattaci</h2>
+            <p class="page-intro">Hai domande, suggerimenti o vuoi condividere la tua esperienza? Scrivici, saremo felici di risponderti!</p>
+            
+            <!-- FORM CONTATTI -->
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tua@email.it" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="messaggio">Messaggio</label>
+                    <textarea id="messaggio" name="messaggio" rows="8" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Invia messaggio</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tra Rete e Realtà | Email: <a href="mailto:info@trareterealta.it">info@trareterealta.it</a></p>
+            <p>Un progetto per promuovere la consapevolezza digitale.</p>
+        </div>
+    </footer>
+</body>
+</html>
