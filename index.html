@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tra Rete e Realtà - Blog su Social Media e Tecnologia</title>
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
     <header>
@@ -74,22 +74,52 @@
     </section>
 
     <script>
-        // Effetto parallax scroll per hero background
-        window.addEventListener('scroll', function() {
+        // Effetto parallax scroll funzionante
+        let ticking = false;
+        
+        function updateParallax() {
             const hero = document.getElementById('hero');
             const scrolled = window.pageYOffset;
             const heroHeight = hero.offsetHeight;
             
+            // Applica parallax solo se siamo nella sezione hero
             if (scrolled < heroHeight) {
-                const parallax = scrolled * 0.5;
-                hero.style.setProperty('--scroll-y', parallax + 'px');
+                const parallaxSpeed = 0.5; // Velocità del parallax (0.5 = metà velocità)
+                const yPos = -(scrolled * parallaxSpeed);
                 
-                // Zoom out effect
-                const scale = 1 + (scrolled / heroHeight) * 0.2;
-                hero.querySelector('::before, .hero::before');
-                document.querySelector('.hero::before');
+                // Applica transform al background
+                const heroStyle = getComputedStyle(hero);
+                hero.style.setProperty('--parallax-y', yPos + 'px');
+                
+                // Applica il transform al ::before tramite CSS custom property
+                const beforeElement = hero;
+                if (beforeElement) {
+                    // Zoom leggero mentre scrolli
+                    const scale = 1 + (scrolled / heroHeight) * 0.15;
+                    hero.style.setProperty('--parallax-scale', scale);
+                }
             }
-        });
+            
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick, { passive: true });
+        
+        // Applica il parallax usando transform sul ::before
+        const style = document.createElement('style');
+        style.textContent = `
+            .hero::before {
+                transform: translateY(var(--parallax-y, 0)) scale(var(--parallax-scale, 1));
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 
     <footer>

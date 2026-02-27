@@ -91,11 +91,11 @@ header nav a.active {
 }
 
 /* ==========================
-   HERO SECTION CON BACKGROUND DINAMICO
+   HERO SECTION CON PARALLAX
    ========================== */
 .hero {
-    min-height: 600px;
-    padding: 100px 0;
+    min-height: 650px;
+    padding: 120px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -104,28 +104,27 @@ header nav a.active {
     justify-content: center;
 }
 
-/* Background image con effetto parallax */
+/* Background image con parallax transform */
 .hero::before {
     content: '';
     position: absolute;
-    top: -10%;
+    top: -20%;
     left: -10%;
     right: -10%;
-    bottom: -10%;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%),
-                url('immagini/hero-image.svg') center/cover no-repeat;
-    background-attachment: fixed;
-    z-index: -1;
+    bottom: -20%;
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80') center/cover no-repeat;
+    z-index: -2;
     will-change: transform;
+    transition: transform 0.1s ease-out;
 }
 
-/* Overlay per migliore leggibilità */
+/* Overlay gradient scuro per leggibilità */
 .hero::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
-    z-index: 0;
+    background: linear-gradient(135deg, rgba(20, 30, 48, 0.92) 0%, rgba(36, 59, 85, 0.88) 50%, rgba(20, 30, 48, 0.92) 100%);
+    z-index: -1;
     pointer-events: none;
 }
 
@@ -146,7 +145,7 @@ header nav a.active {
     color: #ffffff;
     margin-bottom: 20px;
     letter-spacing: -0.015em;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content p {
@@ -156,13 +155,13 @@ header nav a.active {
     color: rgba(255, 255, 255, 0.95);
     margin-bottom: 32px;
     letter-spacing: 0.007em;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button {
     display: inline-block;
     background: rgba(255, 255, 255, 0.95);
-    color: #667eea;
+    color: #1d4ed8;
     padding: 14px 28px;
     border-radius: 980px;
     font-size: 17px;
@@ -170,13 +169,13 @@ header nav a.active {
     letter-spacing: -0.022em;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
     background: #ffffff;
     transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.25);
 }
 
 /* Nascondi immagine hero inline */
@@ -663,7 +662,7 @@ footer a:hover {
     
     .hero {
         min-height: 500px;
-        padding: 60px 0;
+        padding: 80px 0;
     }
     
     .hero-content h2 {
