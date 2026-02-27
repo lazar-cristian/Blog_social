@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatti - Tra Rete e Realtà</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-    <!-- HEADER -->
     <header>
         <div class="container">
-            <h1 class="logo">Tra Rete e Realtà</h1>
+            <a href="index.html" class="logo">Tra Rete e Realtà</a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -22,39 +21,41 @@
         </div>
     </header>
 
-    <!-- PAGINA CONTATTI -->
     <main class="contact-page">
         <div class="container">
             <h2 class="page-title">Contattaci</h2>
-            <p class="page-intro">Hai domande, suggerimenti o vuoi condividere la tua esperienza? Scrivici, saremo felici di risponderti!</p>
-            
-            <!-- FORM CONTATTI -->
+            <p class="page-intro">Hai domande, suggerimenti o vuoi semplicemente condividere la tua esperienza? Scrivici!</p>
+
             <form class="contact-form">
                 <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="tua@email.it" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="messaggio">Messaggio</label>
-                    <textarea id="messaggio" name="messaggio" rows="8" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+                    <label for="subject">Oggetto</label>
+                    <input type="text" id="subject" name="subject" required>
                 </div>
-                
+
+                <div class="form-group">
+                    <label for="message">Messaggio</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
                 <button type="submit" class="submit-button">Invia messaggio</button>
             </form>
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Tra Rete e Realtà | Email: <a href="mailto:info@trareterealta.it">info@trareterealta.it</a></p>
-            <p>Un progetto per promuovere la consapevolezza digitale.</p>
+            <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
+            <p>Un blog per riflettere sul nostro rapporto con la tecnologia.</p>
         </div>
     </footer>
 </body>
