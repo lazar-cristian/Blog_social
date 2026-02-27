@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 280" width="540" height="280">
+  <defs>
+    <radialGradient id="g1" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#4466ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#4466ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="540" height="280" fill="#0c0c14"/>
+  <rect width="540" height="280" fill="url(#g1)"/>
+
+  <!-- Nodo centrale algoritmo -->
+  <circle cx="270" cy="140" r="34" fill="#141420" stroke="#E8441E" stroke-width="1" stroke-opacity="0.7"/>
+  <text x="270" y="137" text-anchor="middle" fill="#E8441E" font-family="sans-serif" font-size="9" font-weight="700" letter-spacing="2">ALGO</text>
+  <text x="270" y="150" text-anchor="middle" fill="#E8441E" font-family="sans-serif" font-size="9" font-weight="700" letter-spacing="2">RITHM</text>
+
+  <!-- Nodi satellite -->
+  <circle cx="100" cy="70" r="22" fill="#141420" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.12"/>
+  <circle cx="440" cy="70" r="22" fill="#141420" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.12"/>
+  <circle cx="90" cy="200" r="18" fill="#141420" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.12"/>
+  <circle cx="450" cy="200" r="18" fill="#141420" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.12"/>
+  <circle cx="270" cy="32" r="15" fill="#141420" stroke="#E8441E" stroke-width="0.5" stroke-opacity="0.4"/>
+  <circle cx="270" cy="248" r="15" fill="#141420" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.12"/>
+
+  <!-- Linee di connessione -->
+  <line x1="122" y1="82" x2="243" y2="120" stroke="#E8441E" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="4,4"/>
+  <line x1="418" y1="82" x2="297" y2="120" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.12" stroke-dasharray="4,4"/>
+  <line x1="104" y1="186" x2="245" y2="155" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.12" stroke-dasharray="4,4"/>
+  <line x1="436" y1="186" x2="295" y2="155" stroke="#E8441E" stroke-width="0.8" stroke-opacity="0.3" stroke-dasharray="4,4"/>
+  <line x1="270" y1="47" x2="270" y2="106" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="3,3"/>
+  <line x1="270" y1="174" x2="270" y2="233" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="3,3"/>
+
+  <!-- Icone mini nei nodi -->
+  <text x="100" y="75" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="11" opacity="0.3">👁</text>
+  <text x="440" y="75" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="11" opacity="0.3">❤</text>
+  <text x="90" y="205" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="9" opacity="0.3">↑</text>
+  <text x="450" y="205" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="9" opacity="0.3">$</text>
+</svg>
