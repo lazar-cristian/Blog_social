@@ -1,132 +1,132 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tra Rete e Realtà - Blog su Social Media e Tecnologia</title>
-    <link rel="stylesheet" href="style.css?v=6">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Tra Rete e Realtà</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="articoli.html">Articoli</a></li>
-                    <li><a href="chisiamo.html">Chi siamo</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Scopri il confine tra mondo digitale e vita reale</h2>
-                <p>Un blog dedicato alla consapevolezza nell'uso dei social media e alla riflessione sul nostro rapporto con la tecnologia.</p>
-                <a href="articoli.html" class="cta-button">Esplora gli articoli</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="featured-article">
-        <div class="container">
-            <h3 class="section-title">In evidenza</h3>
-            <div class="main-article">
-                <img src="immagini/featured-article.svg" alt="Immagine articolo in evidenza">
-                <div class="article-content">
-                    <h4>Il paradosso della connessione: più social, meno sociali?</h4>
-                    <p>Esploriamo come i social media abbiano trasformato le nostre relazioni, creando una rete globale di connessioni virtuali ma distanziandoci dalle persone che ci stanno accanto fisicamente.</p>
-                    <a href="articoli.html" class="read-more">Leggi l'articolo</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="other-articles">
-        <div class="container">
-            <h3 class="section-title">Altri articoli</h3>
-            <div class="articles-grid">
-                <div class="article-card">
-                    <a href="articolo-algoritmi.html">
-                        <img src="immagini/article-2.svg" alt="Algoritmi social media">
-                        <div class="card-content">
-                            <h4>Gli algoritmi che modellano la nostra realtà</h4>
-                            <p>Un'analisi su come gli algoritmi dei social media influenzano ciò che vediamo e pensiamo ogni giorno.</p>
-                            <span class="read-more">Leggi l'articolo</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="article-card">
-                    <a href="articolo-detox.html">
-                        <img src="immagini/article-3.svg" alt="Digital detox">
-                        <div class="card-content">
-                            <h4>Digital detox: riconnettersi con sé stessi</h4>
-                            <p>Consigli pratici per prendersi una pausa dalla tecnologia e riscoprire il valore del tempo offline.</p>
-                            <span class="read-more">Leggi l'articolo</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Effetto parallax scroll funzionante
-        let ticking = false;
-        
-        function updateParallax() {
-            const hero = document.getElementById('hero');
-            const scrolled = window.pageYOffset;
-            const heroHeight = hero.offsetHeight;
-            
-            // Applica parallax solo se siamo nella sezione hero
-            if (scrolled < heroHeight) {
-                const parallaxSpeed = 0.5; // Velocità del parallax (0.5 = metà velocità)
-                const yPos = -(scrolled * parallaxSpeed);
-                
-                // Applica transform al background
-                const heroStyle = getComputedStyle(hero);
-                hero.style.setProperty('--parallax-y', yPos + 'px');
-                
-                // Applica il transform al ::before tramite CSS custom property
-                const beforeElement = hero;
-                if (beforeElement) {
-                    // Zoom leggero mentre scrolli
-                    const scale = 1 + (scrolled / heroHeight) * 0.15;
-                    hero.style.setProperty('--parallax-scale', scale);
-                }
-            }
-            
-            ticking = false;
-        }
-        
-        function requestTick() {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        }
-        
-        window.addEventListener('scroll', requestTick, { passive: true });
-        
-        // Applica il parallax usando transform sul ::before
-        const style = document.createElement('style');
-        style.textContent = `
-            .hero::before {
-                transform: translateY(var(--parallax-y, 0)) scale(var(--parallax-scale, 1));
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
-            <p>Un blog per riflettere sul nostro rapporto con la tecnologia.</p>
-        </div>
-    </footer>
-</body>
-</html>
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="it"> -->
+<!-- <head> -->
+<!--     <meta charset="UTF-8"> -->
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<!--     <title>Tra Rete e Realtà - Blog su Social Media e Tecnologia</title> -->
+<!--     <link rel="stylesheet" href="style.css?v=6"> -->
+<!-- </head> -->
+<!-- <body> -->
+<!--     <header> -->
+<!--         <div class="container"> -->
+<!--             <a href="index.html" class="logo">Tra Rete e Realtà</a> -->
+<!--             <nav> -->
+<!--                 <ul> -->
+<!--                     <li><a href="index.html" class="active">Home</a></li> -->
+<!--                     <li><a href="articoli.html">Articoli</a></li> -->
+<!--                     <li><a href="chisiamo.html">Chi siamo</a></li> -->
+<!--                     <li><a href="contatti.html">Contatti</a></li> -->
+<!--                 </ul> -->
+<!--             </nav> -->
+<!--         </div> -->
+<!--     </header> -->
+<!--  -->
+<!--     <section class="hero" id="hero"> -->
+<!--         <div class="container"> -->
+<!--             <div class="hero-content"> -->
+<!--                 <h2>Scopri il confine tra mondo digitale e vita reale</h2> -->
+<!--                 <p>Un blog dedicato alla consapevolezza nell'uso dei social media e alla riflessione sul nostro rapporto con la tecnologia.</p> -->
+<!--                 <a href="articoli.html" class="cta-button">Esplora gli articoli</a> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <section class="featured-article"> -->
+<!--         <div class="container"> -->
+<!--             <h3 class="section-title">In evidenza</h3> -->
+<!--             <div class="main-article"> -->
+<!--                 <img src="immagini/featured-article.svg" alt="Immagine articolo in evidenza"> -->
+<!--                 <div class="article-content"> -->
+<!--                     <h4>Il paradosso della connessione: più social, meno sociali?</h4> -->
+<!--                     <p>Esploriamo come i social media abbiano trasformato le nostre relazioni, creando una rete globale di connessioni virtuali ma distanziandoci dalle persone che ci stanno accanto fisicamente.</p> -->
+<!--                     <a href="articoli.html" class="read-more">Leggi l'articolo</a> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <section class="other-articles"> -->
+<!--         <div class="container"> -->
+<!--             <h3 class="section-title">Altri articoli</h3> -->
+<!--             <div class="articles-grid"> -->
+<!--                 <div class="article-card"> -->
+<!--                     <a href="articolo-algoritmi.html"> -->
+<!--                         <img src="immagini/article-2.svg" alt="Algoritmi social media"> -->
+<!--                         <div class="card-content"> -->
+<!--                             <h4>Gli algoritmi che modellano la nostra realtà</h4> -->
+<!--                             <p>Un'analisi su come gli algoritmi dei social media influenzano ciò che vediamo e pensiamo ogni giorno.</p> -->
+<!--                             <span class="read-more">Leggi l'articolo</span> -->
+<!--                         </div> -->
+<!--                     </a> -->
+<!--                 </div> -->
+<!--                 <div class="article-card"> -->
+<!--                     <a href="articolo-detox.html"> -->
+<!--                         <img src="immagini/article-3.svg" alt="Digital detox"> -->
+<!--                         <div class="card-content"> -->
+<!--                             <h4>Digital detox: riconnettersi con sé stessi</h4> -->
+<!--                             <p>Consigli pratici per prendersi una pausa dalla tecnologia e riscoprire il valore del tempo offline.</p> -->
+<!--                             <span class="read-more">Leggi l'articolo</span> -->
+<!--                         </div> -->
+<!--                     </a> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <script> -->
+<!--         // Effetto parallax scroll funzionante -->
+<!--         let ticking = false; -->
+<!--          -->
+<!--         function updateParallax() { -->
+<!--             const hero = document.getElementById('hero'); -->
+<!--             const scrolled = window.pageYOffset; -->
+<!--             const heroHeight = hero.offsetHeight; -->
+<!--              -->
+<!--             // Applica parallax solo se siamo nella sezione hero -->
+<!--             if (scrolled < heroHeight) { -->
+<!--                 const parallaxSpeed = 0.5; // Velocità del parallax (0.5 = metà velocità) -->
+<!--                 const yPos = -(scrolled * parallaxSpeed); -->
+<!--                  -->
+<!--                 // Applica transform al background -->
+<!--                 const heroStyle = getComputedStyle(hero); -->
+<!--                 hero.style.setProperty('--parallax-y', yPos + 'px'); -->
+<!--                  -->
+<!--                 // Applica il transform al ::before tramite CSS custom property -->
+<!--                 const beforeElement = hero; -->
+<!--                 if (beforeElement) { -->
+<!--                     // Zoom leggero mentre scrolli -->
+<!--                     const scale = 1 + (scrolled / heroHeight) * 0.15; -->
+<!--                     hero.style.setProperty('--parallax-scale', scale); -->
+<!--                 } -->
+<!--             } -->
+<!--              -->
+<!--             ticking = false; -->
+<!--         } -->
+<!--          -->
+<!--         function requestTick() { -->
+<!--             if (!ticking) { -->
+<!--                 requestAnimationFrame(updateParallax); -->
+<!--                 ticking = true; -->
+<!--             } -->
+<!--         } -->
+<!--          -->
+<!--         window.addEventListener('scroll', requestTick, { passive: true }); -->
+<!--          -->
+<!--         // Applica il parallax usando transform sul ::before -->
+<!--         const style = document.createElement('style'); -->
+<!--         style.textContent = ` -->
+<!--             .hero::before { -->
+<!--                 transform: translateY(var(--parallax-y, 0)) scale(var(--parallax-scale, 1)); -->
+<!--             } -->
+<!--         `; -->
+<!--         document.head.appendChild(style); -->
+<!--     </script> -->
+<!--  -->
+<!--     <footer> -->
+<!--         <div class="container"> -->
+<!--             <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p> -->
+<!--             <p>Un blog per riflettere sul nostro rapporto con la tecnologia.</p> -->
+<!--         </div> -->
+<!--     </footer> -->
+<!-- </body> -->
+<!-- </html> -->
