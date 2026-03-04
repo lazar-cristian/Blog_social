@@ -359,6 +359,18 @@ header nav a.active {
     background-color: #fff;
 }
 
+.article-back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-size: 15px;
+    color: #0071e3;
+    text-decoration: none;
+}
+
+.article-back-link:hover {
+    text-decoration: underline;
+}
+
 .page-title {
     font-size: 56px;
     font-weight: 600;
