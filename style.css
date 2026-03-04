@@ -55,7 +55,9 @@ header .container {
     justify-content: space-between;
     align-items: center;
     height: 48px;
-    max-width: 1024px;
+    max-width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 header .logo {
@@ -202,7 +204,7 @@ header nav a.active {
 }
 
 .section-title {
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 600;
     line-height: 1.0834933333;
     color: #1d1d1f;
