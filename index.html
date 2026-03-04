@@ -84,8 +84,12 @@
             
             // Applica parallax solo se siamo nella sezione hero
             if (scrolled < heroHeight) {
-                const parallaxSpeed = 0.5; // Velocità del parallax (0.5 = metà velocità)
-                const yPos = -(scrolled * parallaxSpeed);
+                const parallaxSpeed = 0.35; // Velocità del parallax più dolce
+                let yPos = -(scrolled * parallaxSpeed);
+                const maxOffset = heroHeight * 0.25; // limite massimo di spostamento
+                if (yPos < -maxOffset) {
+                    yPos = -maxOffset;
+                }
                 
                 // Applica transform al background
                 const heroStyle = getComputedStyle(hero);
@@ -94,8 +98,9 @@
                 // Applica il transform al ::before tramite CSS custom property
                 const beforeElement = hero;
                 if (beforeElement) {
-                    // Zoom leggero mentre scrolli
-                    const scale = 1 + (scrolled / heroHeight) * 0.15;
+                    // Zoom leggero mentre scrolli, con limite massimo
+                    const maxScale = 1.15;
+                    const scale = Math.min(maxScale, 1 + (scrolled / heroHeight) * 0.15);
                     hero.style.setProperty('--parallax-scale', scale);
                 }
             }
