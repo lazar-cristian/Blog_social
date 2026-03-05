@@ -565,23 +565,32 @@ header nav a.active {
 }
 
 .contact-grid {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    display: flex !important;
+    gap: 50px !important;
+    justify-content: center !important;
+    max-width: 1000px !important;
+    margin: 40px auto !important;
+}
+
+.contact-info {
+    flex: 1 !important;
+}
+
+.contact-form-container {
+    flex: 1.5 !important;
 }
 
 @media (max-width: 768px) {
     .contact-grid {
-        flex-direction: column;
+        flex-direction: column !important;
     }
 }
 
+/* remove legacy layout selector by overriding if it appears */
 .contact-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: flex-start;
+    display: block !important;
 }
+
 
 .contact-purposes {
     list-style: disc inside;
