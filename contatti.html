@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatti - Tra Rete e Realtà</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
     <header>
@@ -24,16 +24,12 @@
     <main class="contact-page">
         <div class="container">
             <h2 class="page-title">Contattaci</h2>
-            <p class="page-intro">Hai domande, suggerimenti o vuoi semplicemente condividere la tua esperienza? Scrivici!</p>
-            <ul class="contact-purposes">
-                <li>Inviare messaggi o richieste</li>
-                <li>Fare domande</li>
-                <li>Proporre collaborazioni</li>
-                <li>Segnalare problemi</li>
-            </ul>
+            <p class="page-intro">Hai domande o vuoi collaborare con noi? Contattaci attraverso uno dei seguenti modi.</p>
 
             <div class="contact-wrapper">
-                <div class="contact-info-sidebar">
+
+                <!-- COLONNA SINISTRA: Email, Telefono, Modulo di contatto -->
+                <div class="contact-left">
                     <div class="contact-method">
                         <span class="icon">📧</span>
                         <div>
@@ -41,6 +37,7 @@
                             <p>info@esempio.com</p>
                         </div>
                     </div>
+
                     <div class="contact-method">
                         <span class="icon">📞</span>
                         <div>
@@ -48,29 +45,32 @@
                             <p>+39 0123 456789</p>
                         </div>
                     </div>
+
+                    <div class="contact-method contact-method--block">
+                        <span class="icon">✉️</span>
+                        <div>
+                            <h4>Modulo di contatto</h4>
+                            <p>Spiegazione della missione rooblog e di come il nostro team sta lavorando per fornire contenuti di alta qualità e utili per i nostri lettori.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-form-main">
-                    <form class="contact-form">
-                        <h4>Modulo di contatto</h4>
-                        <p>Spiegazione della missione rooblog e di come il nostro team sta lavorando per fornire contenuti di alta qualità e utili per i nostri lettori.</p>
-                        <div class="form-group">
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
 
+                <!-- COLONNA DESTRA: campi form -->
+                <div class="contact-right">
+                    <form class="contact-form-inline">
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="text" id="name" name="name" placeholder="Nome" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="message">Messaggio</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
                         </div>
-
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="7" placeholder="Messaggio" required></textarea>
+                        </div>
                         <button type="submit" class="submit-button">Invia</button>
                     </form>
                 </div>
+
             </div>
         </div>
     </main>
