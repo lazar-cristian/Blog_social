@@ -1,71 +1,72 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tra Rete e Realtà - Blog su Social Media e Tecnologia</title>
-    <link rel="stylesheet" href="style.css?v=8">
+<!DOCTYPE html> <!-- Dichiara il tipo di documento come HTML5 -->
+<html lang="it"> <!-- Radice della pagina; lang="it" indica la lingua italiana al browser e ai motori di ricerca -->
+<head> <!-- Sezione di configurazione non visibile all'utente -->
+    <meta charset="UTF-8"> <!-- Imposta la codifica a UTF-8: supporta accenti, ò, à, ù e caratteri speciali italiani -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adatta la larghezza della pagina al dispositivo: fondamentale per smartphone e tablet -->
+    <title>Tra Rete e Realtà - Blog su Social Media e Tecnologia</title> <!-- Titolo che appare nella scheda del browser e nei risultati di ricerca Google -->
+    <link rel="stylesheet" href="style.css?v=8"> <!-- Collega il foglio di stile CSS condiviso; ?v=8 forza il browser ad aggiornare la cache -->
 </head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Tra Rete e Realtà</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="articoli.html">Articoli</a></li>
-                    <li><a href="chisiamo.html">Chi siamo</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
+<body> <!-- Inizio di tutto il contenuto visibile nella pagina -->
+
+    <header> <!-- Barra di navigazione in cima: ha effetto vetro (glass) e rimane visibile durante lo scroll -->
+        <div class="container"> <!-- Contenitore centrato che limita la larghezza a ~980px e aggiunge padding laterale -->
+            <a href="index.html" class="logo">Tra Rete e Realtà</a> <!-- Logo testuale del blog: cliccabile, porta sempre alla homepage, ingrandisce leggermente all'hover -->
+            <nav> <!-- Elemento semantico di navigazione: gli screen reader lo riconoscono come menu principale -->
+                <ul> <!-- Lista non ordinata delle voci di menu: visualizzata in orizzontale tramite CSS flex -->
+                    <li><a href="index.html" class="active">Home</a></li> <!-- Voce Home: class="active" la evidenzia perché siamo sulla homepage -->
+                    <li><a href="articoli.html">Articoli</a></li> <!-- Voce Articoli: porta alla pagina con tutti gli articoli -->
+                    <li><a href="chisiamo.html">Chi siamo</a></li> <!-- Voce Chi siamo: porta alla presentazione del progetto scolastico -->
+                    <li><a href="contatti.html">Contatti</a></li> <!-- Voce Contatti: porta al form di contatto con email e telefono -->
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Scopri il confine tra mondo digitale e vita reale</h2>
-                <p>Un blog dedicato alla consapevolezza nell'uso dei social media e alla riflessione sul nostro rapporto con la tecnologia.</p>
-                <a href="articoli.html" class="cta-button">Esplora gli articoli</a>
+    <section class="hero" id="hero"> <!-- Sezione banner principale; id="hero" serve al JavaScript per applicare l'effetto parallax -->
+        <div class="container"> <!-- Contenitore interno del hero: larghezza max 800px per tenere il testo centrato e leggibile -->
+            <div class="hero-content"> <!-- Blocco che raggruppa titolo, descrizione e pulsante CTA al centro del banner -->
+                <h2>Scopri il confine tra mondo digitale e vita reale</h2> <!-- Titolo principale del blog: 64px, bianco, grassetto, con ombra per leggibilità -->
+                <p>Un blog dedicato alla consapevolezza nell'uso dei social media e alla riflessione sul nostro rapporto con la tecnologia.</p> <!-- Testo introduttivo: 28px, bianco semi-trasparente, descrive il tema del blog -->
+                <a href="articoli.html" class="cta-button">Esplora gli articoli</a> <!-- Pulsante di chiamata all'azione: forma a pillola, porta alla pagina articoli, scala all'hover -->
             </div>
         </div>
     </section>
 
-    <section class="featured-article">
-        <div class="container">
-            <h3 class="section-title">In evidenza</h3>
-            <a href="articolo-paradosso.html" class="main-article">
-                <img src="https://www.aessecommunication.it/wp-content/uploads/2025/09/social-per-professionisti-1080x675.jpg" alt="Immagine articolo in evidenza sui social media">
-                <div class="article-content">
-                    <h4>Il paradosso della connessione: più social, meno sociali?</h4>
-                    <p>Esploriamo come i social media abbiano trasformato le nostre relazioni, creando una rete globale di connessioni virtuali ma distanziandoci dalle persone che ci stanno accanto fisicamente.</p>
-                    <span class="read-more">Leggi l'articolo</span>
+    <section class="featured-article"> <!-- Sezione "In evidenza": sfondo bianco, mostra l'articolo principale del blog -->
+        <div class="container"> <!-- Contenitore centrato per la card dell'articolo in evidenza -->
+            <h3 class="section-title">In evidenza</h3> <!-- Titolo della sezione: 32px, centrato, con spaziatura sotto prima della card -->
+            <a href="articolo-paradosso.html" class="main-article"> <!-- Link che avvolge tutta la card: cliccando ovunque sulla card si apre l'articolo -->
+                <img src="https://www.aessecommunication.it/wp-content/uploads/2025/09/social-per-professionisti-1080x675.jpg" alt="Immagine articolo in evidenza sui social media"> <!-- Immagine copertina: altezza 420px, object-fit cover per ritagliare senza deformare, zoom leggero all'hover -->
+                <div class="article-content"> <!-- Blocco testo della card: padding generoso, testo centrato -->
+                    <h4>Il paradosso della connessione: più social, meno sociali?</h4> <!-- Titolo articolo in evidenza: 40px, semi-grassetto, colore scuro -->
+                    <p>Esploriamo come i social media abbiano trasformato le nostre relazioni, creando una rete globale di connessioni virtuali ma distanziandoci dalle persone che ci stanno accanto fisicamente.</p> <!-- Estratto dell'articolo: 21px, grigio medio, introduce il tema senza spoilerare troppo -->
+                    <span class="read-more">Leggi l'articolo</span> <!-- Link testuale con freccia › aggiunta automaticamente via CSS ::after, si sposta a destra all'hover -->
                 </div>
             </a>
         </div>
     </section>
 
-    <section class="other-articles">
-        <div class="container">
-            <h3 class="section-title">Altri articoli</h3>
-            <div class="articles-grid">
-                <div class="article-card">
-                    <a href="articolo-algoritmi.html">
-                        <img src="https://assets.technologynetworks.com/production/dynamic/images/content/320963/the-9-key-bioinformatics-resources-for-analyzing-your-proteomic-data-320963-960x540.jpg?cb=11509237" alt="Algoritmi e codice su schermo">
-                        <div class="card-content">
-                            <h4>Gli algoritmi che modellano la nostra realtà</h4>
-                            <p>Un'analisi su come gli algoritmi dei social media influenzano ciò che vediamo e pensiamo ogni giorno.</p>
-                            <span class="read-more">Leggi l'articolo</span>
+    <section class="other-articles"> <!-- Sezione "Altri articoli": sfondo grigio chiaro #f5f5f7, alterna visivamente con il bianco -->
+        <div class="container"> <!-- Contenitore centrato per la griglia di card -->
+            <h3 class="section-title">Altri articoli</h3> <!-- Titolo della sezione: stesso stile di "In evidenza" per coerenza visiva -->
+            <div class="articles-grid"> <!-- Griglia CSS a 2 colonne uguali con gap 24px tra le card -->
+                <div class="article-card"> <!-- Prima card articolo: bordo arrotondato 28px, ombra soffusa, hover con elevazione -->
+                    <a href="articolo-algoritmi.html"> <!-- Link all'articolo sugli algoritmi: tutta la card è cliccabile -->
+                        <img src="https://assets.technologynetworks.com/production/dynamic/images/content/320963/the-9-key-bioinformatics-resources-for-analyzing-your-proteomic-data-320963-960x540.jpg?cb=11509237" alt="Algoritmi e codice su schermo"> <!-- Immagine copertina algoritmi: altezza 280px, ritaglia proporzionalmente con object-fit cover -->
+                        <div class="card-content"> <!-- Blocco testo della card piccola: padding 40px, centrato -->
+                            <h4>Gli algoritmi che modellano la nostra realtà</h4> <!-- Titolo card: 28px, semi-grassetto, descrive il secondo articolo -->
+                            <p>Un'analisi su come gli algoritmi dei social media influenzano ciò che vediamo e pensiamo ogni giorno.</p> <!-- Descrizione breve: 17px, grigio, anticipa il contenuto dell'articolo -->
+                            <span class="read-more">Leggi l'articolo</span> <!-- Link con freccia: stile identico al link dell'articolo in evidenza -->
                         </div>
                     </a>
                 </div>
-                <div class="article-card">
-                    <a href="articolo-detox.html">
-                        <img src="https://www.camminatorianonimi.com/wp-content/uploads/2024/12/Designer-44.jpeg" alt="Segnale di divieto smartphone in un bosco">
-                        <div class="card-content">
-                            <h4>Digital detox: riconnettersi con sé stessi</h4>
-                            <p>Consigli pratici per prendersi una pausa dalla tecnologia e riscoprire il valore del tempo offline.</p>
-                            <span class="read-more">Leggi l'articolo</span>
+                <div class="article-card"> <!-- Seconda card articolo: struttura identica alla prima card, stesso stile CSS -->
+                    <a href="articolo-detox.html"> <!-- Link all'articolo sul digital detox -->
+                        <img src="https://www.camminatorianonimi.com/wp-content/uploads/2024/12/Designer-44.jpeg" alt="Segnale di divieto smartphone in un bosco"> <!-- Immagine copertina digital detox: altezza 280px, ritaglia al centro -->
+                        <div class="card-content"> <!-- Blocco testo della seconda card -->
+                            <h4>Digital detox: riconnettersi con sé stessi</h4> <!-- Titolo del terzo articolo del blog -->
+                            <p>Consigli pratici per prendersi una pausa dalla tecnologia e riscoprire il valore del tempo offline.</p> <!-- Estratto breve: introduce il tema del distacco consapevole dalla tecnologia -->
+                            <span class="read-more">Leggi l'articolo</span> <!-- Link testuale con freccia animata all'hover -->
                         </div>
                     </a>
                 </div>
@@ -73,66 +74,67 @@
         </div>
     </section>
 
-    <script>
-        let ticking = false;
-        function updateParallax() {
-            const hero = document.getElementById('hero');
-            const scrolled = window.pageYOffset;
-            const heroHeight = hero.offsetHeight;
-            if (scrolled < heroHeight) {
-                const parallaxSpeed = 0.35;
-                let yPos = -(scrolled * parallaxSpeed);
-                const maxOffset = heroHeight * 0.25;
-                if (yPos < -maxOffset) yPos = -maxOffset;
-                hero.style.setProperty('--parallax-y', yPos + 'px');
-                const maxScale = 1.15;
-                const scale = Math.min(maxScale, 1 + (scrolled / heroHeight) * 0.15);
-                hero.style.setProperty('--parallax-scale', scale);
+    <script> <!-- Blocco JavaScript inline: gestisce l'effetto parallax del banner hero durante lo scroll -->
+        let ticking = false; <!-- Flag booleano: evita che il parallax venga ricalcolato troppe volte per ogni pixel scrollato -->
+        function updateParallax() { <!-- Funzione eseguita ad ogni frame animazione: aggiorna posizione e scala dello sfondo -->
+            const hero = document.getElementById('hero'); <!-- Recupera l'elemento HTML con id="hero" dal DOM della pagina -->
+            const scrolled = window.pageYOffset; <!-- Legge quanti pixel sono stati scrollati verso il basso dall'inizio della pagina -->
+            const heroHeight = hero.offsetHeight; <!-- Misura l'altezza reale in pixel della sezione hero nel browser -->
+            if (scrolled < heroHeight) { <!-- Applica il parallax solo mentre la hero è ancora visibile nello schermo -->
+                const parallaxSpeed = 0.35; <!-- Velocità parallax: 0.35 significa che lo sfondo scorre al 35% della velocità del contenuto -->
+                let yPos = -(scrolled * parallaxSpeed); <!-- Calcola lo spostamento verticale negativo dello sfondo (va su mentre l'utente scrolla giù) -->
+                const maxOffset = heroHeight * 0.25; <!-- Limite massimo di spostamento: lo sfondo non si sposta oltre il 25% dell'altezza hero -->
+                if (yPos < -maxOffset) yPos = -maxOffset; <!-- Blocca lo spostamento se supera il limite massimo calcolato -->
+                hero.style.setProperty('--parallax-y', yPos + 'px'); <!-- Imposta la variabile CSS --parallax-y usata dal CSS nel transform di ::before -->
+                const maxScale = 1.15; <!-- Scala massima che l'immagine può raggiungere durante lo scroll (15% più grande) -->
+                const scale = Math.min(maxScale, 1 + (scrolled / heroHeight) * 0.15); <!-- Calcola la scala progressiva: cresce con lo scroll fino al massimo di 1.15 -->
+                hero.style.setProperty('--parallax-scale', scale); <!-- Imposta la variabile CSS --parallax-scale usata dal CSS nel transform di ::before -->
             }
-            ticking = false;
+            ticking = false; <!-- Resetta il flag dopo l'aggiornamento: permette al prossimo evento scroll di avviare un nuovo frame -->
         }
-        function requestTick() {
-            if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
+        function requestTick() { <!-- Funzione che richiede un frame di animazione al browser solo se non è già in attesa -->
+            if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; } <!-- requestAnimationFrame sincronizza l'aggiornamento con il refresh del monitor (60fps) -->
         }
-        window.addEventListener('scroll', requestTick, { passive: true });
-        const style = document.createElement('style');
-        style.textContent = `.hero::before { transform: translateY(var(--parallax-y, 0)) scale(var(--parallax-scale, 1)); }`;
-        document.head.appendChild(style);
+        window.addEventListener('scroll', requestTick, { passive: true }); <!-- Ascolta l'evento scroll; passive:true migliora le prestazioni su mobile evitando blocchi -->
+        const style = document.createElement('style'); <!-- Crea dinamicamente un elemento <style> che verrà aggiunto al <head> -->
+        style.textContent = `.hero::before { transform: translateY(var(--parallax-y, 0)) scale(var(--parallax-scale, 1)); }`; <!-- Regola CSS che applica le variabili di posizione e scala all'immagine di sfondo dello pseudo-elemento -->
+        document.head.appendChild(style); <!-- Inserisce la regola CSS dinamica nell'intestazione della pagina perché abbia effetto -->
     </script>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h5>Link utili</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="articoli.html">Articoli</a></li>
-                        <li><a href="chisiamo.html">Chi siamo</a></li>
-                        <li><a href="contatti.html">Contatti</a></li>
+    <footer> <!-- Pie' di pagina: sfondo blu scuro #1f2937, presente identico in tutte le pagine del sito -->
+        <div class="container"> <!-- Contenitore centrato per il contenuto del footer -->
+            <div class="footer-grid"> <!-- Griglia CSS a 3 colonne (1fr 1fr 1.6fr): link utili, social, newsletter -->
+                <div class="footer-col"> <!-- Prima colonna: link di navigazione rapida verso le pagine del sito -->
+                    <h5>Link utili</h5> <!-- Intestazione colonna: 11px, tutto maiuscolo, opacity 0.7, letter-spacing ampio -->
+                    <ul> <!-- Lista dei link di navigazione nel footer -->
+                        <li><a href="index.html">Home</a></li> <!-- Link footer alla homepage -->
+                        <li><a href="articoli.html">Articoli</a></li> <!-- Link footer alla pagina con tutti gli articoli -->
+                        <li><a href="chisiamo.html">Chi siamo</a></li> <!-- Link footer alla pagina del progetto -->
+                        <li><a href="contatti.html">Contatti</a></li> <!-- Link footer alla pagina con form e informazioni di contatto -->
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h5>Seguici</h5>
-                    <div class="footer-social">
-                        <a href="#">Twitter</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
+                <div class="footer-col"> <!-- Seconda colonna: link ai social media del blog -->
+                    <h5>Seguici</h5> <!-- Intestazione colonna social: stesso stile dell'intestazione "Link utili" -->
+                    <div class="footer-social"> <!-- Contenitore flex-column per i link social con gap 10px tra ognuno -->
+                        <a href="#">Twitter</a> <!-- Link Twitter: testo bianco semi-trasparente, diventa bianco pieno all'hover -->
+                        <a href="#">Facebook</a> <!-- Link Facebook: href="#" è un placeholder da sostituire con l'URL reale -->
+                        <a href="#">Instagram</a> <!-- Link Instagram: stessa stilizzazione degli altri social -->
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h5>Newsletter</h5>
-                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Indirizzo email">
-                        <button type="submit">Iscriviti</button>
+                <div class="footer-col"> <!-- Terza colonna: iscrizione newsletter (colonna più larga: 1.6fr) -->
+                    <h5>Newsletter</h5> <!-- Intestazione colonna newsletter -->
+                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p> <!-- Testo invito: 13px, bianco semitrasparente, margin-bottom 16px prima del form -->
+                    <form class="newsletter-form"> <!-- Form di iscrizione: input email e pulsante "Iscriviti" affiancati in flex-row -->
+                        <input type="email" placeholder="Indirizzo email"> <!-- Campo email: sfondo quasi trasparente sul blu scuro, bordo bianco semitrasparente -->
+                        <button type="submit">Iscriviti</button> <!-- Pulsante invio: sfondo blu #0071e3, si ingrandisce leggermente all'hover -->
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
+            <div class="footer-bottom"> <!-- Riga inferiore del footer: separata da un bordo sottile bianco trasparente -->
+                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p> <!-- Testo copyright: 12px, bianco molto attenuato (opacity 0.4), centrato -->
             </div>
         </div>
     </footer>
-</body>
-</html>
+
+</body> <!-- Fine di tutto il contenuto visibile della pagina -->
+</html> <!-- Chiusura dell'elemento radice: fine del documento HTML -->

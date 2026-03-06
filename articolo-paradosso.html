@@ -1,124 +1,127 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il paradosso della connessione: più social, meno sociali? - Tra Rete e Realtà</title>
-    <link rel="stylesheet" href="style.css?v=7">
+<!DOCTYPE html> <!-- Dichiarazione tipo documento HTML5 -->
+<html lang="it"> <!-- Elemento radice con lingua italiana per accessibilità e SEO -->
+<head> <!-- Intestazione con metadati non visibili nella pagina -->
+    <meta charset="UTF-8"> <!-- Codifica UTF-8: supporta accenti italiani come à, è, ò, ù -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport responsive: larghezza pagina = larghezza dispositivo -->
+    <title>Il paradosso della connessione: più social, meno sociali? - Tra Rete e Realtà</title> <!-- Titolo completo SEO-friendly per la scheda del browser e Google -->
+    <link rel="stylesheet" href="style.css?v=7"> <!-- Foglio di stile condiviso; ?v=7 aggiorna la cache del browser -->
 </head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Tra Rete e Realtà</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="articoli.html" class="active">Articoli</a></li>
-                    <li><a href="chisiamo.html">Chi siamo</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
+<body> <!-- Inizio del corpo della pagina con tutto il contenuto visibile -->
+
+    <header> <!-- Barra di navigazione: position sticky, effetto vetro con backdrop-filter blur -->
+        <div class="container"> <!-- Contenitore header: flex, space-between, altezza 48px, padding 0 32px -->
+            <a href="index.html" class="logo">Tra Rete e Realtà</a> <!-- Logo del blog: porta alla homepage, scala al 103% all'hover -->
+            <nav> <!-- Elemento di navigazione semantico HTML5 -->
+                <ul> <!-- Lista menu orizzontale: display flex, gap 32px, list-style none -->
+                    <li><a href="index.html">Home</a></li> <!-- Voce Home: non attiva su questa pagina -->
+                    <li><a href="articoli.html" class="active">Articoli</a></li> <!-- Voce Articoli: class="active" perché questo è un articolo -->
+                    <li><a href="chisiamo.html">Chi siamo</a></li> <!-- Voce Chi siamo: link alla presentazione del blog -->
+                    <li><a href="contatti.html">Contatti</a></li> <!-- Voce Contatti: link al form di contatto -->
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="articles-page">
-        <div class="container">
-            <a href="articoli.html" class="article-back-link">← Torna agli Articoli</a>
-            <article class="full-article">
-                <img src="https://www.aessecommunication.it/wp-content/uploads/2025/09/social-per-professionisti-1080x675.jpg" alt="Il paradosso della connessione sui social media">
-                <div class="article-meta">
-                    <span class="date">15 Febbraio 2026</span>
+    <main class="articles-page"> <!-- Contenuto principale dell'articolo: padding 80px 0, sfondo bianco -->
+        <div class="container"> <!-- Contenitore centrato max 980px -->
+            <a href="articoli.html" class="article-back-link">← Torna agli Articoli</a> <!-- Freccia di ritorno alla lista: colore blu #0071e3, si sottolinea all'hover -->
+
+            <article class="full-article"> <!-- Card semantica articolo completo: border-radius 28px, bordo grigio, ombra soffusa -->
+                <img src="https://www.aessecommunication.it/wp-content/uploads/2025/09/social-per-professionisti-1080x675.jpg" alt="Il paradosso della connessione sui social media"> <!-- Immagine copertina a tutta larghezza: height 480px, object-fit cover, overflow nascosto dalla card padre -->
+                <div class="article-meta"> <!-- Blocco metadati: padding 32px 56px 0, testo centrato, colore grigio chiaro -->
+                    <span class="date">15 Febbraio 2026</span> <!-- Data di pubblicazione: 14px, #86868b, peso normale -->
                 </div>
-                <h3>Il paradosso della connessione: più social, meno sociali?</h3>
-                <div class="article-body">
-                    <p>Viviamo nell'era della connessione perpetua. I nostri smartphone ci tengono legati a centinaia, a volte migliaia di «amici» attraverso piattaforme come Instagram, Facebook, TikTok e Twitter. Possiamo condividere ogni momento della nostra giornata, commentare le vite altrui in tempo reale e sentirci parte di una comunità globale che non dorme mai. Eppure, un dubbio attraversa sempre più spesso le nostre menti: siamo davvero più connessi?</p>
+                <h3>Il paradosso della connessione: più social, meno sociali?</h3> <!-- Titolo articolo: 48px, centrato, font-weight 600, padding 16px 56px -->
+                <div class="article-body"> <!-- Corpo dell'articolo: padding 32px 56px 56px -->
+                    <p>Viviamo nell'era della connessione perpetua. I nostri smartphone ci tengono legati a centinaia, a volte migliaia di «amici» attraverso piattaforme come Instagram, Facebook, TikTok e Twitter. Possiamo condividere ogni momento della nostra giornata, commentare le vite altrui in tempo reale e sentirci parte di una comunità globale che non dorme mai. Eppure, un dubbio attraversa sempre più spesso le nostre menti: siamo davvero più connessi?</p> <!-- Paragrafo 1: introduce il paradosso, font-size 21px, line-height 1.5, margin-bottom 28px -->
                     
-                    <p>Il paradosso della connessione digitale risiede proprio in questa contraddizione: mentre i social media ci promettono di avvicinarci agli altri, spesso finiscono per allontanarci dalle persone fisicamente presenti nella nostra vita. Quante volte ci siamo trovati a cena con amici o familiari, con tutti gli occhi puntati sugli schermi invece che sui volti delle persone sedute accanto a noi? Quante conversazioni sono state interrotte da una notifica, da un messaggio che sembrava non poter aspettare?</p>
+                    <p>Il paradosso della connessione digitale risiede proprio in questa contraddizione: mentre i social media ci promettono di avvicinarci agli altri, spesso finiscono per allontanarci dalle persone fisicamente presenti nella nostra vita. Quante volte ci siamo trovati a cena con amici o familiari, con tutti gli occhi puntati sugli schermi invece che sui volti delle persone sedute accanto a noi? Quante conversazioni sono state interrotte da una notifica, da un messaggio che sembrava non poter aspettare?</p> <!-- Paragrafo 2: sviluppa la contraddizione con esempi quotidiani concreti -->
                     
-                    <p>La ricerca psicologica degli ultimi anni ha iniziato a documentare questo fenomeno. Uno studio dell'Università di Pennsylvania ha dimostrato che limitare l'uso dei social media a soli 30 minuti al giorno può portare a una significativa riduzione dei sentimenti di solitudine e depressione. Non è la connessione digitale in sé a essere problematica, ma il modo in cui essa ha sostituito, piuttosto che integrare, le nostre relazioni faccia a faccia.</p>
+                    <p>La ricerca psicologica degli ultimi anni ha iniziato a documentare questo fenomeno. Uno studio dell'Università di Pennsylvania ha dimostrato che limitare l'uso dei social media a soli 30 minuti al giorno può portare a una significativa riduzione dei sentimenti di solitudine e depressione. Non è la connessione digitale in sé a essere problematica, ma il modo in cui essa ha sostituito, piuttosto che integrare, le nostre relazioni faccia a faccia.</p> <!-- Paragrafo 3: cita ricerca scientifica a supporto della tesi -->
                     
-                    <p>Il problema si amplifica quando consideriamo la qualità delle interazioni online. Un «mi piace» su Instagram o un commento di poche parole possono darci un piccolo boost di dopamina, ma non sostituiscono la ricchezza emotiva di una conversazione profonda, di uno sguardo, di un abbraccio. Le piattaforme social sono progettate per massimizzare l'engagement, non per nutrire relazioni significative. Gli algoritmi premiano contenuti che generano reazioni immediate, spesso superficiali, alimentando un circolo vizioso di ricerca costante di validazione esterna.</p>
+                    <p>Il problema si amplifica quando consideriamo la qualità delle interazioni online. Un «mi piace» su Instagram o un commento di poche parole possono darci un piccolo boost di dopamina, ma non sostituiscono la ricchezza emotiva di una conversazione profonda, di uno sguardo, di un abbraccio. Le piattaforme social sono progettate per massimizzare l'engagement, non per nutrire relazioni significative. Gli algoritmi premiano contenuti che generano reazioni immediate, spesso superficiali, alimentando un circolo vizioso di ricerca costante di validazione esterna.</p> <!-- Paragrafo 4: analizza la qualità delle interazioni digitali vs reali -->
                     
-                    <p>C'è poi la questione della performance sociale. Sui social media non condividiamo semplicemente la nostra vita: la curiamo, la filtriamo, la rendiamo presentabile per un pubblico. Questo processo di auto-rappresentazione costante può creare una distanza tra chi siamo realmente e l'immagine che proiettiamo online. E nel confronto continuo con le vite apparentemente perfette degli altri, rischiamo di perdere di vista il valore della nostra quotidianità imperfetta ma autentica.</p>
+                    <p>C'è poi la questione della performance sociale. Sui social media non condividiamo semplicemente la nostra vita: la curiamo, la filtriamo, la rendiamo presentabile per un pubblico. Questo processo di auto-rappresentazione costante può creare una distanza tra chi siamo realmente e l'immagine che proiettiamo online. E nel confronto continuo con le vite apparentemente perfette degli altri, rischiamo di perdere di vista il valore della nostra quotidianità imperfetta ma autentica.</p> <!-- Paragrafo 5: affronta il tema della self-presentation e del confronto sociale -->
                     
-                    <p>Cosa possiamo fare, allora? La soluzione non è necessariamente abbandonare i social media completamente, ma sviluppare una maggiore consapevolezza nel loro utilizzo. Possiamo iniziare a chiederci: sto usando questa piattaforma per connettermi davvero con qualcuno, o sto semplicemente scrollando per abitudine? Sto condividendo qualcosa di autentico, o sto costruendo un'immagine? Questo momento online sta arricchendo la mia vita, o mi sta distraendo da ciò che conta?</p>
+                    <p>Cosa possiamo fare, allora? La soluzione non è necessariamente abbandonare i social media completamente, ma sviluppare una maggiore consapevolezza nel loro utilizzo. Possiamo iniziare a chiederci: sto usando questa piattaforma per connettermi davvero con qualcuno, o sto semplicemente scrollando per abitudine? Sto condividendo qualcosa di autentico, o sto costruendo un'immagine? Questo momento online sta arricchendo la mia vita, o mi sta distraendo da ciò che conta?</p> <!-- Paragrafo 6: propone domande di autovalutazione per un uso più consapevole -->
                     
-                    <p>Recuperare la dimensione sociale della nostra vita significa anche riappropriarci degli spazi offline. Organizzare incontri senza telefoni sul tavolo, dedicare tempo a conversazioni profonde, riscoprire il piacere di attività condivise che non necessitano di essere documentate e pubblicate. Significa ricordare che la vera connessione non si misura in follower o like, ma nella capacità di essere presenti, vulnerabili e autentici con le persone che amiamo.</p>
+                    <p>Recuperare la dimensione sociale della nostra vita significa anche riappropriarci degli spazi offline. Organizzare incontri senza telefoni sul tavolo, dedicare tempo a conversazioni profonde, riscoprire il piacere di attività condivise che non necessitano di essere documentate e pubblicate. Significa ricordare che la vera connessione non si misura in follower o like, ma nella capacità di essere presenti, vulnerabili e autentici con le persone che amiamo.</p> <!-- Paragrafo 7: suggerisce azioni concrete per riconnettersi offline -->
                     
-                    <p>Il paradosso della connessione digitale ci pone di fronte a una scelta fondamentale: vogliamo essere spettatori passivi di centinaia di vite virtuali, o protagonisti attivi della nostra vita reale e delle relazioni che la arricchiscono? La tecnologia è uno strumento potente, ma sta a noi decidere come usarla. E forse, la vera connessione inizia proprio quando abbiamo il coraggio di mettere giù il telefono e alzare lo sguardo.</p>
+                    <p>Il paradosso della connessione digitale ci pone di fronte a una scelta fondamentale: vogliamo essere spettatori passivi di centinaia di vite virtuali, o protagonisti attivi della nostra vita reale e delle relazioni che la arricchiscono? La tecnologia è uno strumento potente, ma sta a noi decidere come usarla. E forse, la vera connessione inizia proprio quando abbiamo il coraggio di mettere giù il telefono e alzare lo sguardo.</p> <!-- Paragrafo 8 finale: chiude con un invito all'azione, richiama il titolo del blog -->
                 </div>
             </article>
 
             <!-- SEZIONE COMMENTI — separata dall'articolo con margine -->
-            <section class="comments-section">
-                <h3>Commenti</h3>
-                <p class="comments-intro">Condividi il tuo punto di vista su connessione digitale e relazioni reali.</p>
+            <section class="comments-section"> <!-- Sezione commenti: sfondo #fafafa, border-radius 20px, bordo grigio, padding 40px -->
+                <h3>Commenti</h3> <!-- Titolo sezione: font-size 24px, font-weight 600, color #1d1d1f -->
+                <p class="comments-intro">Condividi il tuo punto di vista su connessione digitale e relazioni reali.</p> <!-- Testo invito a commentare: 15px, grigio #6e6e73, margin-bottom 32px -->
 
-                <div class="comment">
-                    <div class="avatar">
-                        <div class="avatar-default">💬</div>
+                <div class="comment"> <!-- Singolo commento: display flex, gap 16px tra avatar e testo, border-bottom separatore -->
+                    <div class="avatar"> <!-- Contenitore dell'avatar del commentatore -->
+                        <div class="avatar-default">💬</div> <!-- Avatar con emoji nuvoletta: cerchio 48px, sfondo azzurro #e8f0fe, font-size 22px -->
                     </div>
-                    <div class="comment-content">
-                        <div class="comment-meta">
-                            <span class="comment-author">Giorgio</span>
-                            <span class="comment-date">20 febbraio 2026</span>
+                    <div class="comment-content"> <!-- Blocco testo del commento: flex:1 per occupare lo spazio rimanente -->
+                        <div class="comment-meta"> <!-- Riga con nome autore e data: display flex, gap 10px, align-items center -->
+                            <span class="comment-author">Giorgio</span> <!-- Nome autore: font-weight 600, 15px, colore scuro #1d1d1f -->
+                            <span class="comment-date">20 febbraio 2026</span> <!-- Data commento: 13px, grigio chiaro #86868b -->
                         </div>
-                        <div class="comment-text">
-                            <p>Questo articolo mi ha fatto riflettere su quante cene ho passato guardando lo schermo invece delle persone accanto a me. Ho proposto ai miei amici una serata senza telefoni e all'inizio erano scettici — alla fine è stata la serata più bella che ricordi da mesi. Vale la pena provare.</p>
+                        <div class="comment-text"> <!-- Contenitore del testo del commento -->
+                            <p>Questo articolo mi ha fatto riflettere su quante cene ho passato guardando lo schermo invece delle persone accanto a me. Ho proposto ai miei amici una serata senza telefoni e all'inizio erano scettici — alla fine è stata la serata più bella che ricordi da mesi. Vale la pena provare.</p> <!-- Testo del commento di Giorgio: 16px, line-height 1.6, colore #1d1d1f -->
                         </div>
                     </div>
                 </div>
 
-                <form class="comment-form">
-                    <h4>Lascia un commento</h4>
-                    <div class="form-row">
-                        <input type="text" placeholder="Nome" required>
-                        <input type="email" placeholder="Email" required>
+                <form class="comment-form"> <!-- Form per lasciare un nuovo commento: card bianca interna, border-radius 14px, padding 28px -->
+                    <h4>Lascia un commento</h4> <!-- Titolo del form: 20px, font-weight 600, margin-bottom 20px -->
+                    <div class="form-row"> <!-- Riga con due campi affiancati: Nome ed Email con gap 16px tra loro -->
+                        <input type="text" placeholder="Nome" required> <!-- Campo nome: flex:1, bordo grigio, border-radius 8px, focus bordo blu #0071e3 -->
+                        <input type="email" placeholder="Email" required> <!-- Campo email: validazione automatica del formato email da parte del browser -->
                     </div>
-                    <textarea placeholder="Scrivi il tuo commento..." rows="4" required></textarea>
-                    <button type="submit" class="submit-button">Invia commento</button>
+                    <textarea placeholder="Scrivi il tuo commento..." rows="4" required></textarea> <!-- Area testo: 4 righe visibili, ridimensionabile in verticale, focus con glow blu -->
+                    <button type="submit" class="submit-button">Invia commento</button> <!-- Pulsante invio: larghezza 100%, sfondo blu #0071e3, forma pillola, hover scale(1.02) -->
                 </form>
             </section>
 
-            <div style="text-align: center; margin-top: 48px;">
-                <a href="articoli.html" class="cta-button">Torna agli articoli</a>
+            <div style="text-align: center; margin-top: 48px;"> <!-- Div centrato con margine superiore 48px per il pulsante di ritorno -->
+                <a href="articoli.html" class="cta-button">Torna agli articoli</a> <!-- Pulsante pillola di ritorno: riusa lo stile del pulsante CTA della homepage -->
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h5>Link utili</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="articoli.html">Articoli</a></li>
-                        <li><a href="chisiamo.html">Chi siamo</a></li>
-                        <li><a href="contatti.html">Contatti</a></li>
+    <footer> <!-- Pie' di pagina condiviso con tutte le pagine: sfondo blu scuro #1f2937 -->
+        <div class="container"> <!-- Contenitore centrato del footer -->
+            <div class="footer-grid"> <!-- Griglia 3 colonne footer: link, social, newsletter -->
+                <div class="footer-col"> <!-- Colonna 1: link di navigazione rapida -->
+                    <h5>Link utili</h5> <!-- Intestazione uppercase, 11px, opacity 0.7 -->
+                    <ul> <!-- Lista link senza punti elenco -->
+                        <li><a href="index.html">Home</a></li> <!-- Link homepage -->
+                        <li><a href="articoli.html">Articoli</a></li> <!-- Link lista articoli -->
+                        <li><a href="chisiamo.html">Chi siamo</a></li> <!-- Link pagina chi siamo -->
+                        <li><a href="contatti.html">Contatti</a></li> <!-- Link pagina contatti -->
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h5>Seguici</h5>
-                    <div class="footer-social">
-                        <a href="#">Twitter</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
+                <div class="footer-col"> <!-- Colonna 2: social media -->
+                    <h5>Seguici</h5> <!-- Intestazione social -->
+                    <div class="footer-social"> <!-- Flex-column con gap 10px per i link social -->
+                        <a href="#">Twitter</a> <!-- Link Twitter: bianco semi-trasparente, hover bianco pieno -->
+                        <a href="#">Facebook</a> <!-- Link Facebook: href="#" da sostituire con URL reale -->
+                        <a href="#">Instagram</a> <!-- Link Instagram: stessa stilizzazione -->
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h5>Newsletter</h5>
-                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Indirizzo email">
-                        <button type="submit">Iscriviti</button>
+                <div class="footer-col"> <!-- Colonna 3: newsletter (colonna più larga 1.6fr) -->
+                    <h5>Newsletter</h5> <!-- Intestazione newsletter -->
+                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p> <!-- Testo invito: 13px, bianco al 60% -->
+                    <form class="newsletter-form"> <!-- Form newsletter: input email + pulsante in flex-row -->
+                        <input type="email" placeholder="Indirizzo email"> <!-- Input email sfondo quasi trasparente -->
+                        <button type="submit">Iscriviti</button> <!-- Pulsante blu con hover scale -->
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
+            <div class="footer-bottom"> <!-- Riga copyright con separatore superiore bianco trasparente -->
+                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p> <!-- Copyright 12px bianco al 40% centrato -->
             </div>
         </div>
     </footer>
-</body>
-</html>
+
+</body> <!-- Fine contenuto visibile -->
+</html> <!-- Fine documento HTML -->

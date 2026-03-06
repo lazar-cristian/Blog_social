@@ -1,128 +1,130 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gli algoritmi che modellano la nostra realtà - Tra Rete e Realtà</title>
-    <link rel="stylesheet" href="style.css?v=7">
+<!DOCTYPE html> <!-- Dichiarazione documento HTML5 -->
+<html lang="it"> <!-- Radice pagina con lingua italiana dichiarata -->
+<head> <!-- Intestazione con configurazioni e metadati -->
+    <meta charset="UTF-8"> <!-- Codifica UTF-8 per caratteri speciali e accenti italiani -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Layout responsive: si adatta a qualsiasi schermo -->
+    <title>Gli algoritmi che modellano la nostra realtà - Tra Rete e Realtà</title> <!-- Titolo SEO completo per questa pagina specifica -->
+    <link rel="stylesheet" href="style.css?v=7"> <!-- CSS condiviso con tutti i file del sito; ?v=7 evita cache obsoleta -->
 </head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Tra Rete e Realtà</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="articoli.html" class="active">Articoli</a></li>
-                    <li><a href="chisiamo.html">Chi siamo</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
+<body> <!-- Inizio contenuto visibile -->
+
+    <header> <!-- Navigazione sticky con effetto vetro: rimane visibile durante lo scroll -->
+        <div class="container"> <!-- Contenitore header: flex, space-between, height 48px -->
+            <a href="index.html" class="logo">Tra Rete e Realtà</a> <!-- Logo: 28px bold, porta alla homepage -->
+            <nav> <!-- Navigazione principale semantica -->
+                <ul> <!-- Lista voci menu: flex orizzontale, gap 32px -->
+                    <li><a href="index.html">Home</a></li> <!-- Voce Home: non attiva su questa pagina articolo -->
+                    <li><a href="articoli.html" class="active">Articoli</a></li> <!-- Voce Articoli: class="active" perché siamo in un articolo -->
+                    <li><a href="chisiamo.html">Chi siamo</a></li> <!-- Voce Chi siamo: link alla presentazione del progetto -->
+                    <li><a href="contatti.html">Contatti</a></li> <!-- Voce Contatti: link al form di contatto -->
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="articles-page">
-        <div class="container">
-            <a href="articoli.html" class="article-back-link">← Torna agli Articoli</a>
-            <article class="full-article">
-                <img src="https://assets.technologynetworks.com/production/dynamic/images/content/320963/the-9-key-bioinformatics-resources-for-analyzing-your-proteomic-data-320963-960x540.jpg?cb=11509237" alt="Codice e algoritmi su schermo">
-                <div class="article-meta">
-                    <span class="date">8 Febbraio 2026</span>
+    <main class="articles-page"> <!-- Pagina articolo: padding 80px 0, sfondo bianco -->
+        <div class="container"> <!-- Contenitore centrato max 980px -->
+            <a href="articoli.html" class="article-back-link">← Torna agli Articoli</a> <!-- Link ritorno: freccia ←, colore blu #0071e3, sottolineatura all'hover -->
+            <article class="full-article"> <!-- Card articolo: border-radius 28px, bordo grigio #d2d2d7, ombra 0 6px 30px -->
+                <img src="https://assets.technologynetworks.com/production/dynamic/images/content/320963/the-9-key-bioinformatics-resources-for-analyzing-your-proteomic-data-320963-960x540.jpg?cb=11509237" alt="Codice e algoritmi su schermo"> <!-- Immagine copertina: width 100%, height 480px, object-fit cover per ritagliare proporzionalmente -->
+                <div class="article-meta"> <!-- Metadati: padding 32px 56px 0, testo centrato, grigio chiaro -->
+                    <span class="date">8 Febbraio 2026</span> <!-- Data pubblicazione: 14px, colore #86868b -->
                 </div>
-                <h3>Gli algoritmi che modellano la nostra realtà</h3>
-                <div class="article-body">
-                    <p>Ogni giorno, miliardi di persone accedono ai social media aspettandosi di vedere «ciò che accade nel mondo». Ma la verità è che nessuno di noi vede la stessa realtà. Dietro ogni feed di Instagram, ogni timeline di Facebook, ogni sezione «Per te» di TikTok, c'è un algoritmo che decide cosa mostrarci e cosa nasconderci. Questi sistemi invisibili hanno acquisito un potere enorme: quello di plasmare la nostra percezione del mondo.</p>
+                <h3>Gli algoritmi che modellano la nostra realtà</h3> <!-- Titolo: 48px, centrato, font-weight 600, padding 16px 56px -->
+                <div class="article-body"> <!-- Corpo testo: padding 32px 56px 56px -->
+                    <p>Ogni giorno, miliardi di persone accedono ai social media aspettandosi di vedere «ciò che accade nel mondo». Ma la verità è che nessuno di noi vede la stessa realtà. Dietro ogni feed di Instagram, ogni timeline di Facebook, ogni sezione «Per te» di TikTok, c'è un algoritmo che decide cosa mostrarci e cosa nasconderci. Questi sistemi invisibili hanno acquisito un potere enorme: quello di plasmare la nostra percezione del mondo.</p> <!-- P1: introduce il problema della personalizzazione algoritmica; font-size 21px, line-height 1.5 -->
                     
-                    <p>Gli algoritmi dei social media sono progettati con un obiettivo preciso: massimizzare il tempo che trascorriamo sulla piattaforma. Per farlo, analizzano ogni nostra interazione – ogni like, commento, condivisione, ogni secondo speso su un post – per costruire un profilo dettagliato dei nostri interessi, delle nostre preferenze, perfino delle nostre emozioni. Poi, utilizzano queste informazioni per mostrarci contenuti sempre più «personalizzati», creando un flusso infinito di stimoli che ci tengono incollati allo schermo.</p>
+                    <p>Gli algoritmi dei social media sono progettati con un obiettivo preciso: massimizzare il tempo che trascorriamo sulla piattaforma. Per farlo, analizzano ogni nostra interazione – ogni like, commento, condivisione, ogni secondo speso su un post – per costruire un profilo dettagliato dei nostri interessi, delle nostre preferenze, perfino delle nostre emozioni. Poi, utilizzano queste informazioni per mostrarci contenuti sempre più «personalizzati», creando un flusso infinito di stimoli che ci tengono incollati allo schermo.</p> <!-- P2: spiega il meccanismo di profilazione e personalizzazione -->
                     
-                    <p>Il problema è che questa personalizzazione crea quello che gli esperti chiamano «filter bubble» o bolla informativa. Se l'algoritmo nota che reagiamo positivamente a certi tipi di contenuti – politici, sportivi, di intrattenimento – inizierà a mostrarci sempre più contenuti simili, escludendo progressivamente tutto ciò che si discosta dai nostri interessi consolidati. Il risultato? Un feed che riflette e amplifica le nostre convinzioni preesistenti, raramente mettendole in discussione.</p>
+                    <p>Il problema è che questa personalizzazione crea quello che gli esperti chiamano «filter bubble» o bolla informativa. Se l'algoritmo nota che reagiamo positivamente a certi tipi di contenuti – politici, sportivi, di intrattenimento – inizierà a mostrarci sempre più contenuti simili, escludendo progressivamente tutto ciò che si discosta dai nostri interessi consolidati. Il risultato? Un feed che riflette e amplifica le nostre convinzioni preesistenti, raramente mettendole in discussione.</p> <!-- P3: introduce il concetto di filter bubble con esempi concreti -->
                     
-                    <p>Questa dinamica ha conseguenze profonde sul modo in cui percepiamo la realtà. Se vediamo solo notizie, opinioni e prospettive che confermano ciò in cui già crediamo, è facile convincersi che «tutti la pensano come noi». Le posizioni alternative diventano invisibili, o peggio, vengono presentate solo nelle loro versioni più estreme e polarizzanti – perché l'algoritmo sa che i contenuti controversi generano più engagement.</p>
+                    <p>Questa dinamica ha conseguenze profonde sul modo in cui percepiamo la realtà. Se vediamo solo notizie, opinioni e prospettive che confermano ciò in cui già crediamo, è facile convincersi che «tutti la pensano come noi». Le posizioni alternative diventano invisibili, o peggio, vengono presentate solo nelle loro versioni più estreme e polarizzanti – perché l'algoritmo sa che i contenuti controversi generano più engagement.</p> <!-- P4: analizza l'impatto della bolla sulla percezione della realtà e sulla polarizzazione -->
                     
-                    <p>Gli algoritmi non si limitano a filtrare le informazioni: influenzano anche le nostre emozioni e i nostri comportamenti. Studi recenti hanno dimostrato che i contenuti che suscitano reazioni emotive forti – rabbia, indignazione, gioia estrema – vengono privilegiati dagli algoritmi perché generano più interazioni. Questo significa che il nostro feed è spesso dominato da contenuti progettati per provocarci emotivamente, creando uno stato costante di allerta e reattività.</p>
+                    <p>Gli algoritmi non si limitano a filtrare le informazioni: influenzano anche le nostre emozioni e i nostri comportamenti. Studi recenti hanno dimostrato che i contenuti che suscitano reazioni emotive forti – rabbia, indignazione, gioia estrema – vengono privilegiati dagli algoritmi perché generano più interazioni. Questo significa che il nostro feed è spesso dominato da contenuti progettati per provocarci emotivamente, creando uno stato costante di allerta e reattività.</p> <!-- P5: spiega come gli algoritmi sfruttano le emozioni per aumentare l'engagement -->
                     
-                    <p>C'è poi la questione della verità e della disinformazione. Gli algoritmi non sono programmati per distinguere tra informazioni accurate e false; sono programmati per massimizzare l'engagement. Se una notizia falsa ma sensazionale genera più clic e condivisioni di una notizia vera ma meno «scioccante», l'algoritmo la promuoverà. Questo meccanismo ha contribuito alla diffusione epidemica della disinformazione online, con conseguenze reali sulla salute pubblica, sulla politica e sulla coesione sociale.</p>
+                    <p>C'è poi la questione della verità e della disinformazione. Gli algoritmi non sono programmati per distinguere tra informazioni accurate e false; sono programmati per massimizzare l'engagement. Se una notizia falsa ma sensazionale genera più clic e condivisioni di una notizia vera ma meno «scioccante», l'algoritmo la promuoverà. Questo meccanismo ha contribuito alla diffusione epidemica della disinformazione online, con conseguenze reali sulla salute pubblica, sulla politica e sulla coesione sociale.</p> <!-- P6: collega gli algoritmi alla diffusione della disinformazione -->
                     
-                    <p>La natura opaca di questi algoritmi aggrava il problema. Le piattaforme social li trattano come segreti commerciali, rifiutandosi di rivelare esattamente come funzionano. Gli utenti navigano nel loro feed senza sapere perché vedono certi contenuti e non altri, senza strumenti per capire o influenzare attivamente le scelte dell'algoritmo. Questa mancanza di trasparenza mina la nostra capacità di essere consumatori critici dell'informazione digitale.</p>
+                    <p>La natura opaca di questi algoritmi aggrava il problema. Le piattaforme social li trattano come segreti commerciali, rifiutandosi di rivelare esattamente come funzionano. Gli utenti navigano nel loro feed senza sapere perché vedono certi contenuti e non altri, senza strumenti per capire o influenzare attivamente le scelte dell'algoritmo. Questa mancanza di trasparenza mina la nostra capacità di essere consumatori critici dell'informazione digitale.</p> <!-- P7: denuncia l'opacità delle piattaforme e la mancanza di trasparenza algoritmica -->
                     
-                    <p>Cosa possiamo fare per riappropriarci del controllo? Prima di tutto, sviluppare consapevolezza critica. Chiedersi: perché sto vedendo questo contenuto? Quali prospettive non sto vedendo? Cercare attivamente fonti diverse, seguire account con opinioni variegate, utilizzare le impostazioni della piattaforma per «segnalare» all'algoritmo che vogliamo vedere contenuti più equilibrati.</p>
+                    <p>Cosa possiamo fare per riappropriarci del controllo? Prima di tutto, sviluppare consapevolezza critica. Chiedersi: perché sto vedendo questo contenuto? Quali prospettive non sto vedendo? Cercare attivamente fonti diverse, seguire account con opinioni variegate, utilizzare le impostazioni della piattaforma per «segnalare» all'algoritmo che vogliamo vedere contenuti più equilibrati.</p> <!-- P8: primo gruppo di consigli pratici per l'utente -->
                     
-                    <p>Possiamo anche diversificare le nostre fonti di informazione, non affidandoci solo ai social media per restare informati. Leggere giornali di diverse tendenze politiche, ascoltare podcast che presentano dibattiti costruttivi, cercare analisi approfondite invece che titoli sensazionalistici. E soprattutto, ricordare che il feed dei social media non è «la realtà» – è una realtà costruita, personalizzata, ottimizzata per tenerci connessi.</p>
+                    <p>Possiamo anche diversificare le nostre fonti di informazione, non affidandoci solo ai social media per restare informati. Leggere giornali di diverse tendenze politiche, ascoltare podcast che presentano dibattiti costruttivi, cercare analisi approfondite invece che titoli sensazionalistici. E soprattutto, ricordare che il feed dei social media non è «la realtà» – è una realtà costruita, personalizzata, ottimizzata per tenerci connessi.</p> <!-- P9: secondo gruppo di consigli su come diversificare le fonti informative -->
                     
-                    <p>Gli algoritmi sono strumenti potenti che hanno trasformato il modo in cui accediamo all'informazione e ci connettiamo con gli altri. Ma non devono essere padroni invisibili delle nostre percezioni. Con maggiore consapevolezza e scelte deliberate, possiamo iniziare a usare i social media in modo più critico, resistendo alla tentazione di lasciarci guidare passivamente da sistemi progettati per massimizzare il profitto, non il nostro benessere o la nostra comprensione del mondo.</p>
+                    <p>Gli algoritmi sono strumenti potenti che hanno trasformato il modo in cui accediamo all'informazione e ci connettiamo con gli altri. Ma non devono essere padroni invisibili delle nostre percezioni. Con maggiore consapevolezza e scelte deliberate, possiamo iniziare a usare i social media in modo più critico, resistendo alla tentazione di lasciarci guidare passivamente da sistemi progettati per massimizzare il profitto, non il nostro benessere o la nostra comprensione del mondo.</p> <!-- P10 conclusivo: chiude con un messaggio di empowerment digitale -->
                 </div>
             </article>
 
             <!-- SEZIONE COMMENTI — separata dall'articolo con margine -->
-            <section class="comments-section">
-                <h3>Commenti</h3>
-                <p class="comments-intro">Condividi la tua opinione sull'argomento e interagisci con la nostra community.</p>
+            <section class="comments-section"> <!-- Sezione commenti: sfondo #fafafa, border-radius 20px, padding 40px -->
+                <h3>Commenti</h3> <!-- Titolo sezione commenti: 24px, font-weight 600 -->
+                <p class="comments-intro">Condividi la tua opinione sull'argomento e interagisci con la nostra community.</p> <!-- Testo introduttivo: 15px, grigio #6e6e73, margin-bottom 32px -->
 
-                <div class="comment">
-                    <div class="avatar">
-                        <div class="avatar-default">🧑‍💻</div>
+                <div class="comment"> <!-- Commento esistente: display flex, gap 16px, border-bottom separatore grigio -->
+                    <div class="avatar"> <!-- Contenitore avatar commentatore -->
+                        <div class="avatar-default">🧑‍💻</div> <!-- Avatar emoji sviluppatore: cerchio 48px, sfondo #e8f0fe, font-size 22px -->
                     </div>
-                    <div class="comment-content">
-                        <div class="comment-meta">
-                            <span class="comment-author">Marco</span>
-                            <span class="comment-date">12 febbraio 2026</span>
+                    <div class="comment-content"> <!-- Blocco testo: flex:1, prende lo spazio accanto all'avatar -->
+                        <div class="comment-meta"> <!-- Riga nome + data: flex, gap 10px, align-items center -->
+                            <span class="comment-author">Marco</span> <!-- Nome autore: font-weight 600, 15px, colore scuro -->
+                            <span class="comment-date">12 febbraio 2026</span> <!-- Data commento: 13px, grigio chiaro #86868b -->
                         </div>
-                        <div class="comment-text">
-                            <p>Articolo illuminante. Lavoro nel settore tech e posso confermare che la progettazione degli algoritmi punta tutto sull'engagement, non sul benessere dell'utente. Siamo noi a dover scegliere consapevolmente cosa consumare, la piattaforma non lo farà mai al posto nostro.</p>
+                        <div class="comment-text"> <!-- Contenitore del testo del commento -->
+                            <p>Articolo illuminante. Lavoro nel settore tech e posso confermare che la progettazione degli algoritmi punta tutto sull'engagement, non sul benessere dell'utente. Siamo noi a dover scegliere consapevolmente cosa consumare, la piattaforma non lo farà mai al posto nostro.</p> <!-- Testo commento: 16px, line-height 1.6, color #1d1d1f -->
                         </div>
                     </div>
                 </div>
 
-                <form class="comment-form">
-                    <h4>Lascia un commento</h4>
-                    <div class="form-row">
-                        <input type="text" placeholder="Nome" required>
-                        <input type="email" placeholder="Email" required>
+                <form class="comment-form"> <!-- Form nuovo commento: card bianca, border-radius 14px, padding 28px -->
+                    <h4>Lascia un commento</h4> <!-- Titolo form: 20px, font-weight 600, margin-bottom 20px -->
+                    <div class="form-row"> <!-- Riga doppia: Nome ed Email affiancati con gap 16px -->
+                        <input type="text" placeholder="Nome" required> <!-- Input nome: flex:1, focus con bordo blu e glow rgba -->
+                        <input type="email" placeholder="Email" required> <!-- Input email: validazione tipo email integrata nel browser -->
                     </div>
-                    <textarea placeholder="Scrivi il tuo commento..." rows="4" required></textarea>
-                    <button type="submit" class="submit-button">Invia commento</button>
+                    <textarea placeholder="Scrivi il tuo commento..." rows="4" required></textarea> <!-- Textarea: 4 righe, resize vertical, focus blue border -->
+                    <button type="submit" class="submit-button">Invia commento</button> <!-- Pulsante: width 100%, pillola blu, hover scale(1.02) -->
                 </form>
             </section>
             
-            <div style="text-align: center; margin-top: 48px;">
-                <a href="articoli.html" class="cta-button">Torna agli articoli</a>
+            <div style="text-align: center; margin-top: 48px;"> <!-- Div centrato con margine 48px sopra per il bottone di ritorno -->
+                <a href="articoli.html" class="cta-button">Torna agli articoli</a> <!-- Pulsante pillola: riusa classe cta-button della homepage -->
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h5>Link utili</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="articoli.html">Articoli</a></li>
-                        <li><a href="chisiamo.html">Chi siamo</a></li>
-                        <li><a href="contatti.html">Contatti</a></li>
+    <footer> <!-- Footer identico in tutte le pagine -->
+        <div class="container"> <!-- Contenitore centrato footer -->
+            <div class="footer-grid"> <!-- Griglia 3 colonne: 1fr 1fr 1.6fr -->
+                <div class="footer-col"> <!-- Colonna 1: navigazione rapida -->
+                    <h5>Link utili</h5> <!-- Intestazione uppercase, opacity 0.7 -->
+                    <ul> <!-- Lista link footer senza decorazioni -->
+                        <li><a href="index.html">Home</a></li> <!-- Link homepage -->
+                        <li><a href="articoli.html">Articoli</a></li> <!-- Link lista articoli -->
+                        <li><a href="chisiamo.html">Chi siamo</a></li> <!-- Link chi siamo -->
+                        <li><a href="contatti.html">Contatti</a></li> <!-- Link contatti -->
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h5>Seguici</h5>
-                    <div class="footer-social">
-                        <a href="#">Twitter</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
+                <div class="footer-col"> <!-- Colonna 2: social media -->
+                    <h5>Seguici</h5> <!-- Intestazione social -->
+                    <div class="footer-social"> <!-- Flex-column link social -->
+                        <a href="#">Twitter</a> <!-- Link Twitter -->
+                        <a href="#">Facebook</a> <!-- Link Facebook -->
+                        <a href="#">Instagram</a> <!-- Link Instagram -->
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h5>Newsletter</h5>
-                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Indirizzo email">
-                        <button type="submit">Iscriviti</button>
+                <div class="footer-col"> <!-- Colonna 3: newsletter -->
+                    <h5>Newsletter</h5> <!-- Intestazione newsletter -->
+                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p> <!-- Invito iscrizione -->
+                    <form class="newsletter-form"> <!-- Form email + pulsante affiancati -->
+                        <input type="email" placeholder="Indirizzo email"> <!-- Input email sfondo trasparente scuro -->
+                        <button type="submit">Iscriviti</button> <!-- Pulsante blu #0071e3 -->
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
+            <div class="footer-bottom"> <!-- Riga copyright con bordo superiore trasparente -->
+                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p> <!-- Copyright 12px bianco al 40% -->
             </div>
         </div>
     </footer>
-</body>
-</html>
+
+</body> <!-- Fine contenuto pagina -->
+</html> <!-- Fine documento HTML -->

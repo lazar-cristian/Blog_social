@@ -1,73 +1,74 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatti - Tra Rete e Realtà</title>
-    <link rel="stylesheet" href="style.css?v=8">
+<!DOCTYPE html> <!-- Dichiarazione documento HTML5 -->
+<html lang="it"> <!-- Elemento radice con lingua italiana -->
+<head> <!-- Intestazione con metadati non visibili nella pagina -->
+    <meta charset="UTF-8"> <!-- Codifica UTF-8 per accenti e caratteri speciali italiani -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport responsive per dispositivi mobili -->
+    <title>Contatti - Tra Rete e Realtà</title> <!-- Titolo nella scheda del browser per questa pagina -->
+    <link rel="stylesheet" href="style.css?v=8"> <!-- CSS condiviso; ?v=8 aggiorna la cache del browser -->
 </head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Tra Rete e Realtà</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="articoli.html">Articoli</a></li>
-                    <li><a href="chisiamo.html">Chi siamo</a></li>
-                    <li><a href="contatti.html" class="active">Contatti</a></li>
+<body> <!-- Inizio del contenuto visibile della pagina -->
+
+    <header> <!-- Barra di navigazione sticky: glass effect, z-index 1000 -->
+        <div class="container"> <!-- Contenitore header: flex, space-between, height 48px, padding 0 32px -->
+            <a href="index.html" class="logo">Tra Rete e Realtà</a> <!-- Logo: 28px bold, porta alla homepage, scala all'hover -->
+            <nav> <!-- Elemento navigazione semantico per screen reader e accessibilità -->
+                <ul> <!-- Lista voci menu: flex orizzontale, gap 32px, nessun punto elenco -->
+                    <li><a href="index.html">Home</a></li> <!-- Voce Home: non attiva su questa pagina -->
+                    <li><a href="articoli.html">Articoli</a></li> <!-- Voce Articoli: porta alla lista degli articoli -->
+                    <li><a href="chisiamo.html">Chi siamo</a></li> <!-- Voce Chi siamo: porta alla presentazione del progetto -->
+                    <li><a href="contatti.html" class="active">Contatti</a></li> <!-- Voce Contatti: class="active" perché siamo su questa pagina -->
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="contact-page">
-        <div class="container">
-            <h2 class="page-title" style="text-align:center;">Contattaci</h2>
-            <p class="page-intro" style="text-align:center; margin-left:auto; margin-right:auto;">Hai domande o vuoi collaborare con noi? Contattaci attraverso uno dei seguenti modi.</p>
+    <main class="contact-page"> <!-- Pagina contatti: sfondo grigio chiaro #f5f5f7, padding 80px 0 -->
+        <div class="container"> <!-- Contenitore centrato max 980px -->
+            <h2 class="page-title" style="text-align:center;">Contattaci</h2> <!-- Titolo pagina: 56px; style inline sovrascrive il default left della contact-page -->
+            <p class="page-intro" style="text-align:center; margin-left:auto; margin-right:auto;">Hai domande o vuoi collaborare con noi? Contattaci attraverso uno dei seguenti modi.</p> <!-- Sottotitolo: 17px, grigio; style inline centra il testo che di default sarebbe allineato a sinistra -->
 
-            <div class="contact-wrapper">
+            <div class="contact-wrapper"> <!-- Layout a 2 colonne: display flex, gap 56px, align-items flex-start -->
 
                 <!-- COLONNA SINISTRA: Email, Telefono, Modulo di contatto -->
-                <div class="contact-left">
-                    <div class="contact-method">
-                        <span class="icon">📧</span>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="https://mail.google.com/mail/?view=cm&to=lazar.cristiannicolas@itisgrassi.edu.it" target="_blank" style="color:#0071e3; text-decoration:none;">lazar.cristiannicolas@itisgrassi.edu.it</a></p>
+                <div class="contact-left"> <!-- Colonna info contatto: flex: 0 0 320px (larghezza fissa), flex-column, gap 28px -->
+                    <div class="contact-method"> <!-- Primo metodo di contatto: flex, gap 16px tra icona e testo -->
+                        <span class="icon">📧</span> <!-- Icona email: cerchio 46px, sfondo blu #0071e3, box-shadow rgba blu 0.25 -->
+                        <div> <!-- Blocco testo accanto all'icona -->
+                            <h4>Email</h4> <!-- Titolo metodo: 16px, font-weight 600, color #1d1d1f, margin-bottom 4px -->
+                            <p><a href="https://mail.google.com/mail/?view=cm&to=lazar.cristiannicolas@itisgrassi.edu.it" target="_blank" style="color:#0071e3; text-decoration:none;">lazar.cristiannicolas@itisgrassi.edu.it</a></p> <!-- Link: apre Gmail in nuova scheda (target="_blank") con il destinatario precompilato; colore blu inline -->
                         </div>
                     </div>
 
-                    <div class="contact-method">
-                        <span class="icon">📞</span>
-                        <div>
-                            <h4>Telefono</h4>
-                            <p>+39 351 188 9641</p>
+                    <div class="contact-method"> <!-- Secondo metodo di contatto: stessa struttura del primo -->
+                        <span class="icon">📞</span> <!-- Icona telefono: stesso stile cerchio blu con glow dell'icona email -->
+                        <div> <!-- Blocco testo con numero di telefono -->
+                            <h4>Telefono</h4> <!-- Titolo metodo telefono: 16px, font-weight 600 -->
+                            <p>+39 351 188 9641</p> <!-- Numero di telefono: 14px, grigio #6e6e73, line-height 1.5 -->
                         </div>
                     </div>
 
-                    <div class="contact-method contact-method--block">
-                        <span class="icon">✉️</span>
-                        <div>
-                            <h4>Modulo di contatto</h4>
-                            <p>Compila il modulo qua affianco per inviarci un messaggio.</p>
+                    <div class="contact-method contact-method--block"> <!-- Terzo metodo: class aggiuntiva --block per testo più lungo, align-items flex-start -->
+                        <span class="icon">✉️</span> <!-- Icona busta: stessa stilizzazione delle altre icone blu -->
+                        <div> <!-- Blocco testo che spiega l'uso del modulo -->
+                            <h4>Modulo di contatto</h4> <!-- Titolo terzo metodo: 16px, font-weight 600 -->
+                            <p>Compila il modulo qua affianco per inviarci un messaggio.</p> <!-- Descrizione: 14px, grigio, guida l'utente verso il form a destra -->
                         </div>
                     </div>
                 </div>
 
                 <!-- COLONNA DESTRA: campi form -->
-                <div class="contact-right">
-                    <form class="contact-form-inline">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Nome" required>
+                <div class="contact-right"> <!-- Card form: flex:1 (occupa lo spazio rimanente), sfondo bianco, border-radius 20px, padding 40px 44px -->
+                    <form class="contact-form-inline"> <!-- Form verticale: flex-column per impilare i gruppi di campi -->
+                        <div class="form-group"> <!-- Gruppo campo Nome: margin-bottom 18px tra i gruppi -->
+                            <input type="text" id="name" name="name" placeholder="Nome" required> <!-- Input nome: id e name per accessibilità, width 100%, border-radius 10px, focus bordo blu -->
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        <div class="form-group"> <!-- Gruppo campo Email: stessa struttura del campo Nome -->
+                            <input type="email" id="email" name="email" placeholder="Email" required> <!-- Input email: tipo email per validazione automatica del browser -->
                         </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="7" placeholder="Messaggio" required></textarea>
+                        <div class="form-group"> <!-- Gruppo campo Messaggio: stessa struttura degli altri campi -->
+                            <textarea id="message" name="message" rows="7" placeholder="Messaggio" required></textarea> <!-- Textarea: 7 righe (più alta per il messaggio), resize vertical, min-height 160px -->
                         </div>
-                        <button type="submit" class="submit-button">Invia</button>
+                        <button type="submit" class="submit-button">Invia</button> <!-- Pulsante invio: width 100%, sfondo blu #0071e3, border-radius 980px (pillola), hover scale(1.02) -->
                     </form>
                 </div>
 
@@ -75,39 +76,40 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h5>Link utili</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="articoli.html">Articoli</a></li>
-                        <li><a href="chisiamo.html">Chi siamo</a></li>
-                        <li><a href="contatti.html">Contatti</a></li>
+    <footer> <!-- Footer condiviso con tutte le pagine del sito -->
+        <div class="container"> <!-- Contenitore centrato del footer -->
+            <div class="footer-grid"> <!-- Griglia 3 colonne: 1fr 1fr 1.6fr, gap 48px -->
+                <div class="footer-col"> <!-- Colonna 1: link di navigazione rapida -->
+                    <h5>Link utili</h5> <!-- Intestazione: 11px, uppercase, opacity 0.7, margin-bottom 20px -->
+                    <ul> <!-- Lista link senza punti elenco, flex-column, gap 10px -->
+                        <li><a href="index.html">Home</a></li> <!-- Link homepage nel footer -->
+                        <li><a href="articoli.html">Articoli</a></li> <!-- Link lista articoli nel footer -->
+                        <li><a href="chisiamo.html">Chi siamo</a></li> <!-- Link chi siamo nel footer -->
+                        <li><a href="contatti.html">Contatti</a></li> <!-- Link contatti nel footer (questa pagina) -->
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h5>Seguici</h5>
-                    <div class="footer-social">
-                        <a href="#">Twitter</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
+                <div class="footer-col"> <!-- Colonna 2: link social media -->
+                    <h5>Seguici</h5> <!-- Intestazione social -->
+                    <div class="footer-social"> <!-- Flex-column link social, gap 10px -->
+                        <a href="#">Twitter</a> <!-- Link Twitter: rgba bianco 0.75, hover bianco puro, transizione 0.2s -->
+                        <a href="#">Facebook</a> <!-- Link Facebook: href="#" da sostituire con URL reale -->
+                        <a href="#">Instagram</a> <!-- Link Instagram: stessa stilizzazione -->
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h5>Newsletter</h5>
-                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Indirizzo email">
-                        <button type="submit">Iscriviti</button>
+                <div class="footer-col"> <!-- Colonna 3: newsletter (più larga: 1.6fr) -->
+                    <h5>Newsletter</h5> <!-- Intestazione newsletter -->
+                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p> <!-- Testo invito: 13px, rgba bianco 0.6 -->
+                    <form class="newsletter-form"> <!-- Form: display flex, gap 8px, input + pulsante affiancati -->
+                        <input type="email" placeholder="Indirizzo email"> <!-- Input email: sfondo rgba bianco 0.08, focus bordo blu -->
+                        <button type="submit">Iscriviti</button> <!-- Pulsante: sfondo #0071e3, border-radius 8px, hover scale(1.03) -->
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
+            <div class="footer-bottom"> <!-- Riga copyright: border-top rgba bianco 0.08, padding 20px 0 -->
+                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p> <!-- Copyright: 12px, rgba bianco 0.4, text-align center -->
             </div>
         </div>
     </footer>
-</body>
-</html>
+
+</body> <!-- Fine del contenuto visibile della pagina -->
+</html> <!-- Chiusura del documento HTML -->

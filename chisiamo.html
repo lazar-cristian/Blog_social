@@ -1,87 +1,89 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi siamo - Tra Rete e Realtà</title>
-    <link rel="stylesheet" href="style.css?v=8">
+<!DOCTYPE html> <!-- Dichiarazione documento HTML5 -->
+<html lang="it"> <!-- Elemento radice con lingua italiana -->
+<head> <!-- Intestazione con metadati non visibili nella pagina -->
+    <meta charset="UTF-8"> <!-- Codifica UTF-8 per caratteri speciali e lettere accentate -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport responsive: larghezza = larghezza dispositivo -->
+    <title>Chi siamo - Tra Rete e Realtà</title> <!-- Titolo per la scheda del browser di questa pagina specifica -->
+    <link rel="stylesheet" href="style.css?v=8"> <!-- CSS condiviso; ?v=8 forza l'aggiornamento della cache del browser -->
 </head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Tra Rete e Realtà</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="articoli.html">Articoli</a></li>
-                    <li><a href="chisiamo.html" class="active">Chi siamo</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
+<body> <!-- Inizio del contenuto visibile della pagina -->
+
+    <header> <!-- Barra di navigazione: sticky, glass effect con backdrop-filter blur(20px) -->
+        <div class="container"> <!-- Contenitore header: display flex, justify-content space-between, height 48px -->
+            <a href="index.html" class="logo">Tra Rete e Realtà</a> <!-- Logo: 28px bold, porta alla homepage, scale(1.03) all'hover -->
+            <nav> <!-- Elemento di navigazione semantico HTML5 -->
+                <ul> <!-- Lista voci menu: display flex, gap 32px, list-style none -->
+                    <li><a href="index.html">Home</a></li> <!-- Voce Home: non attiva su questa pagina -->
+                    <li><a href="articoli.html">Articoli</a></li> <!-- Voce Articoli: porta alla lista degli articoli -->
+                    <li><a href="chisiamo.html" class="active">Chi siamo</a></li> <!-- Voce Chi siamo: class="active" perché siamo su questa pagina -->
+                    <li><a href="contatti.html">Contatti</a></li> <!-- Voce Contatti: porta al form di contatto -->
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="about-page">
-        <div class="container">
-            <h2 class="page-title">Chi siamo</h2>
+    <main class="about-page"> <!-- Pagina chi siamo: padding 80px 0, sfondo bianco -->
+        <div class="container"> <!-- Contenitore centrato max 980px -->
+            <h2 class="page-title">Chi siamo</h2> <!-- Titolo pagina: 56px, centrato, font-weight 600, letter-spacing -0.005em -->
 
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://miro.medium.com/1*LpgO8FuHE2dEek45Vn-DQg.jpeg" alt="Simbolo grafico di un volto e un punto interrogativo">
+            <div class="about-content"> <!-- Griglia 1 colonna: immagine sopra, testo sotto; max-width 800px centrato, margin-top 60px -->
+                <div class="about-image"> <!-- Contenitore immagine profilo: text-align center per centrare la foto -->
+                    <img src="https://miro.medium.com/1*LpgO8FuHE2dEek45Vn-DQg.jpeg" alt="Simbolo grafico di un volto e un punto interrogativo"> <!-- Immagine profilo: width 240px, height 240px, border-radius 50% (cerchio), bordo grigio, box-shadow soffusa -->
                 </div>
 
-                <div class="about-text">
-                    <h3>Il nostro progetto</h3>
-                    <p>«Tra Rete e Realtà» nasce come progetto scolastico con l'obiettivo di esplorare e promuovere una maggiore consapevolezza nell'uso dei social media e delle tecnologie digitali.</p>
+                <div class="about-text"> <!-- Colonna testo: contiene i due blocchi "Il nostro progetto" e "La nostra missione" -->
+                    <h3>Il nostro progetto</h3> <!-- Titolo prima sezione: 32px, font-weight 600, margin-top 0 (primo figlio), margin-bottom 16px -->
+                    <p>«Tra Rete e Realtà» nasce come progetto scolastico con l'obiettivo di esplorare e promuovere una maggiore consapevolezza nell'uso dei social media e delle tecnologie digitali.</p> <!-- P1: presenta l'origine del blog come progetto scolastico; 21px, line-height 1.5, margin-bottom 24px -->
 
-                    <p>Viviamo in un'epoca in cui il confine tra mondo digitale e vita reale è sempre più sottile. I social media sono diventati parte integrante della nostra quotidianità, influenzando il modo in cui comunichiamo, ci informiamo e costruiamo relazioni. Ma quanto siamo davvero consapevoli dell'impatto che queste piattaforme hanno sulle nostre vite?</p>
+                    <p>Viviamo in un'epoca in cui il confine tra mondo digitale e vita reale è sempre più sottile. I social media sono diventati parte integrante della nostra quotidianità, influenzando il modo in cui comunichiamo, ci informiamo e costruiamo relazioni. Ma quanto siamo davvero consapevoli dell'impatto che queste piattaforme hanno sulle nostre vite?</p> <!-- P2: introduce il contesto e la domanda centrale del blog -->
 
-                    <p>Questo blog è nato dalla volontà di riflettere criticamente sul nostro rapporto con la tecnologia, senza demonizzarla né esaltarla acriticamente. Crediamo che i social media siano strumenti potenti che, se utilizzati consapevolmente, possono arricchire le nostre esperienze e connetterci con il mondo. Allo stesso tempo, riconosciamo i rischi legati a un uso eccessivo o inconsapevole: dalla dipendenza digitale all'ansia sociale, dalla perdita di privacy alla difficoltà di distinguere realtà da finzione.</p>
+                    <p>Questo blog è nato dalla volontà di riflettere criticamente sul nostro rapporto con la tecnologia, senza demonizzarla né esaltarla acriticamente. Crediamo che i social media siano strumenti potenti che, se utilizzati consapevolmente, possono arricchire le nostre esperienze e connetterci con il mondo. Allo stesso tempo, riconosciamo i rischi legati a un uso eccessivo o inconsapevole: dalla dipendenza digitale all'ansia sociale, dalla perdita di privacy alla difficoltà di distinguere realtà da finzione.</p> <!-- P3: posizionamento editoriale equilibrato del blog, né pro né contro la tecnologia -->
 
-                    <h3>La nostra missione</h3>
-                    <p>Attraverso articoli, riflessioni e analisi, vogliamo stimolare un dialogo aperto su temi cruciali: come i social media influenzano la nostra identità, quali sono i meccanismi che ci tengono incollati agli schermi, come possiamo ritrovare un equilibrio sano tra vita online e offline.</p>
+                    <h3>La nostra missione</h3> <!-- Titolo seconda sezione: 32px, margin-top 40px per separare visivamente le due sezioni -->
+                    <p>Attraverso articoli, riflessioni e analisi, vogliamo stimolare un dialogo aperto su temi cruciali: come i social media influenzano la nostra identità, quali sono i meccanismi che ci tengono incollati agli schermi, come possiamo ritrovare un equilibrio sano tra vita online e offline.</p> <!-- P4: descrive il metodo e gli obiettivi specifici del blog -->
 
-                    <p>Il nostro obiettivo non è dare risposte definitive, ma porre domande che ci aiutino a diventare utenti più consapevoli e critici. Perché solo attraverso la consapevolezza possiamo scegliere come, quando e perché utilizzare questi strumenti, senza lasciare che siano loro a scegliere per noi.</p>
+                    <p>Il nostro obiettivo non è dare risposte definitive, ma porre domande che ci aiutino a diventare utenti più consapevoli e critici. Perché solo attraverso la consapevolezza possiamo scegliere come, quando e perché utilizzare questi strumenti, senza lasciare che siano loro a scegliere per noi.</p> <!-- P5: chiarisce l'approccio del blog: domande, non risposte preconfezionate -->
 
-                    <p>Questo blog è pensato per studenti, giovani e chiunque voglia approfondire il tema del digitale consapevole. Speriamo che possa essere uno spazio di confronto e riflessione, un piccolo contributo per navigare con maggiore saggezza nel complesso mondo che si trova tra rete e realtà.</p>
+                    <p>Questo blog è pensato per studenti, giovani e chiunque voglia approfondire il tema del digitale consapevole. Speriamo che possa essere uno spazio di confronto e riflessione, un piccolo contributo per navigare con maggiore saggezza nel complesso mondo che si trova tra rete e realtà.</p> <!-- P6 finale: definisce il pubblico target e si congeda richiamando il titolo del blog -->
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h5>Link utili</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="articoli.html">Articoli</a></li>
-                        <li><a href="chisiamo.html">Chi siamo</a></li>
-                        <li><a href="contatti.html">Contatti</a></li>
+    <footer> <!-- Footer condiviso con tutte le pagine del sito: sfondo #1f2937 -->
+        <div class="container"> <!-- Contenitore centrato del footer -->
+            <div class="footer-grid"> <!-- Griglia 3 colonne: 1fr 1fr 1.6fr, gap 48px, padding-bottom 48px -->
+                <div class="footer-col"> <!-- Colonna 1: link di navigazione rapida -->
+                    <h5>Link utili</h5> <!-- Intestazione: 11px, uppercase, letter-spacing 0.1em, opacity 0.7 -->
+                    <ul> <!-- Lista link senza punti elenco, flex-column, gap 10px -->
+                        <li><a href="index.html">Home</a></li> <!-- Link homepage nel footer -->
+                        <li><a href="articoli.html">Articoli</a></li> <!-- Link lista articoli nel footer -->
+                        <li><a href="chisiamo.html">Chi siamo</a></li> <!-- Link chi siamo nel footer (questa pagina) -->
+                        <li><a href="contatti.html">Contatti</a></li> <!-- Link contatti nel footer -->
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h5>Seguici</h5>
-                    <div class="footer-social">
-                        <a href="#">Twitter</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
+                <div class="footer-col"> <!-- Colonna 2: link social media -->
+                    <h5>Seguici</h5> <!-- Intestazione colonna social -->
+                    <div class="footer-social"> <!-- Contenitore flex-column link social, gap 10px -->
+                        <a href="#">Twitter</a> <!-- Link Twitter: rgba bianco 0.75, hover bianco puro, transizione 0.2s -->
+                        <a href="#">Facebook</a> <!-- Link Facebook: href="#" da sostituire con URL reale -->
+                        <a href="#">Instagram</a> <!-- Link Instagram: stessa stilizzazione -->
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h5>Newsletter</h5>
-                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Indirizzo email">
-                        <button type="submit">Iscriviti</button>
+                <div class="footer-col"> <!-- Colonna 3: newsletter (colonna più larga: 1.6fr) -->
+                    <h5>Newsletter</h5> <!-- Intestazione newsletter -->
+                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p> <!-- Testo invito: 13px, rgba bianco 0.6, margin-bottom 16px -->
+                    <form class="newsletter-form"> <!-- Form: display flex, gap 8px, input + pulsante affiancati -->
+                        <input type="email" placeholder="Indirizzo email"> <!-- Input email: sfondo rgba bianco 0.08, focus bordo blu #0071e3 -->
+                        <button type="submit">Iscriviti</button> <!-- Pulsante: sfondo #0071e3, border-radius 8px, hover scale(1.03) -->
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
+            <div class="footer-bottom"> <!-- Riga copyright: border-top rgba bianco 0.08, padding 20px 0 -->
+                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p> <!-- Testo copyright: 12px, rgba bianco 0.4, text-align center -->
             </div>
         </div>
     </footer>
-</body>
-</html>
+
+</body> <!-- Fine del contenuto visibile -->
+</html> <!-- Chiusura dell'elemento radice e fine del documento -->

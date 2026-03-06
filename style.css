@@ -1,1183 +1,1183 @@
 /* ==========================
    RESET E CONFIGURAZIONE BASE
    ========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { /* Selettore universale: si applica a ogni singolo elemento HTML della pagina */
+    margin: 0; /* Rimuove il margine esterno di default che ogni browser applica agli elementi */
+    padding: 0; /* Rimuove la spaziatura interna di default degli elementi */
+    box-sizing: border-box; /* Padding e border sono inclusi nella larghezza totale: evita che gli elementi sforino */
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Arial, sans-serif;
-    line-height: 1.5;
-    color: #1d1d1f;
-    background-color: #fff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+body { /* Stile base del corpo: tutti gli elementi figli ereditano questi valori */
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Arial, sans-serif; /* Font di sistema: SF Pro su Mac/iOS, Segoe UI su Windows, Arial come fallback universale */
+    line-height: 1.5; /* Interlinea al 150% della dimensione del font: migliora la leggibilità del testo */
+    color: #1d1d1f; /* Colore testo di default: grigio scuro quasi nero (stile Apple) */
+    background-color: #fff; /* Sfondo pagina bianco */
+    -webkit-font-smoothing: antialiased; /* Migliora la resa dei font su macOS e iOS usando il motore WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Migliora la resa dei font su Firefox macOS con smoothing in scala di grigi */
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+img { /* Stile base per tutte le immagini del sito */
+    max-width: 100%; /* Le immagini non superano mai la larghezza del loro contenitore */
+    height: auto; /* Altezza proporzionale alla larghezza: mantiene le proporzioni originali */
+    display: block; /* Elimina lo spazio bianco sotto le immagini causato dal default inline */
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+a { /* Stile base per tutti i link della pagina */
+    text-decoration: none; /* Rimuove la sottolineatura di default dei link */
+    color: inherit; /* I link ereditano il colore del testo dell'elemento genitore */
 }
 
 /* ==========================
    CONTAINER E LAYOUT
    ========================== */
-.container {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 22px;
+.container { /* Contenitore centrato usato in ogni sezione del sito */
+    max-width: 980px; /* Larghezza massima del contenuto: 980px come standard Apple */
+    margin: 0 auto; /* Centra orizzontalmente il contenitore: margine auto uguale su entrambi i lati */
+    padding: 0 22px; /* Padding laterale: evita che il contenuto tocchi i bordi dello schermo su mobile */
 }
 
 /* ==========================
    HEADER STILE APPLE
    ========================== */
-header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+header { /* Barra di navigazione principale: effetto vetro smerigliato (glass morphism) */
+    background: rgba(255, 255, 255, 0.8); /* Sfondo bianco all'80% di opacità: si vede sfocato il contenuto sotto */
+    backdrop-filter: saturate(180%) blur(20px); /* Effetto glass: satura i colori al 180% e sfuma di 20px il contenuto sottostante */
+    -webkit-backdrop-filter: saturate(180%) blur(20px); /* Stessa regola con prefisso -webkit- per compatibilità con Safari e iOS */
+    padding: 0; /* Nessun padding: l'altezza è definita interamente dall'elemento figlio .container */
+    position: sticky; /* Il menu rimane fisso in cima alla pagina mentre l'utente scrolla */
+    top: 0; /* Agganciato al bordo superiore della viewport */
+    z-index: 1000; /* Si sovrappone a tutti gli altri elementi della pagina durante lo scroll */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Linea separatrice sottile semitrasparente sotto l'header */
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 48px;
-    max-width: 100%;
-    padding-left: 32px;
-    padding-right: 32px;
+header .container { /* Override del container per l'header: larghezza piena invece di 980px */
+    display: flex; /* Layout flessibile: logo e nav affiancati orizzontalmente */
+    justify-content: space-between; /* Logo a sinistra, navigazione a destra */
+    align-items: center; /* Allineamento verticale centrato tra logo e voci di menu */
+    height: 48px; /* Altezza fissa dell'header: 48px standard Apple */
+    max-width: 100%; /* L'header occupa tutta la larghezza dello schermo */
+    padding-left: 32px; /* Padding sinistro generoso per il logo */
+    padding-right: 32px; /* Padding destro simmetrico per la navigazione */
 }
 
-header .logo {
-    color: #1d1d1f;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    transition: transform 0.3s ease;
+header .logo { /* Logo testuale del blog nell'header */
+    color: #1d1d1f; /* Colore testo: grigio scuro quasi nero */
+    font-size: 28px; /* Dimensione grande: logo riconoscibile e di impatto */
+    font-weight: 700; /* Grassetto massimo per il logo */
+    letter-spacing: -0.02em; /* Spaziatura lettere ridotta del 2%: stile editoriale moderno */
+    transition: transform 0.3s ease; /* Transizione fluida per l'effetto di scala all'hover */
 }
 
-header .logo:hover {
-    transform: scale(1.03);
+header .logo:hover { /* Effetto al passaggio del mouse sul logo */
+    transform: scale(1.03); /* Il logo si ingrandisce del 3%: feedback visivo sottile */
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 32px;
+header nav ul { /* Lista delle voci di navigazione nell'header */
+    list-style: none; /* Rimuove i punti elenco della lista */
+    display: flex; /* Voci di menu disposte orizzontalmente */
+    gap: 32px; /* Spazio uniforme di 32px tra ogni voce di menu */
 }
 
-header nav a {
-    color: #1d1d1f;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+header nav a { /* Singolo link di una voce di menu */
+    color: #1d1d1f; /* Colore testo grigio scuro */
+    font-size: 12px; /* Dimensione piccola: standard Apple per la navigazione */
+    font-weight: 400; /* Peso normale: non in grassetto per leggerezza visiva */
+    letter-spacing: -0.01em; /* Spaziatura ridotta per leggibilità a piccole dimensioni */
+    opacity: 0.8; /* Leggermente attenuato a riposo: si "accende" all'hover */
+    transition: opacity 0.3s ease; /* Transizione fluida per il cambio di opacità */
 }
 
 header nav a:hover,
-header nav a.active {
-    opacity: 1;
+header nav a.active { /* Stato hover (mouse sopra) e active (pagina corrente) */
+    opacity: 1; /* Piena visibilità: la voce attiva o in hover è completamente visibile */
 }
 
 /* ==========================
    HERO SECTION CON PARALLAX E BACKGROUND
    ========================== */
-.hero {
-    min-height: 650px;
-    padding: 120px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero { /* Sezione banner principale della homepage */
+    min-height: 650px; /* Altezza minima garantita su tutti i dispositivi */
+    padding: 120px 0; /* Spaziatura verticale interna generosa sopra e sotto il contenuto */
+    text-align: center; /* Tutto il testo interno è centrato orizzontalmente */
+    position: relative; /* Contesto di posizionamento per gli pseudo-elementi ::before e ::after */
+    overflow: hidden; /* Nasconde le parti dell'immagine di sfondo che escono durante il parallax */
+    display: flex; /* Layout flex per centrare verticalmente il contenuto */
+    align-items: center; /* Centra il contenuto in altezza */
+    justify-content: center; /* Centra il contenuto in larghezza */
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -40%;
-    left: -10%;
-    right: -10%;
-    bottom: -40%;
-    background: 
-        linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.65) 50%, rgba(15, 23, 42, 0.75) 100%),
-        url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1600&q=80') center/cover no-repeat;
-    z-index: -2;
-    will-change: transform;
-    transition: transform 0.1s ease-out;
+.hero::before { /* Pseudo-elemento che contiene l'immagine di sfondo con overlay scuro */
+    content: ''; /* Contenuto vuoto: obbligatorio per visualizzare i pseudo-elementi */
+    position: absolute; /* Si sovrappone a tutta l'area della sezione hero */
+    top: -40%; /* Esteso del 40% oltre il bordo superiore: lascia spazio al parallax scroll verso l'alto */
+    left: -10%; /* Esteso del 10% oltre il bordo sinistro: evita bordi bianchi durante il parallax */
+    right: -10%; /* Simmetrico al left: 10% di margine extra a destra */
+    bottom: -40%; /* Esteso del 40% oltre il bordo inferiore: lascia spazio al parallax scroll verso il basso */
+    background: /* Proprietà background combinata: overlay gradiente sopra immagine fotografica */
+        linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.65) 50%, rgba(15, 23, 42, 0.75) 100%), /* Overlay scuro diagonale: garantisce leggibilità del testo bianco sull'immagine */
+        url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1600&q=80') center/cover no-repeat; /* Immagine di sfondo: centrata, dimensionata per coprire tutta l'area, non ripetuta */
+    z-index: -2; /* Posizionato sotto il contenuto testuale e sotto l'overlay ::after */
+    will-change: transform; /* Avvisa il browser di ottimizzare il rendering GPU per l'animazione parallax */
+    transition: transform 0.1s ease-out; /* Transizione rapidissima (0.1s) per la fluidità del parallax */
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
-    z-index: -1;
-    pointer-events: none;
+.hero::after { /* Secondo pseudo-elemento: vignettatura radiale ai bordi del banner */
+    content: ''; /* Contenuto vuoto obbligatorio */
+    position: absolute; /* Si sovrappone all'intera area della hero */
+    inset: 0; /* Shorthand per top:0, right:0, bottom:0, left:0 (occupa tutto lo spazio) */
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%); /* Gradiente radiale: centro trasparente, bordi scuri al 30% */
+    z-index: -1; /* Sopra l'immagine di sfondo (::before) ma sotto il contenuto testuale */
+    pointer-events: none; /* Non intercetta i click: permette di cliccare sul pulsante CTA sopra di esso */
 }
 
-.hero .container {
-    max-width: 800px;
-    position: relative;
-    z-index: 1;
+.hero .container { /* Override del container dentro la hero: larghezza più stretta */
+    max-width: 800px; /* Larghezza ridotta a 800px: il testo centrato risulta più leggibile */
+    position: relative; /* Necessario per z-index: si posiziona sopra i pseudo-elementi */
+    z-index: 1; /* Sopra ::before e ::after: il testo è sempre visibile */
 }
 
-.hero-content {
-    margin-bottom: 40px;
+.hero-content { /* Blocco che contiene titolo, descrizione e pulsante CTA */
+    margin-bottom: 40px; /* Spazio sotto il blocco contenuto */
 }
 
-.hero-content h2 {
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 1.0625;
-    color: #ffffff;
-    margin-bottom: 20px;
-    letter-spacing: -0.015em;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+.hero-content h2 { /* Titolo principale del banner hero */
+    font-size: 64px; /* Dimensione molto grande: titolo d'impatto visivo */
+    font-weight: 700; /* Massimo grassetto per il titolo principale */
+    line-height: 1.0625; /* Interlinea stretta per titoli grandi: le righe restano vicine */
+    color: #ffffff; /* Bianco puro: massimo contrasto sull'overlay scuro */
+    margin-bottom: 20px; /* Spazio tra il titolo e il testo descrittivo */
+    letter-spacing: -0.015em; /* Spaziatura lettere ridotta dell'1.5%: standard per titoli grandi */
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3); /* Doppia ombra: diffusa 20px + precisa 8px, garantisce leggibilità su qualsiasi sfondo */
 }
 
-.hero-content p {
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1.25;
-    color: rgba(255, 255, 255, 0.98);
-    margin-bottom: 32px;
-    letter-spacing: 0.007em;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.2);
+.hero-content p { /* Testo descrittivo sotto il titolo della hero */
+    font-size: 28px; /* Dimensione grande: visibile e leggibile anche su schermi lontani */
+    font-weight: 400; /* Peso normale: contrasta col titolo in grassetto per gerarchia visiva */
+    line-height: 1.25; /* Interlinea moderata per testo grande */
+    color: rgba(255, 255, 255, 0.98); /* Bianco al 98%: quasi puro, leggermente meno del titolo */
+    margin-bottom: 32px; /* Spazio generoso tra la descrizione e il pulsante CTA */
+    letter-spacing: 0.007em; /* Spaziatura lettere leggermente aumentata per leggibilità a 28px */
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.2); /* Ombra più leggera del titolo: gerarchia visiva nell'ombreggiatura */
 }
 
-.cta-button {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.98);
-    color: #1e40af;
-    padding: 14px 28px;
-    border-radius: 980px;
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -0.022em;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 8px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15);
+.cta-button { /* Pulsante di chiamata all'azione: usato in hero e come pulsante "Torna agli articoli" */
+    display: inline-block; /* Permette padding e margin su un elemento <a> che di default è inline */
+    background: rgba(255, 255, 255, 0.98); /* Sfondo bianco al 98%: si distingue dall'overlay scuro */
+    color: #1e40af; /* Testo blu intenso: contrasto leggibile sul bianco */
+    padding: 14px 28px; /* Spaziatura interna: 14px verticale, 28px orizzontale */
+    border-radius: 980px; /* Border-radius altissimo: crea la forma a pillola perfetta */
+    font-size: 17px; /* Dimensione testo pulsante: leggibile senza essere eccessiva */
+    font-weight: 600; /* Semi-grassetto: testo del pulsante in evidenza */
+    letter-spacing: -0.022em; /* Spaziatura standard Apple per pulsanti */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione fluida con curva di Bezier per hover morbido */
+    margin-top: 8px; /* Piccolo spazio sopra il pulsante */
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15); /* Doppia ombra: crea effetto tridimensionale sotto il pulsante */
 }
 
-.cta-button:hover {
-    background: #ffffff;
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
+.cta-button:hover { /* Effetto hover del pulsante CTA */
+    background: #ffffff; /* Bianco puro all'hover: leggero cambiamento dal 98% */
+    transform: scale(1.05) translateY(-2px); /* Si ingrandisce del 5% e si solleva di 2px */
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombra più intensa e ampia: suggerisce elevazione */
 }
 
-.hero-image {
-    display: none;
+.hero-image { /* Classe per un'eventuale immagine nella hero */
+    display: none; /* Non visualizzata: lo sfondo è gestito interamente tramite il CSS del ::before */
 }
 
 /* ==========================
    SEZIONI GENERALI
    ========================== */
 .featured-article,
-.other-articles {
-    padding: 100px 0;
+.other-articles { /* Stile base condiviso tra le due sezioni della homepage */
+    padding: 100px 0; /* Spaziatura verticale ampia per dare respiro al contenuto */
 }
 
-.featured-article {
-    background-color: #fff;
+.featured-article { /* Sezione articolo in evidenza */
+    background-color: #fff; /* Sfondo bianco: contrasta con la hero scura e con la sezione grigia successiva */
 }
 
-.other-articles {
-    background-color: #f5f5f7;
+.other-articles { /* Sezione altri articoli */
+    background-color: #f5f5f7; /* Sfondo grigio chiarissimo: alternanza visiva con il bianco */
 }
 
-.section-title {
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 1.0834933333;
-    color: #1d1d1f;
-    margin-bottom: 60px;
-    letter-spacing: -0.003em;
-    text-align: center;
+.section-title { /* Titolo di sezione usato in "In evidenza" e "Altri articoli" */
+    font-size: 32px; /* Dimensione media: si distingue dal contenuto ma è più piccola del titolo hero */
+    font-weight: 600; /* Semi-grassetto */
+    line-height: 1.0834933333; /* Interlinea stretta per titoli */
+    color: #1d1d1f; /* Colore testo standard grigio scuro */
+    margin-bottom: 60px; /* Ampio spazio sotto il titolo prima delle card */
+    letter-spacing: -0.003em; /* Spaziatura lettere leggermente ridotta */
+    text-align: center; /* Titolo centrato nella sezione */
 }
 
 /* ==========================
    ARTICOLO IN EVIDENZA
    ========================== */
-.main-article {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 28px;
-    overflow: hidden;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.main-article { /* Card grande dell'articolo in evidenza nella homepage */
+    display: flex; /* Layout flex per immagine e testo */
+    flex-direction: column; /* Immagine sopra, testo sotto */
+    background-color: #fff; /* Sfondo bianco della card */
+    border-radius: 28px; /* Angoli molto arrotondati: design moderno e morbido */
+    overflow: hidden; /* Nasconde gli angoli dell'immagine che sforerebbero il border-radius */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro sottile */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08); /* Ombra diffusa e leggera sotto la card */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione fluida per tutte le proprietà all'hover */
 }
 
-.main-article:hover {
-    border-color: #0071e3;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
-    transform: translateY(-8px);
+.main-article:hover { /* Effetto hover sulla card articolo in evidenza */
+    border-color: #0071e3; /* Il bordo diventa blu: segnala interattività */
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12); /* Ombra più intensa e più distante: effetto di elevazione */
+    transform: translateY(-8px); /* La card si solleva di 8px verso l'alto */
 }
 
-.main-article img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+.main-article img { /* Immagine copertina dell'articolo in evidenza */
+    width: 100%; /* Immagine a tutta larghezza della card */
+    height: 420px; /* Altezza fissa: mantiene proporzioni uniformi */
+    object-fit: cover; /* Ritaglia l'immagine per riempire lo spazio senza deformarla */
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione lenta (0.7s) per zoom morbido all'hover */
 }
 
-.main-article:hover img {
-    transform: scale(1.03);
+.main-article:hover img { /* Zoom immagine all'hover */
+    transform: scale(1.03); /* Ingrandimento del 3%: leggero ma percettibile */
 }
 
-.main-article .article-content {
-    padding: 50px 56px 56px;
-    text-align: center;
+.main-article .article-content { /* Blocco testo dentro la card in evidenza */
+    padding: 50px 56px 56px; /* Spaziatura generosa: 50px top, 56px lati, 56px bottom */
+    text-align: center; /* Testo centrato nella card */
 }
 
-.main-article h4 {
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 1.1;
-    color: #1d1d1f;
-    margin-bottom: 16px;
-    letter-spacing: -0.005em;
+.main-article h4 { /* Titolo dell'articolo in evidenza */
+    font-size: 40px; /* Dimensione grande: titolo principale della card */
+    font-weight: 600; /* Semi-grassetto */
+    line-height: 1.1; /* Interlinea stretta per titoli grandi */
+    color: #1d1d1f; /* Colore testo standard */
+    margin-bottom: 16px; /* Spazio tra titolo ed estratto */
+    letter-spacing: -0.005em; /* Spaziatura lettere leggermente compressa */
 }
 
-.main-article p {
-    font-size: 21px;
-    font-weight: 400;
-    line-height: 1.381;
-    color: #6e6e73;
-    margin-bottom: 28px;
-    letter-spacing: 0.011em;
+.main-article p { /* Estratto testuale dell'articolo in evidenza */
+    font-size: 21px; /* Dimensione confortevole per testo body */
+    font-weight: 400; /* Peso normale: contrasta con il titolo semi-grassetto */
+    line-height: 1.381; /* Interlinea ottimale per testo di 21px */
+    color: #6e6e73; /* Grigio medio: meno enfasi dell'estratto rispetto al titolo scuro */
+    margin-bottom: 28px; /* Spazio prima del link "Leggi l'articolo" */
+    letter-spacing: 0.011em; /* Spaziatura leggermente aumentata per leggibilità */
 }
 
-.read-more {
-    color: #0071e3;
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: -0.022em;
-    transition: color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+.read-more { /* Link testuale "Leggi l'articolo" con freccia dinamica */
+    color: #0071e3; /* Blu Apple: segnala chiaramente che è un link */
+    font-size: 17px; /* Dimensione standard per link */
+    font-weight: 400; /* Peso normale */
+    letter-spacing: -0.022em; /* Spaziatura standard Apple per link */
+    transition: color 0.3s ease; /* Transizione colore all'hover */
+    display: inline-flex; /* Flex per affiancare il testo alla freccia aggiunta da ::after */
+    align-items: center; /* Allineamento verticale centrato tra testo e freccia */
+    gap: 6px; /* Spazio tra il testo del link e il simbolo › */
 }
 
-.read-more::after {
-    content: '›';
-    font-size: 24px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.read-more::after { /* Freccia › aggiunta automaticamente via CSS dopo il testo del link */
+    content: '›'; /* Simbolo freccia destra Unicode */
+    font-size: 24px; /* Freccia più grande del testo del link */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione per lo spostamento orizzontale all'hover */
 }
 
-.read-more:hover {
-    color: #0077ed;
-    text-decoration: underline;
+.read-more:hover { /* Effetto hover sul link "Leggi l'articolo" */
+    color: #0077ed; /* Blu leggermente più scuro e saturo all'hover */
+    text-decoration: underline; /* Sottolineatura: conferma visivamente che è cliccabile */
 }
 
-.read-more:hover::after {
-    transform: translateX(4px);
+.read-more:hover::after { /* Animazione della freccia all'hover */
+    transform: translateX(4px); /* La freccia si sposta di 4px a destra: movimento direzionale */
 }
 
 /* ==========================
    ALTRI ARTICOLI - GRIGLIA
    ========================== */
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+.articles-grid { /* Contenitore griglia per le due card affiancate nella homepage */
+    display: grid; /* Layout a griglia CSS */
+    grid-template-columns: repeat(2, 1fr); /* 2 colonne di uguale larghezza */
+    gap: 24px; /* Spazio di 24px tra le due card */
 }
 
-.article-card {
-    background-color: #fff;
-    border-radius: 28px;
-    overflow: hidden;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.article-card { /* Singola card nella griglia degli altri articoli */
+    background-color: #fff; /* Sfondo bianco */
+    border-radius: 28px; /* Angoli arrotondati come la card in evidenza */
+    overflow: hidden; /* Nasconde overflow immagine */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08); /* Ombra soffusa */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione fluida per hover */
 }
 
-.article-card:hover {
-    border-color: #0071e3;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
-    transform: translateY(-8px);
+.article-card:hover { /* Effetto hover sulla card articolo piccola */
+    border-color: #0071e3; /* Bordo diventa blu: coerente con la card in evidenza */
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12); /* Ombra più intensa */
+    transform: translateY(-8px); /* Elevazione di 8px: uguale alla card in evidenza */
 }
 
-.article-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+.article-card img { /* Immagine copertina nella card griglia */
+    width: 100%; /* Larghezza piena */
+    height: 280px; /* Altezza fissa: più bassa della card in evidenza (420px) */
+    object-fit: cover; /* Ritaglia senza deformare */
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione lenta per zoom morbido */
 }
 
-.article-card:hover img {
-    transform: scale(1.03);
+.article-card:hover img { /* Zoom immagine al hover della card piccola */
+    transform: scale(1.03); /* Stesso ingrandimento della card in evidenza: coerenza visiva */
 }
 
-.article-card .card-content {
-    padding: 40px 40px 48px;
-    text-align: center;
+.article-card .card-content { /* Blocco testo della card piccola */
+    padding: 40px 40px 48px; /* Spaziatura interna: top 40px, lati 40px, bottom 48px */
+    text-align: center; /* Testo centrato */
 }
 
-.article-card h4 {
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1.14286;
-    color: #1d1d1f;
-    margin-bottom: 12px;
-    letter-spacing: -0.005em;
+.article-card h4 { /* Titolo della card piccola */
+    font-size: 28px; /* Più piccolo del titolo in evidenza (40px): gerarchia visiva */
+    font-weight: 600; /* Semi-grassetto */
+    line-height: 1.14286; /* Interlinea per titolo grande */
+    color: #1d1d1f; /* Colore testo standard */
+    margin-bottom: 12px; /* Spazio tra titolo e descrizione */
+    letter-spacing: -0.005em; /* Spaziatura compressa */
 }
 
-.article-card p {
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 1.47059;
-    color: #6e6e73;
-    margin-bottom: 20px;
-    letter-spacing: -0.022em;
+.article-card p { /* Descrizione nella card piccola */
+    font-size: 17px; /* Più piccolo dell'estratto in evidenza (21px) */
+    font-weight: 400; /* Peso normale */
+    line-height: 1.47059; /* Interlinea ottimale per 17px */
+    color: #6e6e73; /* Grigio medio: meno enfasi */
+    margin-bottom: 20px; /* Spazio prima del link "Leggi l'articolo" */
+    letter-spacing: -0.022em; /* Spaziatura compressa standard Apple */
 }
 
 /* ==========================
    PAGINA ARTICOLI
    ========================== */
-.articles-page {
-    padding: 80px 0;
-    background-color: #fff;
+.articles-page { /* Layout base usato sia per articoli.html che per le pagine articolo singolo */
+    padding: 80px 0; /* Spaziatura verticale standard */
+    background-color: #fff; /* Sfondo bianco */
 }
 
-.article-back-link {
-    display: inline-block;
-    margin-bottom: 24px;
-    font-size: 15px;
-    color: #0071e3;
-    text-decoration: none;
+.article-back-link { /* Link "← Torna agli Articoli" nelle pagine articolo singolo */
+    display: inline-block; /* Permette margin-bottom su un elemento <a> inline */
+    margin-bottom: 24px; /* Spazio tra il link di ritorno e la card articolo */
+    font-size: 15px; /* Dimensione media leggibile */
+    color: #0071e3; /* Blu Apple per i link */
+    text-decoration: none; /* Senza sottolineatura di default */
 }
 
-.article-back-link:hover {
-    text-decoration: underline;
+.article-back-link:hover { /* Hover sul link di ritorno */
+    text-decoration: underline; /* Sottolineatura: feedback visivo all'hover */
 }
 
-.page-title {
-    font-size: 56px;
-    font-weight: 600;
-    line-height: 1.07143;
-    color: #1d1d1f;
-    margin-bottom: 12px;
-    letter-spacing: -0.005em;
-    text-align: center;
+.page-title { /* Titolo principale delle pagine interne: articoli.html, chisiamo.html, contatti.html */
+    font-size: 56px; /* Grande e d'impatto */
+    font-weight: 600; /* Semi-grassetto */
+    line-height: 1.07143; /* Interlinea stretta per titoli molto grandi */
+    color: #1d1d1f; /* Colore testo standard */
+    margin-bottom: 12px; /* Spazio tra titolo e sottotitolo */
+    letter-spacing: -0.005em; /* Spaziatura lettere compressa */
+    text-align: center; /* Centrato di default: sovrascrivibile via style inline (vedi contatti.html) */
 }
 
-.page-intro {
-    font-size: 21px;
-    font-weight: 400;
-    line-height: 1.381;
-    color: #6e6e73;
-    margin-bottom: 80px;
-    text-align: center;
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
+.page-intro { /* Testo introduttivo sotto il titolo delle pagine interne */
+    font-size: 21px; /* Dimensione media per sottotitolo */
+    font-weight: 400; /* Peso normale */
+    line-height: 1.381; /* Interlinea per testo medio */
+    color: #6e6e73; /* Grigio medio: meno enfasi del titolo */
+    margin-bottom: 80px; /* Ampio spazio prima del contenuto principale */
+    text-align: center; /* Centrato: sovrascrivibile via style inline (vedi contatti.html) */
+    max-width: 640px; /* Larghezza massima per leggibilità ottimale del sottotitolo */
+    margin-left: auto; /* Centra orizzontalmente il blocco */
+    margin-right: auto; /* Centra orizzontalmente il blocco */
 }
 
 /* Articolo completo */
-.full-article {
-    background-color: #fff;
-    border-radius: 28px;
-    overflow: hidden;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
-    margin-bottom: 48px;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.full-article { /* Card dell'articolo singolo completo */
+    background-color: #fff; /* Sfondo bianco */
+    border-radius: 28px; /* Angoli arrotondati 28px: coerente con le altre card */
+    overflow: hidden; /* Nasconde overflow dell'immagine di copertina */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08); /* Ombra soffusa */
+    margin-bottom: 48px; /* Spazio prima della sezione commenti */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione fluida per hover */
 }
 
-.full-article:hover {
-    border-color: #0071e3;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+.full-article:hover { /* Hover sulla card articolo singolo */
+    border-color: #0071e3; /* Bordo blu: coerente con tutte le altre card interattive */
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12); /* Ombra più intensa */
 }
 
-.full-article img {
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
+.full-article img { /* Immagine di copertina dell'articolo singolo */
+    width: 100%; /* Larghezza piena della card */
+    height: 480px; /* Altezza fissa: più alta delle card lista (420px e 280px) */
+    object-fit: cover; /* Ritaglia senza deformare */
 }
 
-.full-article .article-meta {
-    padding: 32px 56px 0;
-    color: #86868b;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
+.full-article .article-meta { /* Blocco metadati (data di pubblicazione) */
+    padding: 32px 56px 0; /* Padding: spazio sopra la data, laterale ampio, nessun spazio sotto */
+    color: #86868b; /* Grigio chiaro per le informazioni secondarie */
+    font-size: 14px; /* Piccolo: la data è un'informazione secondaria */
+    font-weight: 400; /* Peso normale */
+    text-align: center; /* Data centrata */
 }
 
-.full-article h3 {
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 1.0834933333;
-    color: #1d1d1f;
-    padding: 16px 56px;
-    text-align: center;
-    letter-spacing: -0.003em;
+.full-article h3 { /* Titolo dell'articolo singolo */
+    font-size: 48px; /* Grande: titolo principale della pagina articolo */
+    font-weight: 600; /* Semi-grassetto */
+    line-height: 1.0834933333; /* Interlinea stretta per titoli grandi */
+    color: #1d1d1f; /* Colore testo standard */
+    padding: 16px 56px; /* Padding interno: spazio sopra, laterale generoso */
+    text-align: center; /* Titolo centrato */
+    letter-spacing: -0.003em; /* Spaziatura compressa */
 }
 
-.full-article .article-body {
-    padding: 32px 56px 56px;
+.full-article .article-body { /* Corpo testuale dell'articolo singolo */
+    padding: 32px 56px 56px; /* Padding: 32px top, 56px laterale, 56px bottom */
 }
 
-.full-article .article-body p {
-    font-size: 21px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #1d1d1f;
-    margin-bottom: 28px;
-    letter-spacing: 0.011em;
+.full-article .article-body p { /* Singolo paragrafo del corpo dell'articolo */
+    font-size: 21px; /* Dimensione ottimale per testi lunghi da leggere */
+    font-weight: 400; /* Peso normale */
+    line-height: 1.5; /* Interlinea 150%: ottimale per testi lunghi, migliora la leggibilità */
+    color: #1d1d1f; /* Colore testo scuro: massimo contrasto sul bianco */
+    margin-bottom: 28px; /* Spazio generoso tra i paragrafi: aiuta la lettura */
+    letter-spacing: 0.011em; /* Spaziatura leggermente aumentata per leggibilità a 21px */
 }
 
 /* Articoli anteprima */
-.article-preview {
-    background-color: #fff;
-    border-radius: 28px;
-    overflow: hidden;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
-    margin-bottom: 32px;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.article-preview { /* Card anteprima nella pagina articoli.html */
+    background-color: #fff; /* Sfondo bianco */
+    border-radius: 28px; /* Angoli arrotondati 28px */
+    overflow: hidden; /* Nasconde overflow immagine */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08); /* Ombra soffusa */
+    margin-bottom: 32px; /* Spazio tra le card nella lista */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione fluida hover */
 }
 
-.article-preview:hover {
-    border-color: #0071e3;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
-    transform: translateY(-8px);
+.article-preview:hover { /* Hover sulla card anteprima */
+    border-color: #0071e3; /* Bordo blu: coerente con tutte le altre card */
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12); /* Ombra più intensa */
+    transform: translateY(-8px); /* Elevazione di 8px */
 }
 
-.article-preview img {
-    width: 100%;
-    height: 360px;
-    object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+.article-preview img { /* Immagine copertina nella card anteprima */
+    width: 100%; /* Larghezza piena */
+    height: 360px; /* Altezza media: tra card piccola (280px) e articolo completo (480px) */
+    object-fit: cover; /* Ritaglia proporzionalmente */
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione lenta per zoom morbido */
 }
 
-.article-preview:hover img {
-    transform: scale(1.03);
+.article-preview:hover img { /* Zoom immagine anteprima */
+    transform: scale(1.03); /* Ingrandimento 3%: coerente con le altre card */
 }
 
-.article-preview .article-meta {
-    padding: 32px 48px 0;
-    color: #86868b;
-    font-size: 14px;
-    text-align: center;
+.article-preview .article-meta { /* Metadati della card anteprima */
+    padding: 32px 48px 0; /* Padding interno */
+    color: #86868b; /* Grigio chiaro per la data */
+    font-size: 14px; /* Dimensione piccola */
+    text-align: center; /* Data centrata */
 }
 
-.article-preview h3 {
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 1.125;
-    color: #1d1d1f;
-    padding: 12px 48px;
-    text-align: center;
-    letter-spacing: -0.005em;
+.article-preview h3 { /* Titolo nella card anteprima */
+    font-size: 32px; /* Dimensione media */
+    font-weight: 600; /* Semi-grassetto */
+    line-height: 1.125; /* Interlinea stretta */
+    color: #1d1d1f; /* Colore standard */
+    padding: 12px 48px; /* Padding interno orizzontale generoso */
+    text-align: center; /* Centrato */
+    letter-spacing: -0.005em; /* Spaziatura compressa */
 }
 
-.article-preview p {
-    font-size: 19px;
-    font-weight: 400;
-    line-height: 1.4211;
-    color: #6e6e73;
-    padding: 0 48px 48px;
-    text-align: center;
-    letter-spacing: 0.012em;
+.article-preview p { /* Descrizione nella card anteprima */
+    font-size: 19px; /* Leggermente più piccolo del corpo articolo (21px) */
+    font-weight: 400; /* Peso normale */
+    line-height: 1.4211; /* Interlinea ottimale per 19px */
+    color: #6e6e73; /* Grigio medio: meno enfasi del titolo */
+    padding: 0 48px 48px; /* Padding: solo laterale e bottom */
+    text-align: center; /* Centrato */
+    letter-spacing: 0.012em; /* Spaziatura leggermente aumentata */
 }
 
 /* ==========================
    PAGINA CHI SIAMO
    ========================== */
-.about-page {
-    padding: 80px 0;
-    background-color: #fff;
+.about-page { /* Layout della pagina chi siamo */
+    padding: 80px 0; /* Spaziatura verticale standard */
+    background-color: #fff; /* Sfondo bianco */
 }
 
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-    margin-top: 60px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+.about-content { /* Contenitore immagine + testo in griglia */
+    display: grid; /* Layout a griglia CSS */
+    grid-template-columns: 1fr; /* Colonna singola: immagine sopra, testo sotto */
+    gap: 48px; /* Spazio tra immagine e testo */
+    margin-top: 60px; /* Spazio dopo il titolo pagina */
+    max-width: 800px; /* Larghezza massima per leggibilità ottimale */
+    margin-left: auto; /* Centra il blocco orizzontalmente */
+    margin-right: auto; /* Centra il blocco orizzontalmente */
 }
 
-.about-image {
-    text-align: center;
+.about-image { /* Contenitore dell'immagine di profilo circolare */
+    text-align: center; /* Centra l'immagine nel contenitore */
 }
 
-.about-image img {
-    width: 240px;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 0 auto;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+.about-image img { /* Immagine di profilo circolare */
+    width: 240px; /* Larghezza fissa */
+    height: 240px; /* Altezza uguale alla larghezza: quadrato che diventa cerchio */
+    object-fit: cover; /* Ritaglia l'immagine nel cerchio senza deformarla */
+    border-radius: 50%; /* 50% su entrambi gli assi: forma circolare perfetta */
+    margin: 0 auto; /* Centra l'immagine orizzontalmente nel div padre */
+    border: 1px solid #d2d2d7; /* Bordo grigio sottile attorno alla foto */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08); /* Ombra soffusa: profondità visiva attorno alla foto */
 }
 
-.about-text h3 {
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 1.125;
-    color: #1d1d1f;
-    margin-bottom: 16px;
-    margin-top: 40px;
-    letter-spacing: -0.005em;
+.about-text h3 { /* Titoli "Il nostro progetto" e "La nostra missione" */
+    font-size: 32px; /* Dimensione titolo sezione */
+    font-weight: 600; /* Semi-grassetto */
+    line-height: 1.125; /* Interlinea stretta per titoli */
+    color: #1d1d1f; /* Colore testo standard */
+    margin-bottom: 16px; /* Spazio tra il titolo e il paragrafo successivo */
+    margin-top: 40px; /* Spazio generoso sopra: separa visivamente le due sezioni */
+    letter-spacing: -0.005em; /* Spaziatura compressa */
 }
 
-.about-text h3:first-child {
-    margin-top: 0;
+.about-text h3:first-child { /* Solo il primo h3 "Il nostro progetto": elimina il margine superiore */
+    margin-top: 0; /* Nessun margine superiore: è il primo elemento della colonna testo */
 }
 
-.about-text p {
-    font-size: 21px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #1d1d1f;
-    margin-bottom: 24px;
-    letter-spacing: 0.011em;
+.about-text p { /* Paragrafi del testo nella pagina chi siamo */
+    font-size: 21px; /* Dimensione ottimale per testi lunghi */
+    font-weight: 400; /* Peso normale */
+    line-height: 1.5; /* Interlinea 150% per leggibilità */
+    color: #1d1d1f; /* Colore testo scuro */
+    margin-bottom: 24px; /* Spazio tra i paragrafi */
+    letter-spacing: 0.011em; /* Spaziatura leggermente aumentata */
 }
 
 /* ==========================
    PAGINA CONTATTI
    ========================== */
-.contact-page {
-    padding: 80px 0;
-    background-color: #f5f5f7;
+.contact-page { /* Layout della pagina contatti */
+    padding: 80px 0; /* Spaziatura verticale standard */
+    background-color: #f5f5f7; /* Sfondo grigio chiarissimo: distingue visivamente dalla pagina chi siamo */
 }
 
-.contact-page .page-title {
-    text-align: left;
+.contact-page .page-title { /* Override del titolo nella pagina contatti */
+    text-align: left; /* Sovrascrive text-align: center del .page-title generico */
 }
 
-.contact-page .page-intro {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 40px;
-    font-size: 17px;
+.contact-page .page-intro { /* Override del sottotitolo nella pagina contatti */
+    text-align: left; /* Allineato a sinistra come il titolo */
+    margin-left: 0; /* Rimuove il centramento automatico del .page-intro generico */
+    margin-right: 0; /* Rimuove il centramento automatico */
+    margin-bottom: 40px; /* Meno spazio rispetto alla pagina articoli (80px) */
+    font-size: 17px; /* Leggermente più piccolo del .page-intro generico (21px) */
 }
 
 /* Layout a due colonne */
-.contact-wrapper {
-    display: flex;
-    gap: 56px;
-    align-items: flex-start;
+.contact-wrapper { /* Contenitore del layout a 2 colonne della pagina contatti */
+    display: flex; /* Layout flex: affianca colonna sinistra e colonna destra */
+    gap: 56px; /* Spazio generoso tra le due colonne */
+    align-items: flex-start; /* Le colonne si allineano in alto, non si stirano in altezza */
 }
 
 /* COLONNA SINISTRA */
-.contact-left {
-    flex: 0 0 320px;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+.contact-left { /* Colonna con le informazioni di contatto */
+    flex: 0 0 320px; /* Larghezza fissa di 320px: non cresce né si restringe */
+    display: flex; /* Flex per impilare i metodi di contatto */
+    flex-direction: column; /* Metodi di contatto in colonna verticale */
+    gap: 28px; /* Spazio tra ogni metodo di contatto */
 }
 
-.contact-method {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
+.contact-method { /* Singolo metodo di contatto: icona + testo affiancati */
+    display: flex; /* Layout flex orizzontale */
+    align-items: flex-start; /* Icona allineata in cima al testo (anche quando il testo è lungo) */
+    gap: 16px; /* Spazio tra l'icona circolare e il blocco testo */
 }
 
-.contact-method .icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background-color: #0071e3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 16px rgba(0, 113, 227, 0.25);
+.contact-method .icon { /* Icona circolare colorata per ogni metodo di contatto */
+    width: 46px; /* Larghezza fissa del cerchio */
+    height: 46px; /* Altezza uguale alla larghezza: quadrato trasformato in cerchio */
+    border-radius: 50%; /* Forma circolare perfetta */
+    background-color: #0071e3; /* Sfondo blu Apple */
+    display: flex; /* Flex per centrare l'emoji dentro il cerchio */
+    align-items: center; /* Centra l'emoji verticalmente nel cerchio */
+    justify-content: center; /* Centra l'emoji orizzontalmente nel cerchio */
+    font-size: 20px; /* Dimensione dell'emoji nella icona */
+    flex-shrink: 0; /* L'icona non si restringe mai, mantiene le sue dimensioni */
+    box-shadow: 0 4px 16px rgba(0, 113, 227, 0.25); /* Ombra colorata blu: effetto glow attorno all'icona */
 }
 
-.contact-method div h4 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #1d1d1f;
-    margin-bottom: 4px;
+.contact-method div h4 { /* Titolo del metodo di contatto (es. "Email", "Telefono") */
+    font-size: 16px; /* Dimensione leggibile */
+    font-weight: 600; /* Semi-grassetto per il nome del metodo */
+    color: #1d1d1f; /* Colore testo scuro */
+    margin-bottom: 4px; /* Piccolo spazio tra il titolo e il testo sotto */
 }
 
-.contact-method div p {
-    font-size: 14px;
-    color: #6e6e73;
-    margin: 0;
-    line-height: 1.5;
+.contact-method div p { /* Testo del metodo: indirizzo email o numero di telefono */
+    font-size: 14px; /* Dimensione più piccola: informazione secondaria */
+    color: #6e6e73; /* Grigio medio */
+    margin: 0; /* Nessun margine aggiuntivo */
+    line-height: 1.5; /* Interlinea standard per testo breve */
 }
 
 /* Variante con testo lungo (modulo di contatto) */
-.contact-method--block {
-    align-items: flex-start;
+.contact-method--block { /* Variante per il terzo metodo con testo più lungo */
+    align-items: flex-start; /* Icona allineata in cima anche con testo su più righe */
 }
 
 /* COLONNA DESTRA: form */
-.contact-right {
-    flex: 1;
-    background: #fff;
-    border-radius: 20px;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
-    padding: 40px 44px;
+.contact-right { /* Card bianca con il form di contatto */
+    flex: 1; /* Occupa tutto lo spazio rimanente dopo la colonna sinistra (320px) */
+    background: #fff; /* Sfondo bianco: contrasta con il grigio della pagina */
+    border-radius: 20px; /* Angoli arrotondati */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08); /* Ombra soffusa sotto la card */
+    padding: 40px 44px; /* Spaziatura interna generosa: 40px verticale, 44px orizzontale */
 }
 
-.contact-form-inline {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+.contact-form-inline { /* Form di contatto: struttura verticale */
+    display: flex; /* Flex per il layout */
+    flex-direction: column; /* Campi impilati verticalmente */
+    gap: 0; /* Nessun gap CSS: usiamo margin-bottom su ogni .form-group */
 }
 
-.form-group {
-    margin-bottom: 18px;
+.form-group { /* Gruppo contenitore per ogni singolo campo del form */
+    margin-bottom: 18px; /* Spazio sotto ogni campo prima del successivo */
 }
 
-.form-group label {
-    display: block;
-    font-size: 15px;
-    font-weight: 500;
-    color: #1d1d1f;
-    margin-bottom: 6px;
-    letter-spacing: -0.01em;
+.form-group label { /* Etichetta del campo (quando presente) */
+    display: block; /* Occupa tutta la larghezza: il campo di input va a capo sotto */
+    font-size: 15px; /* Dimensione leggibile per l'etichetta */
+    font-weight: 500; /* Semi-grassetto per distinguere l'etichetta dal campo */
+    color: #1d1d1f; /* Colore testo scuro */
+    margin-bottom: 6px; /* Spazio tra etichetta e campo di input */
+    letter-spacing: -0.01em; /* Spaziatura ridotta */
 }
 
 .form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 13px 16px;
-    font-size: 15px;
-    border: 1px solid #d2d2d7;
-    border-radius: 10px;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    background-color: #fff;
-    color: #1d1d1f;
+.form-group textarea { /* Stile base condiviso per tutti i campi del form */
+    width: 100%; /* Campo a tutta larghezza del contenitore .contact-right */
+    padding: 13px 16px; /* Spaziatura interna confortevole: 13px verticale, 16px orizzontale */
+    font-size: 15px; /* Dimensione testo nel campo */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro: leggermente visibile ma non invasivo */
+    border-radius: 10px; /* Angoli leggermente arrotondati */
+    font-family: inherit; /* Usa lo stesso font del resto della pagina: coerenza tipografica */
+    transition: all 0.3s ease; /* Transizione fluida per il cambio di stile al focus */
+    background-color: #fff; /* Sfondo bianco */
+    color: #1d1d1f; /* Testo scuro nel campo */
 }
 
 .form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #a1a1aa;
+.form-group textarea::placeholder { /* Testo segnaposto nei campi del form */
+    color: #a1a1aa; /* Grigio chiaro: il placeholder è meno visibile del testo reale */
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #0071e3;
-    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+.form-group textarea:focus { /* Stile applicato quando il campo è attivo (focus) */
+    outline: none; /* Rimuove il contorno di default del browser (solitamente blu o arancione) */
+    border-color: #0071e3; /* Bordo blu Apple quando il campo è selezionato */
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1); /* Glow azzurro tenue attorno al campo: feedback visivo */
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 160px;
+.form-group textarea { /* Stile aggiuntivo specifico per l'area di testo del messaggio */
+    resize: vertical; /* L'utente può ridimensionare solo in altezza, non in larghezza */
+    min-height: 160px; /* Altezza minima garantita per il campo messaggio */
 }
 
-.submit-button {
-    width: 100%;
-    padding: 15px;
-    background: #0071e3;
-    color: #fff;
-    border: none;
-    border-radius: 980px;
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: -0.022em;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 4px;
+.submit-button { /* Pulsante di invio del form (contatti e commenti) */
+    width: 100%; /* Larghezza piena del contenitore */
+    padding: 15px; /* Spaziatura interna uniforme su tutti i lati */
+    background: #0071e3; /* Sfondo blu Apple */
+    color: #fff; /* Testo bianco sul pulsante blu */
+    border: none; /* Nessun bordo */
+    border-radius: 980px; /* Border-radius altissimo: forma a pillola */
+    font-size: 17px; /* Dimensione testo pulsante */
+    font-weight: 400; /* Peso normale: diverso dal .cta-button della hero (600) */
+    letter-spacing: -0.022em; /* Spaziatura standard Apple per pulsanti */
+    cursor: pointer; /* Cursore a manina: indica che è cliccabile */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione fluida con curva di Bezier */
+    margin-top: 4px; /* Piccolo spazio sopra il pulsante */
 }
 
-.submit-button:hover {
-    background: #0077ed;
-    transform: scale(1.02);
+.submit-button:hover { /* Effetto hover sul pulsante Invia */
+    background: #0077ed; /* Blu leggermente più chiaro all'hover */
+    transform: scale(1.02); /* Leggero ingrandimento: feedback visivo */
 }
 
 /* Legacy selectors — kept for safety */
 .contact-form-main,
-.contact-info-sidebar {
-    display: none;
+.contact-info-sidebar { /* Selettori vecchi di una versione precedente del layout contatti */
+    display: none; /* Non visualizzati: il layout è ora gestito da .contact-left e .contact-right */
 }
 
 /* ==========================
    FOOTER
    ========================== */
-footer {
-    background-color: #1f2937;
-    color: #ffffff;
-    padding: 56px 0 0;
-    border-top: 1px solid rgba(255,255,255,0.08);
+footer { /* Pie' di pagina: sfondo scuro presente in tutte le pagine */
+    background-color: #1f2937; /* Sfondo blu scuro/grafite */
+    color: #ffffff; /* Colore testo bianco di default per tutto il footer */
+    padding: 56px 0 0; /* Spaziatura superiore 56px: il padding inferiore è gestito da .footer-bottom */
+    border-top: 1px solid rgba(255,255,255,0.08); /* Linea separatrice bianca al 8%: quasi invisibile, elegante */
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.6fr;
-    gap: 48px;
-    padding-bottom: 48px;
+.footer-grid { /* Griglia delle 3 colonne del footer */
+    display: grid; /* Layout a griglia CSS */
+    grid-template-columns: 1fr 1fr 1.6fr; /* 3 colonne: prime due uguali, terza più larga per la newsletter */
+    gap: 48px; /* Spazio generoso tra le colonne */
+    padding-bottom: 48px; /* Spazio prima della riga copyright */
 }
 
-.footer-col h5 {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #ffffff;
-    margin-bottom: 20px;
-    opacity: 0.7;
+.footer-col h5 { /* Intestazioni delle 3 colonne del footer */
+    font-size: 11px; /* Dimensione piccola: le intestazioni sono etichette secondarie */
+    font-weight: 600; /* Semi-grassetto */
+    letter-spacing: 0.1em; /* Spaziatura ampia: standard tipografico per testi uppercase piccoli */
+    text-transform: uppercase; /* Tutto maiuscolo */
+    color: #ffffff; /* Bianco */
+    margin-bottom: 20px; /* Spazio tra l'intestazione e il contenuto della colonna */
+    opacity: 0.7; /* Leggermente attenuata: gerarchia visiva rispetto ai link e al testo */
 }
 
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.footer-col ul { /* Lista link nella prima colonna del footer */
+    list-style: none; /* Nessun punto elenco */
+    padding: 0; /* Nessun padding interno */
+    margin: 0; /* Nessun margine */
+    display: flex; /* Flex per il layout */
+    flex-direction: column; /* Link impilati verticalmente */
+    gap: 10px; /* Spazio uniforme tra ogni link */
 }
 
-.footer-col ul li a {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 14px;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.footer-col ul li a { /* Link singolo nella lista della prima colonna */
+    color: rgba(255, 255, 255, 0.75); /* Bianco al 75% di opacità */
+    font-size: 14px; /* Dimensione media */
+    text-decoration: none; /* Senza sottolineatura */
+    transition: color 0.2s ease; /* Transizione rapida del colore all'hover */
 }
 
-.footer-col ul li a:hover {
-    color: #ffffff;
+.footer-col ul li a:hover { /* Hover sui link della prima colonna */
+    color: #ffffff; /* Bianco pieno: la voce si "accende" all'hover */
 }
 
-.footer-social {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.footer-social { /* Contenitore dei link social nella seconda colonna */
+    display: flex; /* Flex per il layout */
+    flex-direction: column; /* Link social in colonna verticale */
+    gap: 10px; /* Spazio tra Twitter, Facebook, Instagram */
 }
 
-.footer-social a {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 14px;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.footer-social a { /* Singolo link social */
+    color: rgba(255, 255, 255, 0.75); /* Stesso stile dei link navigazione: coerenza */
+    font-size: 14px; /* Stessa dimensione */
+    text-decoration: none; /* Senza sottolineatura */
+    transition: color 0.2s ease; /* Transizione rapida */
 }
 
-.footer-social a:hover {
-    color: #ffffff;
+.footer-social a:hover { /* Hover link social */
+    color: #ffffff; /* Bianco pieno: stesso comportamento dei link navigazione */
 }
 
-.footer-col > p {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 16px;
-    line-height: 1.5;
+.footer-col > p { /* Testo descrittivo diretto figlio di .footer-col (es. il testo newsletter) */
+    font-size: 13px; /* Piccolo: testo secondario */
+    color: rgba(255, 255, 255, 0.6); /* Bianco al 60%: molto attenuato */
+    margin-bottom: 16px; /* Spazio prima del form newsletter */
+    line-height: 1.5; /* Interlinea standard */
 }
 
-.newsletter-form {
-    display: flex;
-    gap: 8px;
+.newsletter-form { /* Form di iscrizione alla newsletter nel footer */
+    display: flex; /* Input email e pulsante affiancati in riga */
+    gap: 8px; /* Spazio minimo tra input e pulsante */
 }
 
-.newsletter-form input[type="email"] {
-    flex: 1;
-    padding: 10px 14px;
-    font-size: 14px;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 8px;
-    background: rgba(255,255,255,0.08);
-    color: #ffffff;
-    font-family: inherit;
-    transition: all 0.3s ease;
+.newsletter-form input[type="email"] { /* Campo email della newsletter */
+    flex: 1; /* Occupa tutto lo spazio disponibile lasciando solo quello del pulsante */
+    padding: 10px 14px; /* Spaziatura interna del campo */
+    font-size: 14px; /* Dimensione testo */
+    border: 1px solid rgba(255,255,255,0.15); /* Bordo bianco quasi invisibile sul sfondo scuro */
+    border-radius: 8px; /* Angoli arrotondati */
+    background: rgba(255,255,255,0.08); /* Sfondo bianco molto trasparente: effetto glass sul scuro */
+    color: #ffffff; /* Testo bianco nel campo */
+    font-family: inherit; /* Font del sito */
+    transition: all 0.3s ease; /* Transizione per il focus */
 }
 
-.newsletter-form input[type="email"]::placeholder {
-    color: rgba(255,255,255,0.4);
+.newsletter-form input[type="email"]::placeholder { /* Placeholder del campo email */
+    color: rgba(255,255,255,0.4); /* Bianco molto attenuato per il segnaposto */
 }
 
-.newsletter-form input[type="email"]:focus {
-    outline: none;
-    border-color: #0071e3;
-    background: rgba(255,255,255,0.12);
+.newsletter-form input[type="email"]:focus { /* Focus sul campo email newsletter */
+    outline: none; /* Rimuove il contorno di default del browser */
+    border-color: #0071e3; /* Bordo blu al focus */
+    background: rgba(255,255,255,0.12); /* Sfondo leggermente più visibile al focus */
 }
 
-.newsletter-form button {
-    padding: 10px 18px;
-    background: #0071e3;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+.newsletter-form button { /* Pulsante Iscriviti della newsletter */
+    padding: 10px 18px; /* Spaziatura interna del pulsante */
+    background: #0071e3; /* Sfondo blu Apple */
+    color: #ffffff; /* Testo bianco */
+    border: none; /* Nessun bordo */
+    border-radius: 8px; /* Angoli arrotondati (non pillola: più compatto) */
+    font-size: 14px; /* Dimensione testo pulsante */
+    font-weight: 500; /* Semi-grassetto */
+    cursor: pointer; /* Cursore a manina */
+    font-family: inherit; /* Font del sito */
+    transition: all 0.3s ease; /* Transizione hover */
+    white-space: nowrap; /* Il testo "Iscriviti" non va mai a capo */
 }
 
-.newsletter-form button:hover {
-    background: #0077ed;
-    transform: scale(1.03);
+.newsletter-form button:hover { /* Hover pulsante newsletter */
+    background: #0077ed; /* Blu leggermente più chiaro */
+    transform: scale(1.03); /* Lieve ingrandimento */
 }
 
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding: 20px 0;
-    text-align: center;
+.footer-bottom { /* Riga inferiore con il copyright */
+    border-top: 1px solid rgba(255,255,255,0.08); /* Separatore sottile bianco trasparente */
+    padding: 20px 0; /* Spaziatura verticale attorno al copyright */
+    text-align: center; /* Testo copyright centrato */
 }
 
-.footer-bottom p {
-    font-size: 12px;
-    color: rgba(255,255,255,0.4);
-    margin: 0;
+.footer-bottom p { /* Testo del copyright */
+    font-size: 12px; /* Molto piccolo: informazione legale secondaria */
+    color: rgba(255,255,255,0.4); /* Bianco al 40%: molto attenuato */
+    margin: 0; /* Nessun margine extra */
 }
 
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
+@media (max-width: 768px) { /* Media query per schermi mobili fino a 768px di larghezza */
+    .footer-grid { /* Footer su mobile */
+        grid-template-columns: 1fr; /* Una sola colonna su mobile: le 3 colonne si impilano */
+        gap: 32px; /* Gap ridotto rispetto al desktop (48px) */
     }
 
-    .newsletter-form {
-        flex-direction: column;
+    .newsletter-form { /* Form newsletter su mobile */
+        flex-direction: column; /* Input e pulsante si impilano verticalmente su mobile */
     }
 }
 
 /* ==========================
    COMMENTS SECTION
    ========================== */
-.comments-section {
-    margin-top: 40px;    /* spazio tra articolo e commenti */
-    padding: 40px;
-    background-color: #fafafa;
-    border-radius: 20px;
-    border: 1px solid #d2d2d7;
+.comments-section { /* Sezione commenti sotto gli articoli singoli */
+    margin-top: 40px; /* Spazio tra la card articolo e la sezione commenti */
+    padding: 40px; /* Spaziatura interna della sezione */
+    background-color: #fafafa; /* Sfondo grigio chiarissimo: distingue la sezione dall'articolo bianco */
+    border-radius: 20px; /* Angoli arrotondati */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro */
 }
 
-.comments-section h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #1d1d1f;
+.comments-section h3 { /* Titolo "Commenti" */
+    font-size: 24px; /* Dimensione media per titolo sezione */
+    font-weight: 600; /* Semi-grassetto */
+    margin-bottom: 8px; /* Spazio prima del testo introduttivo */
+    color: #1d1d1f; /* Colore testo scuro */
 }
 
-.comments-intro {
-    font-size: 15px;
-    color: #6e6e73;
-    margin-bottom: 32px;
-    line-height: 1.5;
+.comments-intro { /* Testo invito a commentare */
+    font-size: 15px; /* Dimensione media */
+    color: #6e6e73; /* Grigio medio */
+    margin-bottom: 32px; /* Spazio generoso prima del primo commento */
+    line-height: 1.5; /* Interlinea standard */
 }
 
-.comment {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 32px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid #e5e7eb;
+.comment { /* Singolo commento nella lista */
+    display: flex; /* Avatar e testo affiancati */
+    gap: 16px; /* Spazio tra l'avatar e il blocco testo */
+    margin-bottom: 32px; /* Spazio sotto ogni commento */
+    padding-bottom: 32px; /* Padding prima del bordo separatore */
+    border-bottom: 1px solid #e5e7eb; /* Linea separatrice grigia tra i commenti */
 }
 
-.comment:last-of-type {
-    border-bottom: none;
+.comment:last-of-type { /* Ultimo commento nella lista */
+    border-bottom: none; /* Rimuove la linea separatrice dall'ultimo commento */
 }
 
-.comment .avatar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+.comment .avatar img { /* Immagine avatar quando è un tag <img> */
+    width: 50px; /* Larghezza avatar */
+    height: 50px; /* Altezza uguale: quadrato poi circolarizzato */
+    border-radius: 50%; /* Forma circolare */
+    object-fit: cover; /* Ritaglia senza deformare */
 }
 
-.comment .avatar-default {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: #e8f0fe;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
+.comment .avatar-default { /* Avatar con emoji quando non c'è immagine reale */
+    width: 48px; /* Larghezza cerchio avatar */
+    height: 48px; /* Altezza uguale alla larghezza */
+    border-radius: 50%; /* Forma circolare */
+    background-color: #e8f0fe; /* Sfondo azzurro chiaro */
+    display: flex; /* Flex per centrare l'emoji */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra orizzontalmente */
+    font-size: 22px; /* Dimensione emoji: grande e ben visibile */
+    flex-shrink: 0; /* L'avatar non si restringe mai */
 }
 
-.comment .comment-content {
-    flex: 1;
+.comment .comment-content { /* Blocco testo del commento (accanto all'avatar) */
+    flex: 1; /* Occupa tutto lo spazio rimanente dopo l'avatar */
 }
 
-.comment .comment-meta {
-    font-size: 13px;
-    color: #86868b;
-    margin-bottom: 6px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.comment .comment-meta { /* Riga con nome autore e data del commento */
+    font-size: 13px; /* Piccolo: metadati secondari */
+    color: #86868b; /* Grigio chiaro */
+    margin-bottom: 6px; /* Spazio prima del testo del commento */
+    display: flex; /* Nome e data affiancati */
+    gap: 10px; /* Spazio tra nome e data */
+    align-items: center; /* Allineamento verticale centrato */
 }
 
-.comment .comment-author {
-    font-weight: 600;
-    color: #1d1d1f;
-    font-size: 15px;
+.comment .comment-author { /* Nome dell'autore del commento */
+    font-weight: 600; /* Semi-grassetto: il nome è più importante della data */
+    color: #1d1d1f; /* Colore scuro: si distingue dal grigio della data */
+    font-size: 15px; /* Leggermente più grande della data (13px) */
 }
 
-.comment .comment-text p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #1d1d1f;
+.comment .comment-text p { /* Testo del commento */
+    font-size: 16px; /* Dimensione leggibile */
+    line-height: 1.6; /* Interlinea ampia per commenti */
+    color: #1d1d1f; /* Colore testo scuro */
 }
 
 /* Form commento */
-.comment-form {
-    margin-top: 32px;
-    padding: 28px;
-    background-color: #fff;
-    border-radius: 14px;
-    border: 1px solid #d2d2d7;
+.comment-form { /* Card del form per lasciare un nuovo commento */
+    margin-top: 32px; /* Spazio tra i commenti esistenti e il form */
+    padding: 28px; /* Spaziatura interna della card form */
+    background-color: #fff; /* Sfondo bianco: contrasta con il grigio #fafafa della sezione */
+    border-radius: 14px; /* Angoli arrotondati */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro */
 }
 
-.comment-form h4 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #1d1d1f;
+.comment-form h4 { /* Titolo "Lascia un commento" nel form */
+    font-size: 20px; /* Dimensione media */
+    font-weight: 600; /* Semi-grassetto */
+    margin-bottom: 20px; /* Spazio prima dei campi del form */
+    color: #1d1d1f; /* Colore testo scuro */
 }
 
-.comment-form .form-row {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
+.comment-form .form-row { /* Riga con Nome ed Email affiancati */
+    display: flex; /* I due campi si affiancano in riga */
+    gap: 16px; /* Spazio tra i due campi */
+    margin-bottom: 16px; /* Spazio sotto la riga prima della textarea */
 }
 
-.comment-form .form-row input {
-    flex: 1;
-    padding: 12px 14px;
-    font-size: 15px;
-    border: 1px solid #d2d2d7;
-    border-radius: 8px;
-    font-family: inherit;
-    background-color: #fff;
-    color: #1d1d1f;
-    transition: all 0.3s ease;
+.comment-form .form-row input { /* Campi input nella riga doppia */
+    flex: 1; /* Ogni campo prende metà dello spazio disponibile */
+    padding: 12px 14px; /* Spaziatura interna del campo */
+    font-size: 15px; /* Dimensione testo */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro */
+    border-radius: 8px; /* Angoli leggermente arrotondati */
+    font-family: inherit; /* Font del sito */
+    background-color: #fff; /* Sfondo bianco */
+    color: #1d1d1f; /* Testo scuro */
+    transition: all 0.3s ease; /* Transizione per il focus */
 }
 
-.comment-form .form-row input:focus {
-    outline: none;
-    border-color: #0071e3;
-    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+.comment-form .form-row input:focus { /* Focus sui campi Nome ed Email */
+    outline: none; /* Rimuove il contorno di default del browser */
+    border-color: #0071e3; /* Bordo blu al focus */
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1); /* Glow blu tenue attorno al campo */
 }
 
-.comment-form textarea {
-    width: 100%;
-    padding: 12px 14px;
-    font-size: 15px;
-    border: 1px solid #d2d2d7;
-    border-radius: 8px;
-    resize: vertical;
-    margin-bottom: 16px;
-    font-family: inherit;
-    background-color: #fff;
-    color: #1d1d1f;
-    transition: all 0.3s ease;
+.comment-form textarea { /* Area di testo del commento */
+    width: 100%; /* Larghezza piena del form */
+    padding: 12px 14px; /* Spaziatura interna */
+    font-size: 15px; /* Dimensione testo */
+    border: 1px solid #d2d2d7; /* Bordo grigio chiaro */
+    border-radius: 8px; /* Angoli arrotondati */
+    resize: vertical; /* L'utente può ridimensionare solo in altezza */
+    margin-bottom: 16px; /* Spazio prima del pulsante */
+    font-family: inherit; /* Font del sito */
+    background-color: #fff; /* Sfondo bianco */
+    color: #1d1d1f; /* Testo scuro */
+    transition: all 0.3s ease; /* Transizione focus */
 }
 
-.comment-form textarea:focus {
-    outline: none;
-    border-color: #0071e3;
-    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+.comment-form textarea:focus { /* Focus sulla textarea del commento */
+    outline: none; /* Rimuove contorno browser */
+    border-color: #0071e3; /* Bordo blu */
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1); /* Glow blu tenue */
 }
 
-.comment-form .submit-button {
-    width: 100%;
-    padding: 12px;
-    background: #0071e3;
-    color: #fff;
-    border: none;
-    border-radius: 980px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.comment-form .submit-button { /* Pulsante "Invia commento" */
+    width: 100%; /* Larghezza piena */
+    padding: 12px; /* Spaziatura interna uniforme */
+    background: #0071e3; /* Sfondo blu Apple */
+    color: #fff; /* Testo bianco */
+    border: none; /* Nessun bordo */
+    border-radius: 980px; /* Forma a pillola */
+    font-size: 15px; /* Dimensione testo pulsante */
+    font-weight: 500; /* Semi-grassetto */
+    cursor: pointer; /* Cursore a manina */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione fluida con Bezier */
 }
 
-.comment-form .submit-button:hover {
-    background: #0062b8;
-    transform: scale(1.02);
+.comment-form .submit-button:hover { /* Hover pulsante "Invia commento" */
+    background: #0062b8; /* Blu più scuro all'hover: diverso dal .submit-button globale */
+    transform: scale(1.02); /* Leggero ingrandimento */
 }
 
 /* ==========================
    RESPONSIVE - MOBILE
    ========================== */
-@media (max-width: 768px) {
-    header .container {
-        height: 44px;
+@media (max-width: 768px) { /* Media query: si attiva su schermi larghi al massimo 768px */
+    header .container { /* Header su mobile */
+        height: 44px; /* Leggermente più basso del desktop (48px): risparmio spazio verticale */
     }
     
-    header .logo {
-        font-size: 22px;
+    header .logo { /* Logo su mobile */
+        font-size: 22px; /* Ridotto da 28px: si adatta allo schermo piccolo */
     }
     
-    header nav ul {
-        gap: 16px;
-        font-size: 11px;
+    header nav ul { /* Menu di navigazione su mobile */
+        gap: 16px; /* Gap ridotto da 32px: le voci sono più vicine su schermo piccolo */
+        font-size: 11px; /* Font ridotto per far stare tutte le voci in riga */
     }
     
-    .hero {
-        min-height: 500px;
-        padding: 80px 0;
+    .hero { /* Banner hero su mobile */
+        min-height: 500px; /* Altezza minima ridotta da 650px */
+        padding: 80px 0; /* Padding verticale ridotto da 120px */
     }
     
-    .hero-content h2 {
-        font-size: 40px;
+    .hero-content h2 { /* Titolo hero su mobile */
+        font-size: 40px; /* Ridotto da 64px: leggibile su schermo piccolo */
     }
     
-    .hero-content p {
-        font-size: 21px;
+    .hero-content p { /* Testo descrittivo hero su mobile */
+        font-size: 21px; /* Ridotto da 28px */
     }
     
-    .cta-button {
-        padding: 12px 24px;
-        font-size: 15px;
+    .cta-button { /* Pulsante CTA su mobile */
+        padding: 12px 24px; /* Padding ridotto */
+        font-size: 15px; /* Font ridotto */
     }
     
-    .section-title {
-        font-size: 32px;
-        margin-bottom: 40px;
+    .section-title { /* Titolo di sezione su mobile */
+        font-size: 32px; /* Invariato: era già adatto */
+        margin-bottom: 40px; /* Margine ridotto da 60px */
     }
     
-    .main-article {
-        border-radius: 18px;
+    .main-article { /* Card articolo in evidenza su mobile */
+        border-radius: 18px; /* Border-radius ridotto da 28px */
     }
     
-    .main-article img {
-        height: 280px;
+    .main-article img { /* Immagine card in evidenza su mobile */
+        height: 280px; /* Altezza ridotta da 420px */
     }
     
-    .main-article .article-content {
-        padding: 32px 28px;
+    .main-article .article-content { /* Testo card in evidenza su mobile */
+        padding: 32px 28px; /* Padding ridotto */
     }
     
-    .main-article h4 {
-        font-size: 28px;
+    .main-article h4 { /* Titolo card in evidenza su mobile */
+        font-size: 28px; /* Ridotto da 40px */
     }
     
-    .main-article p {
-        font-size: 17px;
+    .main-article p { /* Estratto card in evidenza su mobile */
+        font-size: 17px; /* Ridotto da 21px */
     }
     
-    .articles-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .articles-grid { /* Griglia articoli su mobile */
+        grid-template-columns: 1fr; /* Una sola colonna: le card si impilano verticalmente */
+        gap: 20px; /* Gap ridotto da 24px */
     }
     
-    .article-card {
-        border-radius: 18px;
+    .article-card { /* Card piccola su mobile */
+        border-radius: 18px; /* Border-radius ridotto */
     }
     
-    .article-card img {
-        height: 220px;
+    .article-card img { /* Immagine card piccola su mobile */
+        height: 220px; /* Altezza ridotta da 280px */
     }
     
-    .article-card .card-content {
-        padding: 28px 24px;
+    .article-card .card-content { /* Testo card piccola su mobile */
+        padding: 28px 24px; /* Padding ridotto */
     }
     
-    .article-card h4 {
-        font-size: 24px;
+    .article-card h4 { /* Titolo card piccola su mobile */
+        font-size: 24px; /* Ridotto da 28px */
     }
     
-    .page-title {
-        font-size: 40px;
+    .page-title { /* Titolo pagine interne su mobile */
+        font-size: 40px; /* Ridotto da 56px */
     }
     
-    .page-intro {
-        font-size: 17px;
+    .page-intro { /* Sottotitolo pagine interne su mobile */
+        font-size: 17px; /* Ridotto da 21px */
     }
     
     .full-article,
-    .article-preview {
-        border-radius: 18px;
+    .article-preview { /* Card articolo completo e anteprima su mobile */
+        border-radius: 18px; /* Border-radius ridotto */
     }
     
-    .full-article img {
-        height: 280px;
+    .full-article img { /* Immagine articolo completo su mobile */
+        height: 280px; /* Ridotta da 480px */
     }
     
-    .full-article h3 {
-        font-size: 32px;
-        padding: 16px 28px;
+    .full-article h3 { /* Titolo articolo completo su mobile */
+        font-size: 32px; /* Ridotto da 48px */
+        padding: 16px 28px; /* Padding laterale ridotto da 56px */
     }
     
-    .full-article .article-body {
-        padding: 0 28px 40px;
+    .full-article .article-body { /* Corpo articolo su mobile */
+        padding: 0 28px 40px; /* Padding laterale ridotto, zero top */
     }
     
-    .full-article .article-body p {
-        font-size: 17px;
+    .full-article .article-body p { /* Paragrafi articolo su mobile */
+        font-size: 17px; /* Ridotto da 21px */
     }
     
-    .article-preview img {
-        height: 240px;
+    .article-preview img { /* Immagine anteprima su mobile */
+        height: 240px; /* Ridotta da 360px */
     }
     
-    .article-preview h3 {
-        font-size: 24px;
-        padding: 12px 28px;
+    .article-preview h3 { /* Titolo anteprima su mobile */
+        font-size: 24px; /* Ridotto da 32px */
+        padding: 12px 28px; /* Padding laterale ridotto */
     }
     
-    .article-preview p {
-        font-size: 15px;
-        padding: 0 28px 32px;
+    .article-preview p { /* Descrizione anteprima su mobile */
+        font-size: 15px; /* Ridotto da 19px */
+        padding: 0 28px 32px; /* Padding ridotto */
     }
     
-    .about-image img {
-        width: 180px;
-        height: 180px;
+    .about-image img { /* Immagine profilo su mobile */
+        width: 180px; /* Ridotta da 240px */
+        height: 180px; /* Ridotta proporzionalmente */
     }
     
-    .about-text h3 {
-        font-size: 24px;
+    .about-text h3 { /* Titoli sezione chi siamo su mobile */
+        font-size: 24px; /* Ridotto da 32px */
     }
     
-    .about-text p {
-        font-size: 17px;
+    .about-text p { /* Testo chi siamo su mobile */
+        font-size: 17px; /* Ridotto da 21px */
     }
 
     /* Contatti responsive */
-    .contact-wrapper {
-        flex-direction: column;
-        gap: 32px;
+    .contact-wrapper { /* Layout contatti su mobile */
+        flex-direction: column; /* Le due colonne si impilano verticalmente su mobile */
+        gap: 32px; /* Gap ridotto da 56px */
     }
 
-    .contact-left {
-        flex: 1 1 auto;
-        width: 100%;
+    .contact-left { /* Colonna info contatto su mobile */
+        flex: 1 1 auto; /* Torna flessibile: larghezza non più fissa a 320px */
+        width: 100%; /* Larghezza piena su mobile */
     }
 
-    .contact-right {
-        width: 100%;
-        padding: 28px 24px;
+    .contact-right { /* Card form contatti su mobile */
+        width: 100%; /* Larghezza piena */
+        padding: 28px 24px; /* Padding ridotto da 40px 44px */
     }
 
-    .comment-form .form-row {
-        flex-direction: column;
-        gap: 12px;
+    .comment-form .form-row { /* Riga Nome/Email del form commento su mobile */
+        flex-direction: column; /* I due campi si impilano verticalmente su mobile */
+        gap: 12px; /* Gap ridotto */
     }
 
-    .comments-section {
-        padding: 24px;
+    .comments-section { /* Sezione commenti su mobile */
+        padding: 24px; /* Padding ridotto da 40px */
     }
     
     .featured-article,
     .other-articles,
     .articles-page,
     .about-page,
-    .contact-page {
-        padding: 60px 0;
+    .contact-page { /* Tutte le sezioni principali su mobile */
+        padding: 60px 0; /* Padding verticale ridotto da 80-100px */
     }
 }
