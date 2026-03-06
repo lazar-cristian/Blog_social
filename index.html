@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tra Rete e Realtà - Blog su Social Media e Tecnologia</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
     <header>
@@ -74,67 +74,63 @@
     </section>
 
     <script>
-        // Effetto parallax scroll funzionante
         let ticking = false;
-        
         function updateParallax() {
             const hero = document.getElementById('hero');
             const scrolled = window.pageYOffset;
             const heroHeight = hero.offsetHeight;
-            
-            // Applica parallax solo se siamo nella sezione hero
             if (scrolled < heroHeight) {
-                const parallaxSpeed = 0.35; // Velocità del parallax più dolce
+                const parallaxSpeed = 0.35;
                 let yPos = -(scrolled * parallaxSpeed);
-                const maxOffset = heroHeight * 0.25; // limite massimo di spostamento
-                if (yPos < -maxOffset) {
-                    yPos = -maxOffset;
-                }
-                
-                // Applica transform al background
-                const heroStyle = getComputedStyle(hero);
+                const maxOffset = heroHeight * 0.25;
+                if (yPos < -maxOffset) yPos = -maxOffset;
                 hero.style.setProperty('--parallax-y', yPos + 'px');
-                
-                // Applica il transform al ::before tramite CSS custom property
-                const beforeElement = hero;
-                if (beforeElement) {
-                    // Zoom leggero mentre scrolli, con limite massimo
-                    const maxScale = 1.15;
-                    const scale = Math.min(maxScale, 1 + (scrolled / heroHeight) * 0.15);
-                    hero.style.setProperty('--parallax-scale', scale);
-                }
+                const maxScale = 1.15;
+                const scale = Math.min(maxScale, 1 + (scrolled / heroHeight) * 0.15);
+                hero.style.setProperty('--parallax-scale', scale);
             }
-            
             ticking = false;
         }
-        
         function requestTick() {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
+            if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
         }
-        
         window.addEventListener('scroll', requestTick, { passive: true });
-        
-        // Applica il parallax usando transform sul ::before
         const style = document.createElement('style');
-        style.textContent = `
-            .hero::before {
-                transform: translateY(var(--parallax-y, 0)) scale(var(--parallax-scale, 1));
-            }
-        `;
+        style.textContent = `.hero::before { transform: translateY(var(--parallax-y, 0)) scale(var(--parallax-scale, 1)); }`;
         document.head.appendChild(style);
     </script>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
-            <p>Un blog per riflettere sul nostro rapporto con la tecnologia.</p>
-            <div class="footer-social">
-                <a href="#">Twitter</a>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Link utili</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articoli.html">Articoli</a></li>
+                        <li><a href="chisiamo.html">Chi siamo</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Seguici</h5>
+                    <div class="footer-social">
+                        <a href="#">Twitter</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Newsletter</h5>
+                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Indirizzo email">
+                        <button type="submit">Iscriviti</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>

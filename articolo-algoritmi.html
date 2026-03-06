@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gli algoritmi che modellano la nostra realtà - Tra Rete e Realtà</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
     <header>
@@ -51,36 +51,38 @@
                     
                     <p>Gli algoritmi sono strumenti potenti che hanno trasformato il modo in cui accediamo all'informazione e ci connettiamo con gli altri. Ma non devono essere padroni invisibili delle nostre percezioni. Con maggiore consapevolezza e scelte deliberate, possiamo iniziare a usare i social media in modo più critico, resistendo alla tentazione di lasciarci guidare passivamente da sistemi progettati per massimizzare il profitto, non il nostro benessere o la nostra comprensione del mondo.</p>
                 </div>
-                
-                <!-- SEZIONE COMMENTI -->
-                <section class="comments-section">
-                    <h3>Commenti</h3>
-                    <p class="comments-intro">La sezione commenti permette agli utenti di esprimere opinioni, fare domande sugli articoli e interagire con l'autore.</p>
+            </article>
 
-                    <div class="comment">
-                        <div class="avatar"><div class="avatar-default">👤</div></div>
-                        <div class="comment-content">
-                            <div class="comment-meta">
-                                <span class="comment-author">Luca</span>
-                                <span class="comment-date">10 marzo 2026</span>
-                            </div>
-                            <div class="comment-text">
-                                <p>Eccellente analisi sugli algoritmi! Mi ha fatto riflettere su quanto poco controllo abbiamo sui contenuti che vediamo. È spaventoso pensare che decisioni così importanti siano prese da macchine senza etica.</p>
-                            </div>
+            <!-- SEZIONE COMMENTI — separata dall'articolo con margine -->
+            <section class="comments-section">
+                <h3>Commenti</h3>
+                <p class="comments-intro">Condividi la tua opinione sull'argomento e interagisci con la nostra community.</p>
+
+                <div class="comment">
+                    <div class="avatar">
+                        <div class="avatar-default">🧑‍💻</div>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-meta">
+                            <span class="comment-author">Marco</span>
+                            <span class="comment-date">12 febbraio 2026</span>
+                        </div>
+                        <div class="comment-text">
+                            <p>Articolo illuminante. Lavoro nel settore tech e posso confermare che la progettazione degli algoritmi punta tutto sull'engagement, non sul benessere dell'utente. Siamo noi a dover scegliere consapevolmente cosa consumare, la piattaforma non lo farà mai al posto nostro.</p>
                         </div>
                     </div>
+                </div>
 
-                    <form class="comment-form">
-                        <h4>Lascia un commento</h4>
-                        <div class="form-row">
-                            <input type="text" placeholder="Nome" required>
-                            <input type="email" placeholder="Email" required>
-                        </div>
-                        <textarea placeholder="Commento" rows="4" required></textarea>
-                        <button type="submit" class="submit-button">Invia commento</button>
-                    </form>
-                </section>
-            </article>
+                <form class="comment-form">
+                    <h4>Lascia un commento</h4>
+                    <div class="form-row">
+                        <input type="text" placeholder="Nome" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <textarea placeholder="Scrivi il tuo commento..." rows="4" required></textarea>
+                    <button type="submit" class="submit-button">Invia commento</button>
+                </form>
+            </section>
             
             <div style="text-align: center; margin-top: 48px;">
                 <a href="articoli.html" class="cta-button">Torna agli articoli</a>
@@ -90,12 +92,35 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
-            <p>Un blog per riflettere sul nostro rapporto con la tecnologia.</p>
-            <div class="footer-social">
-                <a href="#">Twitter</a>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Link utili</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articoli.html">Articoli</a></li>
+                        <li><a href="chisiamo.html">Chi siamo</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Seguici</h5>
+                    <div class="footer-social">
+                        <a href="#">Twitter</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Newsletter</h5>
+                    <p>Iscriviti alla nostra newsletter per le ultime novità!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Indirizzo email">
+                        <button type="submit">Iscriviti</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
