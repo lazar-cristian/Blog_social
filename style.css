@@ -106,7 +106,6 @@ header nav a.active {
     justify-content: center;
 }
 
-/* Background image con parallax transform - VISIBILE */
 .hero::before {
     content: '';
     position: absolute;
@@ -122,7 +121,6 @@ header nav a.active {
     transition: transform 0.1s ease-out;
 }
 
-/* Overlay gradient per contrasto ottimale */
 .hero::after {
     content: '';
     position: absolute;
@@ -182,7 +180,6 @@ header nav a.active {
     box-shadow: 0 6px 32px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Nascondi immagine hero inline */
 .hero-image {
     display: none;
 }
@@ -564,121 +561,116 @@ header nav a.active {
     background-color: #f5f5f7;
 }
 
-.contact-wrapper {
-    display: flex !important;
-    gap: 60px;
-    align-items: flex-start;
-    max-width: 1000px;
-    margin: 40px auto;
+.contact-page .page-title {
+    text-align: left;
 }
 
-.contact-info-sidebar {
-    flex: 1;
-}
-
-.contact-form-main {
-    flex: 2;
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-@media (max-width: 768px) {
-    .contact-wrapper {
-        flex-direction: column;
-    }
-}
-
-/* remove legacy layout selector by overriding if it appears */
-.contact-layout {
-    display: block !important;
-}
-
-
-.contact-purposes {
-    list-style: disc inside;
-    margin: 16px 0 0 0;
-    padding-left: 20px;
-    color: #1d1d1f;
+.contact-page .page-intro {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 40px;
     font-size: 17px;
 }
 
-.contact-purposes li {
-    margin-bottom: 8px;
+/* Layout a due colonne */
+.contact-wrapper {
+    display: flex;
+    gap: 56px;
+    align-items: flex-start;
 }
 
-.contact-info {
-    flex: 1;
-    min-width: 280px;
+/* COLONNA SINISTRA */
+.contact-left {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
 }
 
 .contact-method {
     display: flex;
+    align-items: flex-start;
     gap: 16px;
-    margin-bottom: 24px;
 }
 
 .contact-method .icon {
-    font-size: 24px;
-    line-height: 1;
-    color: #86868b;
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     background-color: #0071e3;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    font-size: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0, 113, 227, 0.25);
 }
 
-.contact-form {
-    max-width: 640px;
-    margin: 60px auto 0;
-    background-color: #fff;
-    padding: 56px;
-    border-radius: 28px;
+.contact-method div h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 4px;
+}
+
+.contact-method div p {
+    font-size: 14px;
+    color: #6e6e73;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Variante con testo lungo (modulo di contatto) */
+.contact-method--block {
+    align-items: flex-start;
+}
+
+/* COLONNA DESTRA: form */
+.contact-right {
+    flex: 1;
+    background: #fff;
+    border-radius: 20px;
     border: 1px solid #d2d2d7;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+    padding: 40px 44px;
 }
 
-.contact-form h4 {
-    font-size: 24px;
-    margin-bottom: 12px;
-    color: #1d1d1f;
-}
-
-.contact-form p {
-    font-size: 17px;
-    color: #6e6e73;
-    margin-bottom: 24px;
+.contact-form-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .form-group {
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 .form-group label {
     display: block;
-    font-size: 17px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 500;
     color: #1d1d1f;
-    margin-bottom: 8px;
-    letter-spacing: -0.022em;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 16px 18px;
-    font-size: 17px;
+    padding: 13px 16px;
+    font-size: 15px;
     border: 1px solid #d2d2d7;
-    border-radius: 12px;
+    border-radius: 10px;
     font-family: inherit;
     transition: all 0.3s ease;
     background-color: #fff;
     color: #1d1d1f;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a1a1aa;
 }
 
 .form-group input:focus,
@@ -690,12 +682,12 @@ header nav a.active {
 
 .form-group textarea {
     resize: vertical;
-    min-height: 140px;
+    min-height: 160px;
 }
 
 .submit-button {
     width: 100%;
-    padding: 16px;
+    padding: 15px;
     background: #0071e3;
     color: #fff;
     border: none;
@@ -705,11 +697,18 @@ header nav a.active {
     letter-spacing: -0.022em;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 4px;
 }
 
 .submit-button:hover {
     background: #0077ed;
     transform: scale(1.02);
+}
+
+/* Legacy selectors — kept for safety */
+.contact-form-main,
+.contact-info-sidebar {
+    display: none;
 }
 
 /* ==========================
@@ -750,32 +749,38 @@ footer p {
 /* ==========================
    COMMENTS SECTION
    ========================== */
-.comments-intro {
-    font-size: 18px;
-    color: #6e6e73;
-    margin-bottom: 24px;
-    max-width: 800px;
-}
-
 .comments-section {
-    margin-top: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
+    margin-top: 40px;    /* spazio tra articolo e commenti */
+    padding: 40px;
+    background-color: #fafafa;
+    border-radius: 20px;
+    border: 1px solid #d2d2d7;
 }
 
 .comments-section h3 {
     font-size: 24px;
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     color: #1d1d1f;
+}
+
+.comments-intro {
+    font-size: 15px;
+    color: #6e6e73;
+    margin-bottom: 32px;
+    line-height: 1.5;
 }
 
 .comment {
     display: flex;
     gap: 16px;
     margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.comment:last-of-type {
+    border-bottom: none;
 }
 
 .comment .avatar img {
@@ -786,15 +791,14 @@ footer p {
 }
 
 .comment .avatar-default {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background-color: #e5e7eb;
+    background-color: #e8f0fe;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    color: #9ca3af;
+    font-size: 22px;
     flex-shrink: 0;
 }
 
@@ -803,54 +807,57 @@ footer p {
 }
 
 .comment .comment-meta {
-    font-size: 14px;
+    font-size: 13px;
     color: #86868b;
     margin-bottom: 6px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .comment .comment-author {
     font-weight: 600;
     color: #1d1d1f;
-    margin-right: 8px;
+    font-size: 15px;
 }
 
 .comment .comment-text p {
-    font-size: 17px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.6;
     color: #1d1d1f;
 }
 
+/* Form commento */
 .comment-form {
-    margin-top: 40px;
-    padding: 32px;
-    background-color: #fafafa;
-    border-radius: 12px;
+    margin-top: 32px;
+    padding: 28px;
+    background-color: #fff;
+    border-radius: 14px;
     border: 1px solid #d2d2d7;
 }
 
 .comment-form h4 {
-    font-size: 24px;
-    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
     color: #1d1d1f;
 }
 
 .comment-form .form-row {
     display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 0;
+    gap: 16px;
+    margin-bottom: 16px;
 }
 
 .comment-form .form-row input {
-    width: 100%;
-    padding: 12px;
-    font-size: 17px;
+    flex: 1;
+    padding: 12px 14px;
+    font-size: 15px;
     border: 1px solid #d2d2d7;
     border-radius: 8px;
     font-family: inherit;
     background-color: #fff;
     color: #1d1d1f;
-    margin-bottom: 20px;
     transition: all 0.3s ease;
 }
 
@@ -862,12 +869,12 @@ footer p {
 
 .comment-form textarea {
     width: 100%;
-    padding: 12px;
-    font-size: 17px;
+    padding: 12px 14px;
+    font-size: 15px;
     border: 1px solid #d2d2d7;
     border-radius: 8px;
     resize: vertical;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-family: inherit;
     background-color: #fff;
     color: #1d1d1f;
@@ -886,16 +893,16 @@ footer p {
     background: #0071e3;
     color: #fff;
     border: none;
-    border-radius: 16px;
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: -0.022em;
+    border-radius: 980px;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .comment-form .submit-button:hover {
     background: #0062b8;
+    transform: scale(1.02);
 }
 
 /* ==========================
@@ -1035,9 +1042,30 @@ footer p {
     .about-text p {
         font-size: 17px;
     }
-    
-    .contact-form {
-        padding: 40px 28px;
+
+    /* Contatti responsive */
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .contact-left {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .contact-right {
+        width: 100%;
+        padding: 28px 24px;
+    }
+
+    .comment-form .form-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .comments-section {
+        padding: 24px;
     }
     
     .featured-article,
