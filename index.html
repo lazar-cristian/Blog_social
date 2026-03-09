@@ -22,7 +22,7 @@
         </div>
     </header>
 
-    <section class="hero" id="hero"> <!-- Sezione banner principale; id="hero" serve al JavaScript per applicare l'effetto parallax -->
+    <section class="hero" id="hero"> <!-- Sezione banner principale -->
         <div class="container"> <!-- Contenitore interno del hero: larghezza max 800px per tenere il testo centrato e leggibile -->
             <div class="hero-content"> <!-- Blocco che raggruppa titolo, descrizione e pulsante CTA al centro del banner -->
                 <h2>Scopri il confine tra mondo digitale e vita reale</h2> <!-- Titolo principale del blog: 64px, bianco, grassetto, con ombra per leggibilità -->
@@ -73,33 +73,6 @@
             </div>
         </div>
     </section>
-
-    <script> <!-- Blocco JavaScript inline: gestisce l'effetto parallax del banner hero durante lo scroll -->
-        let ticking = false; <!-- Flag booleano: evita che il parallax venga ricalcolato troppe volte per ogni pixel scrollato -->
-        function updateParallax() { <!-- Funzione eseguita ad ogni frame animazione: aggiorna posizione e scala dello sfondo -->
-            const hero = document.getElementById('hero'); <!-- Recupera l'elemento HTML con id="hero" dal DOM della pagina -->
-            const scrolled = window.pageYOffset; <!-- Legge quanti pixel sono stati scrollati verso il basso dall'inizio della pagina -->
-            const heroHeight = hero.offsetHeight; <!-- Misura l'altezza reale in pixel della sezione hero nel browser -->
-            if (scrolled < heroHeight) { <!-- Applica il parallax solo mentre la hero è ancora visibile nello schermo -->
-                const parallaxSpeed = 0.35; <!-- Velocità parallax: 0.35 significa che lo sfondo scorre al 35% della velocità del contenuto -->
-                let yPos = -(scrolled * parallaxSpeed); <!-- Calcola lo spostamento verticale negativo dello sfondo (va su mentre l'utente scrolla giù) -->
-                const maxOffset = heroHeight * 0.25; <!-- Limite massimo di spostamento: lo sfondo non si sposta oltre il 25% dell'altezza hero -->
-                if (yPos < -maxOffset) yPos = -maxOffset; <!-- Blocca lo spostamento se supera il limite massimo calcolato -->
-                hero.style.setProperty('--parallax-y', yPos + 'px'); <!-- Imposta la variabile CSS --parallax-y usata dal CSS nel transform di ::before -->
-                const maxScale = 1.15; <!-- Scala massima che l'immagine può raggiungere durante lo scroll (15% più grande) -->
-                const scale = Math.min(maxScale, 1 + (scrolled / heroHeight) * 0.15); <!-- Calcola la scala progressiva: cresce con lo scroll fino al massimo di 1.15 -->
-                hero.style.setProperty('--parallax-scale', scale); <!-- Imposta la variabile CSS --parallax-scale usata dal CSS nel transform di ::before -->
-            }
-            ticking = false; <!-- Resetta il flag dopo l'aggiornamento: permette al prossimo evento scroll di avviare un nuovo frame -->
-        }
-        function requestTick() { <!-- Funzione che richiede un frame di animazione al browser solo se non è già in attesa -->
-            if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; } <!-- requestAnimationFrame sincronizza l'aggiornamento con il refresh del monitor (60fps) -->
-        }
-        window.addEventListener('scroll', requestTick, { passive: true }); <!-- Ascolta l'evento scroll; passive:true migliora le prestazioni su mobile evitando blocchi -->
-        const style = document.createElement('style'); <!-- Crea dinamicamente un elemento <style> che verrà aggiunto al <head> -->
-        style.textContent = `.hero::before { transform: translateY(var(--parallax-y, 0)) scale(var(--parallax-scale, 1)); }`; <!-- Regola CSS che applica le variabili di posizione e scala all'immagine di sfondo dello pseudo-elemento -->
-        document.head.appendChild(style); <!-- Inserisce la regola CSS dinamica nell'intestazione della pagina perché abbia effetto -->
-    </script>
 
     <footer> <!-- Pie' di pagina: sfondo blu scuro #1f2937, presente identico in tutte le pagine del sito -->
         <div class="container"> <!-- Contenitore centrato per il contenuto del footer -->
