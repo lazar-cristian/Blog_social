@@ -27,9 +27,19 @@
 ## 1. Menu di Navigazione
 
 ### Requisito Funzionale
-Il menu rimane visibile in cima alla pagina durante lo scroll (posizione `sticky`). Contiene il logo cliccabile del blog e 4 voci di navigazione: **Home**, **Articoli**, **Chi siamo**, **Contatti**. La voce della pagina corrente viene evidenziata tramite la classe `active`.
+
+Il sito deve contenere un **menu di navigazione principale** posizionato nella parte superiore della pagina e visibile in tutte le pagine del blog. Il menu deve permettere all'utente di spostarsi facilmente tra le sezioni del sito.
+
+Il menu deve contenere le seguenti voci:
+- **Home**
+- **Articoli**
+- **Chi siamo**
+- **Contatti**
+
+Ogni voce deve essere cliccabile e portare alla rispettiva pagina. La voce attiva (pagina corrente) deve essere evidenziata tramite la classe `active`. Il menu deve rimanere visibile durante lo scroll della pagina (`position: sticky`).
 
 ### Codice HTML
+
 ```html
 <header>
     <div class="container">
@@ -47,77 +57,34 @@ Il menu rimane visibile in cima alla pagina durante lo scroll (posizione `sticky
 ```
 
 ### Requisito Grafico
-- Sfondo bianco semi-trasparente con effetto **glass morphism** (`backdrop-filter: blur(20px)`)
-- Altezza fissa: **48px**
-- Logo: `28px`, grassetto, colore `#1d1d1f`, si ingrandisce al 103% all'hover
-- Voci di menu: `12px`, `opacity: 0.8` a riposo, `opacity: 1` al hover/active
-- Bordo inferiore sottile: `1px solid rgba(0,0,0,0.1)`
-- `z-index: 1000` — si sovrappone a tutto durante lo scroll
 
-### Codice CSS
-```css
-header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
+Il menu deve avere uno stile **moderno**, coerente con la palette del blog.
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 48px;
-    max-width: 100%;
-    padding: 0 32px;
-}
-
-header .logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #1d1d1f;
-    letter-spacing: -0.02em;
-    transition: transform 0.3s ease;
-}
-
-header .logo:hover { transform: scale(1.03); }
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 32px;
-}
-
-header nav a {
-    font-size: 12px;
-    color: #1d1d1f;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-header nav a:hover,
-header nav a.active { opacity: 1; }
-```
-
-### Immagine Esemplificativa
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  Tra Rete e Realtà          Home  Articoli  Chi siamo  Contatti │
-└─────────────────────────────────────────────────────────────────┘
-  [logo 28px grassetto]        [voci 12px, gap 32px tra ognuna]
-```
+**Caratteristiche grafiche:**
+- **Sfondo:** Bianco semi-trasparente con effetto vetro (`backdrop-filter: blur(20px)`)
+- **Altezza fissa:** 48px con contenuto centrato verticalmente
+- **Logo:** 28px, grassetto, colore `#1d1d1f`, si ingrandisce leggermente al hover (`scale(1.03)`)
+- **Voci di menu:** 12px, `opacity: 0.8` a riposo, `opacity: 1` al hover e sulla voce attiva
+- **Bordo inferiore:** sottile linea `1px solid rgba(0,0,0,0.1)`
+- **Comportamento:** `position: sticky`, rimane visibile sopra a tutto (`z-index: 1000`)
 
 ---
 
 ## 2. Hero Banner Homepage
 
 ### Requisito Funzionale
-Sezione banner grande con immagine di sfondo fotografica e testo sovrapposto. Contiene un titolo principale, un testo descrittivo e un pulsante CTA (Call To Action) che porta alla pagina Articoli. Implementa un effetto **parallax** allo scroll tramite JavaScript.
+
+La homepage deve includere un **hero banner** di grande impatto visivo, posizionato subito sotto il menu. Deve presentare il blog all'utente con un titolo principale, un testo descrittivo e un pulsante di chiamata all'azione (CTA).
+
+Il banner deve contenere:
+- Titolo principale `h2` del blog
+- Sottotitolo descrittivo della missione del blog
+- Immagine di sfondo fotografica con overlay scuro
+- Pulsante CTA "Esplora gli articoli" che porta a `articoli.html`
+- Effetto parallax allo scroll tramite JavaScript
 
 ### Codice HTML
+
 ```html
 <section class="hero" id="hero">
     <div class="container">
@@ -132,105 +99,44 @@ Sezione banner grande con immagine di sfondo fotografica e testo sovrapposto. Co
 ```
 
 ### Requisito Grafico
-- Altezza minima: **650px**, padding verticale `120px`
-- Immagine di sfondo da Unsplash con overlay gradiente scuro (`rgba(15,23,42,0.75)`)
-- Vignettatura radiale ai bordi tramite `::after`
-- Titolo `h2`: `64px`, bianco, grassetto, `text-shadow` doppia per leggibilità
-- Testo descrittivo: `28px`, bianco al 98%
-- Pulsante CTA: sfondo bianco, testo blu `#1e40af`, forma a pillola (`border-radius: 980px`), si solleva all'hover con `translateY(-2px) scale(1.05)`
 
-### Codice CSS
-```css
-.hero {
-    min-height: 650px;
-    padding: 120px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+Il hero banner deve essere visivamente **impattante** e trasmettere il tema del blog al primo sguardo.
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -40%; left: -10%; right: -10%; bottom: -40%;
-    background:
-        linear-gradient(135deg, rgba(15,23,42,0.75) 0%, rgba(30,41,59,0.65) 50%, rgba(15,23,42,0.75) 100%),
-        url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1600&q=80') center/cover no-repeat;
-    z-index: -2;
-    will-change: transform;
-}
-
-.hero-content h2 {
-    font-size: 64px;
-    font-weight: 700;
-    color: #ffffff;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 28px;
-    color: rgba(255,255,255,0.98);
-    margin-bottom: 32px;
-}
-
-.cta-button {
-    display: inline-block;
-    background: rgba(255,255,255,0.98);
-    color: #1e40af;
-    padding: 14px 28px;
-    border-radius: 980px;
-    font-size: 17px;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-}
-
-.cta-button:hover {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 6px 32px rgba(0,0,0,0.3);
-}
-```
-
-### Immagine Esemplificativa
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│         [Foto sfondo scurita con overlay gradiente]            │
-│                                                                 │
-│      Scopri il confine tra mondo digitale e vita reale         │
-│            [titolo 64px bianco con text-shadow]                │
-│                                                                 │
-│    Un blog dedicato alla consapevolezza nell'uso dei social    │
-│                    [testo 28px bianco]                          │
-│                                                                 │
-│                  [ Esplora gli articoli ]                       │
-│               [pulsante pillola bianco/blu]                    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Caratteristiche grafiche:**
+- **Altezza minima:** 650px con padding verticale 120px
+- **Sfondo:** Fotografia da Unsplash con overlay gradiente diagonale scuro `rgba(15,23,42,0.75)`
+- **Titolo `h2`:** 64px, bianco puro, `font-weight: 700`, doppio `text-shadow` per leggibilità
+- **Sottotitolo `p`:** 28px, bianco al 98%
+- **Pulsante CTA:** forma a pillola (`border-radius: 980px`), sfondo bianco, testo blu `#1e40af`
+- **Hover pulsante:** si solleva con `translateY(-2px) scale(1.05)` e ombra più intensa
 
 ---
 
 ## 3. Articolo in Evidenza
 
 ### Requisito Funzionale
-Sezione della homepage che mostra l'articolo principale del blog in una card grande e cliccabile. Tutta la card è un link che porta all'articolo completo. All'hover la card si solleva e l'immagine fa un leggero zoom.
+
+La homepage deve includere una sezione dedicata all'**articolo principale del blog**, visualizzato in una card grande e cliccabile. Tutta la card è un link che porta all'articolo completo. All'hover la card si solleva e l'immagine fa un leggero zoom.
+
+La card deve contenere:
+- Immagine di copertina a tutta larghezza
+- Titolo dell'articolo
+- Estratto del contenuto
+- Link "Leggi l'articolo" con freccia animata
 
 ### Codice HTML
+
 ```html
 <section class="featured-article">
     <div class="container">
         <h3 class="section-title">In evidenza</h3>
         <a href="articolo-paradosso.html" class="main-article">
-            <img src="[url-immagine]" alt="Immagine articolo in evidenza sui social media">
+            <img src="[url-immagine]" alt="Il paradosso della connessione sui social media">
             <div class="article-content">
                 <h4>Il paradosso della connessione: più social, meno sociali?</h4>
                 <p>Esploriamo come i social media abbiano trasformato le nostre relazioni,
-                   creando una rete globale di connessioni virtuali...</p>
+                   creando una rete globale di connessioni virtuali ma spesso impoverendone
+                   la profondità nella vita reale.</p>
                 <span class="read-more">Leggi l'articolo</span>
             </div>
         </a>
@@ -239,98 +145,40 @@ Sezione della homepage che mostra l'articolo principale del blog in una card gra
 ```
 
 ### Requisito Grafico
-- Sfondo sezione: **bianco** `#fff`, padding `100px 0`
-- Titolo sezione: `32px`, centrato, `margin-bottom: 60px`
-- Card: `border-radius: 28px`, bordo `1px solid #d2d2d7`, `box-shadow: 0 6px 30px rgba(0,0,0,0.08)`
-- Immagine copertina: altezza **420px**, `object-fit: cover`
-- All'hover: bordo diventa blu `#0071e3`, ombra più intensa, `translateY(-8px)`, zoom immagine `scale(1.03)`
-- Titolo `h4`: `40px`, semi-grassetto, centrato
-- Estratto `p`: `21px`, grigio `#6e6e73`, centrato
-- Link "Leggi l'articolo": blu `#0071e3`, con freccia `›` animata che si sposta a destra all'hover
 
-### Codice CSS
-```css
-.main-article {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 28px;
-    overflow: hidden;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
+La card in evidenza deve essere il **punto focale** della homepage, grande e ben visibile.
 
-.main-article:hover {
-    border-color: #0071e3;
-    box-shadow: 0 12px 48px rgba(0,0,0,0.12);
-    transform: translateY(-8px);
-}
-
-.main-article img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.main-article:hover img { transform: scale(1.03); }
-
-.main-article .article-content {
-    padding: 50px 56px 56px;
-    text-align: center;
-}
-
-.main-article h4 { font-size: 40px; font-weight: 600; color: #1d1d1f; }
-.main-article p  { font-size: 21px; color: #6e6e73; margin-bottom: 28px; }
-
-.read-more {
-    color: #0071e3;
-    font-size: 17px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.read-more::after { content: '›'; font-size: 24px; transition: transform 0.3s ease; }
-.read-more:hover::after { transform: translateX(4px); }
-```
-
-### Immagine Esemplificativa
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│           [Immagine copertina — altezza 420px]                 │
-│                                                                 │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│       Il paradosso della connessione: più social,              │
-│                    meno sociali?                               │
-│              [titolo 40px, centrato]                           │
-│                                                                 │
-│    Esploriamo come i social media abbiano trasformato...       │
-│              [estratto 21px grigio, centrato]                  │
-│                                                                 │
-│                  Leggi l'articolo ›                            │
-│                  [link blu animato]                            │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-   [hover: bordo blu, elevazione -8px, zoom immagine 1.03]
-```
+**Caratteristiche grafiche:**
+- **Sfondo sezione:** Bianco `#fff`, padding `100px 0`
+- **Card:** `border-radius: 28px`, bordo `1px solid #d2d2d7`, ombra `0 6px 30px rgba(0,0,0,0.08)`
+- **Immagine copertina:** altezza 420px, `object-fit: cover`
+- **Titolo `h4`:** 40px, `font-weight: 600`, centrato, colore `#1d1d1f`
+- **Estratto `p`:** 21px, grigio `#6e6e73`, centrato
+- **Hover card:** bordo diventa blu `#0071e3`, `translateY(-8px)`, zoom immagine `scale(1.03)`
+- **Link "Leggi l'articolo":** blu `#0071e3`, freccia `›` che si sposta a destra al hover
 
 ---
 
 ## 4. Griglia Altri Articoli
 
 ### Requisito Funzionale
-Sezione della homepage con una griglia a 2 colonne che mostra le anteprime degli altri articoli del blog. Ogni card è completamente cliccabile e porta all'articolo corrispondente.
+
+La homepage deve mostrare gli altri articoli del blog in una **griglia a 2 colonne**, ciascuno visualizzato come card cliccabile. Ogni card porta all'articolo completo.
+
+Ogni card deve mostrare:
+- Immagine di copertina
+- Titolo dell'articolo
+- Estratto del contenuto
+- Link "Leggi l'articolo"
 
 ### Codice HTML
+
 ```html
 <section class="other-articles">
     <div class="container">
         <h3 class="section-title">Altri articoli</h3>
         <div class="articles-grid">
+
             <div class="article-card">
                 <a href="articolo-algoritmi.html">
                     <img src="[url-immagine]" alt="Algoritmi e codice su schermo">
@@ -342,9 +190,10 @@ Sezione della homepage con una griglia a 2 colonne che mostra le anteprime degli
                     </div>
                 </a>
             </div>
+
             <div class="article-card">
                 <a href="articolo-detox.html">
-                    <img src="[url-immagine]" alt="Segnale di divieto smartphone in un bosco">
+                    <img src="[url-immagine]" alt="Digital detox - segnale no smartphone">
                     <div class="card-content">
                         <h4>Digital detox: riconnettersi con sé stessi</h4>
                         <p>Consigli pratici per prendersi una pausa dalla tecnologia
@@ -353,305 +202,160 @@ Sezione della homepage con una griglia a 2 colonne che mostra le anteprime degli
                     </div>
                 </a>
             </div>
+
         </div>
     </div>
 </section>
 ```
 
 ### Requisito Grafico
-- Sfondo sezione: grigio chiarissimo `#f5f5f7`, padding `100px 0` — alternanza visiva con la sezione bianca
-- Griglia: `display: grid`, `grid-template-columns: repeat(2, 1fr)`, `gap: 24px`
-- Card: `border-radius: 28px`, stesso stile ombra della card in evidenza
-- Immagine copertina: altezza **280px**, `object-fit: cover`
-- Titolo `h4`: `28px`, semi-grassetto
-- Descrizione `p`: `17px`, grigio `#6e6e73`
-- All'hover: identico alla card in evidenza (bordo blu, elevazione, zoom immagine)
 
-### Codice CSS
-```css
-.other-articles { background-color: #f5f5f7; padding: 100px 0; }
+Le card della griglia devono essere **coerenti** con la card in evidenza ma più compatte.
 
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.article-card {
-    background-color: #fff;
-    border-radius: 28px;
-    overflow: hidden;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.article-card:hover {
-    border-color: #0071e3;
-    box-shadow: 0 12px 48px rgba(0,0,0,0.12);
-    transform: translateY(-8px);
-}
-
-.article-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.article-card:hover img { transform: scale(1.03); }
-
-.article-card .card-content { padding: 40px 40px 48px; text-align: center; }
-.article-card h4 { font-size: 28px; font-weight: 600; color: #1d1d1f; }
-.article-card p  { font-size: 17px; color: #6e6e73; margin-bottom: 20px; }
-```
-
-### Immagine Esemplificativa
-```
-┌───────────────────────────┐  ┌───────────────────────────┐
-│                           │  │                           │
-│  [Immagine — 280px]       │  │  [Immagine — 280px]       │
-│                           │  │                           │
-├───────────────────────────┤  ├───────────────────────────┤
-│  Gli algoritmi che        │  │  Digital detox:           │
-│  modellano la nostra      │  │  riconnettersi con        │
-│  realtà                   │  │  sé stessi                │
-│  [28px semi-grassetto]    │  │  [28px semi-grassetto]    │
-│                           │  │                           │
-│  Un'analisi su come...    │  │  Consigli pratici per...  │
-│  [17px grigio]            │  │  [17px grigio]            │
-│                           │  │                           │
-│  Leggi l'articolo ›       │  │  Leggi l'articolo ›       │
-└───────────────────────────┘  └───────────────────────────┘
-       [gap: 24px tra le due card — sfondo #f5f5f7]
-```
+**Caratteristiche grafiche:**
+- **Sfondo sezione:** Grigio chiarissimo `#f5f5f7`, padding `100px 0` — alternanza visiva con la sezione bianca
+- **Griglia:** `display: grid`, `grid-template-columns: repeat(2, 1fr)`, `gap: 24px`
+- **Immagine copertina:** altezza 280px, `object-fit: cover`
+- **Titolo `h4`:** 28px, `font-weight: 600`, centrato
+- **Estratto `p`:** 17px, grigio `#6e6e73`, centrato
+- **Hover:** identico alla card in evidenza (bordo blu, elevazione, zoom immagine)
 
 ---
 
 ## 5. Pagina Articoli — Lista Anteprime
 
 ### Requisito Funzionale
-La pagina `articoli.html` mostra tutti gli articoli del blog in formato lista verticale. Ogni card anteprima ha immagine, data, titolo, estratto e link all'articolo completo. Un titolo e un sottotitolo introducono la pagina.
+
+La pagina `articoli.html` deve mostrare **tutti gli articoli del blog** in una lista verticale di card. Ogni card è cliccabile e porta all'articolo completo. Un titolo e un sottotitolo introducono la pagina.
+
+Ogni card deve contenere:
+- Immagine di copertina
+- Data di pubblicazione
+- Titolo dell'articolo
+- Estratto del contenuto
 
 ### Codice HTML
+
 ```html
 <main class="articles-page">
     <div class="container">
         <h2 class="page-title">Articoli</h2>
-        <p class="page-intro">Esplora tutti gli articoli del blog...</p>
+        <p class="page-intro">Esplora tutti gli articoli del blog su social media e tecnologia.</p>
 
-        <div class="article-preview">
-            <a href="articolo-paradosso.html">
-                <img src="[url-immagine]" alt="...">
-                <div class="article-meta">
-                    <span class="date">15 Febbraio 2026</span>
-                </div>
-                <h3>Il paradosso della connessione: più social, meno sociali?</h3>
-                <p>Esploriamo come i social media abbiano trasformato le nostre relazioni...</p>
-            </a>
-        </div>
+        <a href="articolo-paradosso.html" class="article-preview">
+            <img src="[url-immagine]" alt="Il paradosso della connessione">
+            <div class="article-meta">
+                <span class="date">15 Febbraio 2026</span>
+            </div>
+            <h3>Il paradosso della connessione: più social, meno sociali?</h3>
+            <p>Esploriamo come i social media abbiano trasformato le nostre relazioni,
+               creando una rete globale di connessioni virtuali ma spesso impoverendone
+               la profondità nella vita reale.</p>
+        </a>
+
         <!-- altre card .article-preview -->
     </div>
 </main>
 ```
 
 ### Requisito Grafico
-- Titolo pagina: `56px`, centrato, colore `#1d1d1f`
-- Sottotitolo: `21px`, grigio `#6e6e73`, centrato, `max-width: 640px`
-- Card anteprima: `border-radius: 28px`, immagine altezza **360px**
-- Data: `14px`, grigio chiaro `#86868b`, centrata
-- Titolo articolo: `32px`, semi-grassetto
-- Estratto: `19px`, grigio `#6e6e73`
-- Hover: bordo blu, `translateY(-8px)`, zoom immagine `scale(1.03)`
 
-### Codice CSS
-```css
-.articles-page { padding: 80px 0; background-color: #fff; }
+Le card devono essere chiare, ordinate e invitare alla lettura.
 
-.page-title {
-    font-size: 56px;
-    font-weight: 600;
-    color: #1d1d1f;
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-.page-intro {
-    font-size: 21px;
-    color: #6e6e73;
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto 80px;
-}
-
-.article-preview {
-    border-radius: 28px;
-    overflow: hidden;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
-    margin-bottom: 32px;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.article-preview:hover {
-    border-color: #0071e3;
-    transform: translateY(-8px);
-}
-
-.article-preview img { width: 100%; height: 360px; object-fit: cover; }
-.article-preview .article-meta { padding: 32px 48px 0; color: #86868b; font-size: 14px; text-align: center; }
-.article-preview h3 { font-size: 32px; font-weight: 600; text-align: center; padding: 12px 48px; }
-.article-preview p  { font-size: 19px; color: #6e6e73; padding: 0 48px 48px; text-align: center; }
-```
-
-### Immagine Esemplificativa
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│              [Immagine copertina — altezza 360px]              │
-│                                                                 │
-├─────────────────────────────────────────────────────────────────┤
-│                    15 Febbraio 2026                            │
-│                    [data 14px grigio]                          │
-│                                                                 │
-│        Il paradosso della connessione: più social,             │
-│                     meno sociali?                              │
-│                  [titolo 32px centrato]                        │
-│                                                                 │
-│     Esploriamo come i social media abbiano trasformato...      │
-│              [estratto 19px grigio centrato]                   │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Caratteristiche grafiche:**
+- **Titolo pagina `h2`:** 56px, centrato, colore `#1d1d1f`
+- **Sottotitolo:** 21px, grigio `#6e6e73`, centrato, `max-width: 640px`
+- **Card anteprima:** `border-radius: 28px`, immagine altezza 360px
+- **Data:** 14px, grigio chiaro `#86868b`, centrata
+- **Titolo articolo `h3`:** 32px, `font-weight: 600`, centrato
+- **Estratto `p`:** 19px, grigio `#6e6e73`, centrato
+- **Hover:** bordo blu `#0071e3`, `translateY(-8px)`, zoom immagine
 
 ---
 
 ## 6. Articolo Singolo Completo
 
 ### Requisito Funzionale
-Ogni articolo ha una pagina dedicata (`articolo-*.html`) con: freccia di ritorno alla lista, immagine di copertina grande, data di pubblicazione, titolo e corpo dell'articolo suddiviso in paragrafi. In fondo alla pagina c'è un pulsante "Torna agli articoli".
+
+Ogni articolo deve avere una **pagina dedicata** con il contenuto completo. In cima alla pagina deve esserci un link "← Torna agli Articoli". In fondo alla pagina un pulsante di ritorno e la sezione commenti.
+
+La pagina deve contenere:
+- Link "← Torna agli Articoli" nella parte alta
+- Immagine di copertina a larghezza piena
+- Data di pubblicazione
+- Titolo `h3` centrato
+- Corpo dell'articolo con almeno 5 paragrafi
+- Sezione commenti (Requisito 7)
+- Pulsante "Torna agli articoli" in fondo
 
 ### Codice HTML
+
 ```html
 <main class="articles-page">
     <div class="container">
+
         <a href="articoli.html" class="article-back-link">← Torna agli Articoli</a>
 
         <article class="full-article">
-            <img src="[url-immagine]" alt="...">
+            <img src="[url-immagine]" alt="Il paradosso della connessione">
             <div class="article-meta">
                 <span class="date">15 Febbraio 2026</span>
             </div>
             <h3>Il paradosso della connessione: più social, meno sociali?</h3>
             <div class="article-body">
-                <p>Viviamo nell'era della connessione perpetua...</p>
-                <p>Il paradosso della connessione digitale risiede proprio...</p>
+                <p>Viviamo nell'era della connessione perpetua. I nostri smartphone
+                   ci tengono legati a centinaia, a volte migliaia di persone attraverso
+                   piattaforme come Instagram, Facebook, TikTok e Twitter.</p>
+                <p>Il paradosso della connessione digitale risiede proprio in questa
+                   contraddizione: mentre i social media ci promettono di avvicinarci
+                   agli altri, spesso finiscono per allontanarci dalle persone
+                   fisicamente presenti nella nostra vita.</p>
                 <!-- altri paragrafi -->
             </div>
         </article>
 
-        <!-- Sezione commenti (vedi Requisito 7) -->
+        <!-- Sezione commenti -->
 
         <div style="text-align: center; margin-top: 48px;">
             <a href="articoli.html" class="cta-button">Torna agli articoli</a>
         </div>
+
     </div>
 </main>
 ```
 
 ### Requisito Grafico
-- Link di ritorno: `15px`, blu `#0071e3`, sottolineatura all'hover
-- Card articolo: `border-radius: 28px`, `margin-bottom: 48px`
-- Immagine copertina: altezza **480px**, `object-fit: cover`
-- Data: `14px`, grigio chiaro `#86868b`, centrata
-- Titolo `h3`: `48px`, semi-grassetto, centrato, `padding: 16px 56px`
-- Corpo articolo `p`: `21px`, `line-height: 1.5`, `margin-bottom: 28px`, `padding: 32px 56px 56px`
-- Pulsante di ritorno: riusa lo stile `.cta-button` della hero
 
-### Codice CSS
-```css
-.article-back-link {
-    display: inline-block;
-    margin-bottom: 24px;
-    font-size: 15px;
-    color: #0071e3;
-}
+La pagina articolo deve essere **leggibile e confortevole**, con ampi margini laterali.
 
-.article-back-link:hover { text-decoration: underline; }
-
-.full-article {
-    border-radius: 28px;
-    overflow: hidden;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
-    margin-bottom: 48px;
-}
-
-.full-article img { width: 100%; height: 480px; object-fit: cover; }
-
-.full-article .article-meta {
-    padding: 32px 56px 0;
-    color: #86868b;
-    font-size: 14px;
-    text-align: center;
-}
-
-.full-article h3 {
-    font-size: 48px;
-    font-weight: 600;
-    color: #1d1d1f;
-    padding: 16px 56px;
-    text-align: center;
-}
-
-.full-article .article-body { padding: 32px 56px 56px; }
-
-.full-article .article-body p {
-    font-size: 21px;
-    line-height: 1.5;
-    color: #1d1d1f;
-    margin-bottom: 28px;
-    letter-spacing: 0.011em;
-}
-```
-
-### Immagine Esemplificativa
-```
-← Torna agli Articoli
-
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│              [Immagine copertina — altezza 480px]              │
-│                                                                 │
-├─────────────────────────────────────────────────────────────────┤
-│                    15 Febbraio 2026                            │
-│                                                                 │
-│        Il paradosso della connessione: più social,             │
-│                     meno sociali?                              │
-│                  [titolo 48px centrato]                        │
-│                                                                 │
-│  Viviamo nell'era della connessione perpetua. I nostri         │
-│  smartphone ci tengono legati a centinaia...                   │
-│  [corpo 21px, line-height 1.5, padding 56px laterale]         │
-│                                                                 │
-│  Il paradosso della connessione digitale risiede proprio...    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-
-              [ Torna agli articoli ]   ← pulsante pillola
-```
+**Caratteristiche grafiche:**
+- **Link di ritorno:** 15px, blu `#0071e3`, sottolineatura al hover
+- **Immagine copertina:** altezza 480px, `object-fit: cover`, a tutta larghezza della card
+- **Data:** 14px, grigio `#86868b`, centrata, `padding: 32px 56px 0`
+- **Titolo `h3`:** 48px, `font-weight: 600`, centrato, `padding: 16px 56px`
+- **Corpo testo `p`:** 21px, `line-height: 1.5`, colore `#1d1d1f`, `padding: 32px 56px 56px`
+- **Pulsante finale:** riusa lo stile `.cta-button` della hero (pillola bianca/blu)
 
 ---
 
 ## 7. Sezione Commenti
 
 ### Requisito Funzionale
-Ogni articolo singolo ha una sezione commenti subito sotto la card dell'articolo. Mostra i commenti esistenti (con avatar emoji e nome autore) e un form per lasciare un nuovo commento con campi Nome, Email, testo e pulsante di invio.
+
+Sotto ogni articolo deve essere presente una **sezione commenti** che mostra i commenti degli utenti e permette di aggiungerne di nuovi tramite un form.
+
+La sezione deve contenere:
+- Titolo "Commenti" e testo introduttivo
+- Commenti esistenti con avatar emoji, nome autore, data e testo
+- Form per nuovo commento con campi: Nome, Email (affiancati), testo messaggio
+- Pulsante "Invia commento"
 
 ### Codice HTML
+
 ```html
 <section class="comments-section">
     <h3>Commenti</h3>
-    <p class="comments-intro">Condividi il tuo punto di vista su connessione digitale e relazioni reali.</p>
+    <p class="comments-intro">Condividi il tuo punto di vista sull'argomento.</p>
 
     <div class="comment">
         <div class="avatar">
@@ -682,103 +386,42 @@ Ogni articolo singolo ha una sezione commenti subito sotto la card dell'articolo
 ```
 
 ### Requisito Grafico
-- Sfondo sezione: `#fafafa`, `border-radius: 20px`, `padding: 40px`
-- Titolo "Commenti": `24px`, semi-grassetto
-- Ogni commento: `display: flex`, `gap: 16px`, separatore `border-bottom: 1px solid #e5e7eb`
-- Avatar emoji: cerchio **48px**, sfondo azzurro `#e8f0fe`, emoji `22px`
-- Nome autore: `15px`, semi-grassetto, colore scuro
-- Data commento: `13px`, grigio `#86868b`
-- Testo commento: `16px`, `line-height: 1.6`
-- Form commento: card bianca interna, `border-radius: 14px`, `padding: 28px`
-- Riga Nome/Email: `display: flex`, `gap: 16px` (su mobile si impilano in colonna)
-- Pulsante "Invia commento": forma a pillola, sfondo blu `#0071e3`
 
-### Codice CSS
-```css
-.comments-section {
-    margin-top: 40px;
-    padding: 40px;
-    background-color: #fafafa;
-    border-radius: 20px;
-    border: 1px solid #d2d2d7;
-}
+La sezione commenti deve essere **visivamente separata** dal corpo dell'articolo.
 
-.comment {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 32px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.avatar-default {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background-color: #e8f0fe;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-}
-
-.comment-author { font-weight: 600; font-size: 15px; color: #1d1d1f; }
-.comment-date   { font-size: 13px; color: #86868b; }
-.comment-text p { font-size: 16px; line-height: 1.6; color: #1d1d1f; }
-
-.comment-form {
-    margin-top: 32px;
-    padding: 28px;
-    background-color: #fff;
-    border-radius: 14px;
-    border: 1px solid #d2d2d7;
-}
-
-.comment-form .form-row { display: flex; gap: 16px; margin-bottom: 16px; }
-.comment-form .form-row input { flex: 1; padding: 12px 14px; border: 1px solid #d2d2d7; border-radius: 8px; }
-.comment-form textarea { width: 100%; padding: 12px 14px; border: 1px solid #d2d2d7; border-radius: 8px; resize: vertical; margin-bottom: 16px; }
-
-.comment-form .submit-button {
-    width: 100%; padding: 12px;
-    background: #0071e3; color: #fff;
-    border: none; border-radius: 980px;
-    font-size: 15px; cursor: pointer;
-}
-```
-
-### Immagine Esemplificativa
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  Commenti                                                       │
-│  Condividi il tuo punto di vista...                            │
-│ ─────────────────────────────────────────────────────────────── │
-│  [💬]  Giorgio           20 febbraio 2026                      │
-│        Questo articolo mi ha fatto riflettere su quante        │
-│        cene ho passato guardando lo schermo...                 │
-│ ─────────────────────────────────────────────────────────────── │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │  Lascia un commento                                     │   │
-│  │  [  Nome  ]  [  Email  ]                                │   │
-│  │  [  Scrivi il tuo commento...                       ]   │   │
-│  │  [  Scrivi il tuo commento...                       ]   │   │
-│  │            [ Invia commento ]                           │   │
-│  └─────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Caratteristiche grafiche:**
+- **Sfondo sezione:** `#fafafa`, `border-radius: 20px`, bordo grigio, `padding: 40px`
+- **Avatar emoji:** cerchio 48px, sfondo azzurro `#e8f0fe`, emoji 22px centrata
+- **Nome autore:** 15px, `font-weight: 600` | **Data:** 13px, grigio `#86868b`
+- **Testo commento:** 16px, `line-height: 1.6`
+- **Form nuovo commento:** card bianca interna, `border-radius: 14px`, `padding: 28px`
+- **Campi Nome/Email:** affiancati in riga con `display: flex; gap: 16px`
+- **Input focus:** bordo blu `#0071e3` + glow `rgba(0,113,227,0.1)`
+- **Pulsante:** pillola blu `#0071e3`, larghezza 100%, `hover: scale(1.02)`
 
 ---
 
 ## 8. Pagina Chi Siamo
 
 ### Requisito Funzionale
-La pagina `chisiamo.html` presenta il blog e il team con un'immagine circolare di profilo, un titolo di pagina, un sottotitolo e due sezioni di testo: "Il nostro progetto" e "La nostra missione".
+
+La pagina `chisiamo.html` deve presentare il blog e la sua missione. Deve includere un'immagine circolare, un titolo, un sottotitolo e due sezioni di testo descrittive.
+
+La pagina deve contenere:
+- Titolo `h2` "Chi siamo" centrato
+- Sottotitolo descrittivo centrato
+- Immagine circolare del team
+- Sezione "Il nostro progetto" con testo descrittivo
+- Sezione "La nostra missione" con testo descrittivo
 
 ### Codice HTML
+
 ```html
 <main class="about-page">
     <div class="container">
         <h2 class="page-title">Chi siamo</h2>
-        <p class="page-intro">Siamo un gruppo di studenti appassionati di tecnologia...</p>
+        <p class="page-intro">Siamo un gruppo di studenti appassionati
+           di tecnologia e comunicazione digitale.</p>
 
         <div class="about-content">
             <div class="about-image">
@@ -786,10 +429,16 @@ La pagina `chisiamo.html` presenta il blog e il team con un'immagine circolare d
             </div>
             <div class="about-text">
                 <h3>Il nostro progetto</h3>
-                <p>Tra Rete e Realtà è nato come progetto scolastico con l'obiettivo...</p>
+                <p>Tra Rete e Realtà è nato come progetto scolastico con l'obiettivo
+                   di analizzare l'impatto dei social media sulla società contemporanea.
+                   Vogliamo offrire spunti di riflessione su un tema che ci riguarda
+                   tutti ogni giorno.</p>
 
                 <h3>La nostra missione</h3>
-                <p>Crediamo che la tecnologia debba essere uno strumento di crescita...</p>
+                <p>Crediamo che la tecnologia debba essere uno strumento di crescita
+                   personale e collettiva. Per questo promuoviamo un uso consapevole
+                   e critico dei social media, senza demonizzarli ma imparando a
+                   conoscerli meglio.</p>
             </div>
         </div>
     </div>
@@ -797,82 +446,33 @@ La pagina `chisiamo.html` presenta il blog e il team con un'immagine circolare d
 ```
 
 ### Requisito Grafico
-- Sfondo pagina: bianco `#fff`, padding `80px 0`
-- Titolo `h2`: `56px`, centrato
-- Sottotitolo: `21px`, grigio, centrato, `max-width: 640px`
-- Layout contenuto: griglia colonna singola, `max-width: 800px`, centrata
-- Immagine profilo: **240×240px**, `border-radius: 50%` (cerchio), centrata
-- Titoli sezione `h3`: `32px`, semi-grassetto, `margin-top: 40px`
-- Testo: `21px`, `line-height: 1.5`, colore `#1d1d1f`
 
-### Codice CSS
-```css
-.about-page { padding: 80px 0; background-color: #fff; }
+La pagina deve essere **pulita e personale**, centrata sulla presentazione del team.
 
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-    max-width: 800px;
-    margin: 60px auto 0;
-}
-
-.about-image img {
-    width: 240px; height: 240px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 0 auto;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
-}
-
-.about-text h3 {
-    font-size: 32px;
-    font-weight: 600;
-    color: #1d1d1f;
-    margin-bottom: 16px;
-    margin-top: 40px;
-}
-
-.about-text h3:first-child { margin-top: 0; }
-
-.about-text p {
-    font-size: 21px;
-    line-height: 1.5;
-    color: #1d1d1f;
-    margin-bottom: 24px;
-}
-```
-
-### Immagine Esemplificativa
-```
-              Chi siamo
-   [titolo 56px centrato]
-
-   Siamo un gruppo di studenti appassionati di tecnologia...
-   [sottotitolo 21px grigio centrato]
-
-                  ( foto )
-               [cerchio 240px]
-
-   Il nostro progetto
-   [h3 32px]
-   Tra Rete e Realtà è nato come progetto scolastico...
-   [testo 21px, line-height 1.5]
-
-   La nostra missione
-   [h3 32px]
-   Crediamo che la tecnologia debba essere uno strumento...
-```
+**Caratteristiche grafiche:**
+- **Sfondo:** Bianco `#fff`, padding `80px 0`
+- **Titolo `h2`:** 56px, centrato, `font-weight: 600`
+- **Sottotitolo:** 21px, grigio `#6e6e73`, centrato, `max-width: 640px`
+- **Immagine:** cerchio 240×240px (`border-radius: 50%`), centrata, bordo grigio e ombra leggera
+- **Titoli sezione `h3`:** 32px, `font-weight: 600`, `margin-top: 40px` (eccetto il primo)
+- **Testo:** 21px, `line-height: 1.5`, colore `#1d1d1f`
 
 ---
 
 ## 9. Pagina Contatti
 
 ### Requisito Funzionale
-La pagina `contatti.html` ha un layout a 2 colonne: a sinistra le informazioni di contatto (email e telefono con icone circolari colorate), a destra una card bianca con un form di contatto con campi Nome, Cognome, Email, Messaggio e pulsante di invio.
+
+La pagina `contatti.html` deve permettere agli utenti di contattare il team. Deve avere un layout a **2 colonne**: a sinistra le informazioni di contatto, a destra un form.
+
+La pagina deve contenere:
+- Titolo `h2` e sottotitolo allineati a sinistra
+- Colonna sinistra: icone circolari con email e numero di telefono
+- Colonna destra: form con campi Nome, Cognome, Email, Messaggio
+- Pulsante "Invia messaggio" visibile e cliccabile
 
 ### Codice HTML
+
 ```html
 <main class="contact-page">
     <div class="container">
@@ -924,104 +524,39 @@ La pagina `contatti.html` ha un layout a 2 colonne: a sinistra le informazioni d
 ```
 
 ### Requisito Grafico
-- Sfondo pagina: grigio chiaro `#f5f5f7`
-- Titolo e sottotitolo: **allineati a sinistra** (override rispetto alle altre pagine)
-- Layout a 2 colonne: `display: flex`, `gap: 56px`
-- Colonna sinistra: larghezza fissa `320px` — icone circolari blu `#0071e3` da **46px**, con `box-shadow` colorata
-- Colonna destra: `flex: 1` — card bianca con `border-radius: 20px`, `padding: 40px 44px`
-- Campi del form: `border-radius: 10px`, focus con bordo blu e glow `rgba(0,113,227,0.1)`
-- Textarea: `min-height: 160px`, ridimensionabile solo in verticale
-- Pulsante: forma a pillola `border-radius: 980px`, sfondo blu `#0071e3`, larghezza 100%
 
-### Codice CSS
-```css
-.contact-page { padding: 80px 0; background-color: #f5f5f7; }
-.contact-page .page-title { text-align: left; }
-.contact-page .page-intro { text-align: left; margin-left: 0; font-size: 17px; }
+La pagina contatti deve avere un aspetto **professionale** con layout chiaro a due colonne.
 
-.contact-wrapper { display: flex; gap: 56px; align-items: flex-start; }
-
-.contact-left { flex: 0 0 320px; display: flex; flex-direction: column; gap: 28px; }
-
-.contact-method { display: flex; align-items: flex-start; gap: 16px; }
-
-.contact-method .icon {
-    width: 46px; height: 46px;
-    border-radius: 50%;
-    background-color: #0071e3;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 16px rgba(0,113,227,0.25);
-}
-
-.contact-right {
-    flex: 1;
-    background: #fff;
-    border-radius: 20px;
-    border: 1px solid #d2d2d7;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
-    padding: 40px 44px;
-}
-
-.form-group { margin-bottom: 18px; }
-.form-group label { display: block; font-size: 15px; font-weight: 500; margin-bottom: 6px; }
-.form-group input,
-.form-group textarea {
-    width: 100%; padding: 13px 16px;
-    font-size: 15px; border: 1px solid #d2d2d7;
-    border-radius: 10px; font-family: inherit;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #0071e3;
-    box-shadow: 0 0 0 4px rgba(0,113,227,0.1);
-}
-.form-group textarea { resize: vertical; min-height: 160px; }
-
-.submit-button {
-    width: 100%; padding: 15px;
-    background: #0071e3; color: #fff;
-    border: none; border-radius: 980px;
-    font-size: 17px; cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.submit-button:hover { background: #0077ed; transform: scale(1.02); }
-```
-
-### Immagine Esemplificativa
-```
-Contatti
-Hai domande o vuoi collaborare?
-
-┌────────────────────┐  ┌─────────────────────────────────────┐
-│ [📧] Email         │  │  Nome                               │
-│   traerete@...     │  │  [________________________]         │
-│                    │  │  Cognome                            │
-│ [📞] Telefono      │  │  [________________________]         │
-│   +39 011 000 0000 │  │  Email                              │
-│                    │  │  [________________________]         │
-│  [icone cerchi     │  │  Messaggio                          │
-│   46px blu]        │  │  [                         ]        │
-│                    │  │  [  min-height: 160px       ]       │
-│   [largh. 320px]   │  │         [ Invia messaggio ]         │
-└────────────────────┘  └─────────────────────────────────────┘
-     colonna sinistra             colonna destra (card bianca)
-```
+**Caratteristiche grafiche:**
+- **Sfondo:** Grigio chiaro `#f5f5f7` — titolo e sottotitolo allineati a sinistra
+- **Layout:** `display: flex`, `gap: 56px` — colonna sinistra larghezza fissa 320px
+- **Icone contatto:** cerchi 46px, sfondo blu `#0071e3`, `box-shadow` colorata
+- **Card form destra:** sfondo bianco, `border-radius: 20px`, `padding: 40px 44px`
+- **Input:** `border-radius: 10px`, `padding: 13px` — focus con bordo blu e glow
+- **Textarea:** `min-height: 160px`, ridimensionabile solo in verticale
+- **Pulsante:** pillola blu `#0071e3`, larghezza 100%, 17px
 
 ---
 
 ## 10. Footer
 
 ### Requisito Funzionale
-Il footer è presente identico in tutte le pagine del sito. È diviso in 3 colonne: **Link utili** (navigazione rapida), **Seguici** (link ai social), **Newsletter** (form di iscrizione con campo email e pulsante). In fondo c'è una riga con il copyright.
+
+Tutte le pagine devono avere un **footer identico** diviso in 3 colonne: Link Utili, Seguici e Newsletter. In fondo c'è la riga del copyright.
+
+Il footer deve contenere:
+- **Colonna 1:** link rapidi Home, Articoli, Chi Siamo, Contatti
+- **Colonna 2:** link ai social (Twitter, Facebook, Instagram)
+- **Colonna 3:** form newsletter con input email e pulsante "Iscriviti"
+- Riga copyright: © 2026 Tra Rete e Realtà
 
 ### Codice HTML
+
 ```html
 <footer>
     <div class="container">
         <div class="footer-grid">
+
             <div class="footer-col">
                 <h5>Link utili</h5>
                 <ul>
@@ -1031,6 +566,7 @@ Il footer è presente identico in tutte le pagine del sito. È diviso in 3 colon
                     <li><a href="contatti.html">Contatti</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h5>Seguici</h5>
                 <div class="footer-social">
@@ -1039,6 +575,7 @@ Il footer è presente identico in tutte le pagine del sito. È diviso in 3 colon
                     <a href="#">Instagram</a>
                 </div>
             </div>
+
             <div class="footer-col">
                 <h5>Newsletter</h5>
                 <p>Iscriviti alla nostra newsletter per le ultime novità!</p>
@@ -1047,6 +584,7 @@ Il footer è presente identico in tutte le pagine del sito. È diviso in 3 colon
                     <button type="submit">Iscriviti</button>
                 </form>
             </div>
+
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Tra Rete e Realtà. Tutti i diritti riservati.</p>
@@ -1056,128 +594,82 @@ Il footer è presente identico in tutte le pagine del sito. È diviso in 3 colon
 ```
 
 ### Requisito Grafico
-- Sfondo: blu scuro/grafite `#1f2937`, `padding-top: 56px`
-- Griglia 3 colonne: `grid-template-columns: 1fr 1fr 1.6fr`, `gap: 48px`
-- Intestazioni `h5`: `11px`, tutto maiuscolo, `letter-spacing: 0.1em`, `opacity: 0.7`
-- Link: bianco al 75% `rgba(255,255,255,0.75)`, diventano bianchi pieni all'hover
-- Form newsletter: input e pulsante affiancati in riga, sfondo input glass `rgba(255,255,255,0.08)`
-- Riga copyright: separatore bianco, testo `12px`, bianco al 40%
-- Su mobile (≤768px): le 3 colonne si impilano in una sola colonna, form newsletter in colonna verticale
 
-### Codice CSS
-```css
-footer {
-    background-color: #1f2937;
-    color: #ffffff;
-    padding: 56px 0 0;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
+Il footer deve avere un aspetto **scuro e professionale**, in contrasto con il resto del sito.
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.6fr;
-    gap: 48px;
-    padding-bottom: 48px;
-}
-
-.footer-col h5 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.7;
-    margin-bottom: 20px;
-}
-
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul li a,
-.footer-social a { color: rgba(255,255,255,0.75); font-size: 14px; }
-.footer-col ul li a:hover,
-.footer-social a:hover { color: #ffffff; }
-
-.newsletter-form { display: flex; gap: 8px; }
-.newsletter-form input[type="email"] {
-    flex: 1; padding: 10px 14px; font-size: 14px;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 8px;
-    background: rgba(255,255,255,0.08);
-    color: #ffffff;
-}
-.newsletter-form button {
-    padding: 10px 18px;
-    background: #0071e3; color: #fff;
-    border: none; border-radius: 8px;
-    font-size: 14px; cursor: pointer;
-}
-
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 0; text-align: center; }
-.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.4); }
-```
-
-### Immagine Esemplificativa
-```
-┌─────────────────────────────────────────────────────────────────┐  ← sfondo #1f2937
-│                                                                 │
-│  LINK UTILI          SEGUICI         NEWSLETTER                 │
-│  Home                Twitter         Iscriviti alla nostra      │
-│  Articoli            Facebook        newsletter!               │
-│  Chi siamo           Instagram       [ email... ] [Iscriviti]  │
-│  Contatti                                                       │
-│                                                                 │
-│ ─────────────────────────────────────────────────────────────── │
-│           © 2026 Tra Rete e Realtà. Tutti i diritti riservati. │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Caratteristiche grafiche:**
+- **Sfondo:** Blu scuro/grafite `#1f2937`, testo bianco, `padding-top: 56px`
+- **Griglia 3 colonne:** `grid-template-columns: 1fr 1fr 1.6fr`, `gap: 48px`
+- **Intestazioni `h5`:** 11px, tutto maiuscolo, `letter-spacing: 0.1em`, `opacity: 0.7`
+- **Link:** bianco al 75% a riposo, bianco pieno al hover
+- **Form newsletter:** input con sfondo glass `rgba(255,255,255,0.08)` + pulsante blu `#0071e3` affiancati
+- **Riga copyright:** separatore bianco trasparente, testo 12px bianco al 40%
+- **Mobile:** le 3 colonne si impilano in una sola, form newsletter in colonna verticale
 
 ---
 
 ## 11. Responsive Mobile
 
 ### Requisito Funzionale
-Il sito si adatta automaticamente agli schermi con larghezza ≤768px tramite una media query. Tutti gli elementi ridimensionano font, padding e layout per garantire leggibilità e usabilità su smartphone.
 
-### Principali adattamenti mobile
+Il sito deve adattarsi automaticamente agli schermi con larghezza **≤768px** tramite una media query CSS. Tutti gli elementi devono ridimensionarsi per garantire leggibilità e usabilità su smartphone.
 
-| Elemento | Desktop | Mobile (≤768px) |
-|---|---|---|
-| Header altezza | 48px | 44px |
-| Logo font | 28px | 22px |
-| Nav gap | 32px | 16px |
-| Hero altezza min | 650px | 500px |
-| Titolo hero | 64px | 40px |
-| Testo hero | 28px | 21px |
-| Immagine in evidenza | 420px | 280px |
-| Titolo in evidenza | 40px | 28px |
-| Griglia articoli | 2 colonne | 1 colonna |
-| Immagine card piccola | 280px | 220px |
-| Titolo pagine | 56px | 40px |
-| Immagine articolo singolo | 480px | 280px |
-| Titolo articolo | 48px | 32px |
-| Immagine profilo chi siamo | 240px | 180px |
-| Layout contatti | 2 colonne affiancate | 1 colonna |
-| Form commento Nome/Email | affiancati | in colonna |
-| Footer griglia | 3 colonne | 1 colonna |
-| Form newsletter | riga | colonna |
+Adattamenti principali richiesti:
+- Menu: voci più piccole, logo ridotto
+- Hero: titolo e testo ridimensionati, altezza minima ridotta
+- Griglia articoli: da 2 colonne a **1 colonna**
+- Layout contatti: da 2 colonne affiancate a **1 colonna** sovrapposta
+- Form commenti: campi Nome/Email da riga a **colonna verticale**
+- Footer: 3 colonne diventano **1 colonna**
 
-### Codice CSS (estratto)
+### Codice CSS
+
 ```css
 @media (max-width: 768px) {
+
     header .logo { font-size: 22px; }
     header nav ul { gap: 16px; }
+    header nav a { font-size: 11px; }
 
     .hero { min-height: 500px; padding: 80px 0; }
     .hero-content h2 { font-size: 40px; }
+    .hero-content p  { font-size: 21px; }
+
+    .main-article img { height: 280px; }
+    .main-article h4  { font-size: 28px; }
 
     .articles-grid { grid-template-columns: 1fr; }
+    .article-card img { height: 220px; }
+
+    .page-title { font-size: 40px; }
+
+    .full-article img { height: 280px; }
+    .full-article h3  { font-size: 32px; padding: 12px 24px; }
+    .full-article .article-body { padding: 20px 24px 36px; }
+    .full-article .article-body p { font-size: 17px; }
 
     .contact-wrapper { flex-direction: column; }
     .contact-left { width: 100%; }
 
     .comment-form .form-row { flex-direction: column; }
 
-    .footer-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
     .newsletter-form { flex-direction: column; }
+    .newsletter-form input,
+    .newsletter-form button { width: 100%; }
+
 }
 ```
+
+### Requisito Grafico
+
+**Caratteristiche grafiche su mobile:**
+- **Punto di rottura unico:** `max-width: 768px`
+- **Hero:** altezza minima scende a 500px, titolo da 64px → 40px
+- **Griglia:** da `repeat(2,1fr)` → `grid-template-columns: 1fr`
+- **Contatti:** `flex-direction: column`, entrambe le colonne a larghezza 100%
+- **Footer:** `grid-template-columns: 1fr`, form newsletter in colonna
+- Tutti i font e padding si riducono proporzionalmente per leggibilità ottimale
 
 ---
 
@@ -1201,7 +693,7 @@ Il sito si adatta automaticamente agli schermi con larghezza ≤768px tramite un
 
 ### Tipografia
 
-Il sito usa il **font di sistema** per garantire velocità e coerenza con il dispositivo dell'utente:
+Il sito usa il **font di sistema** per garantire velocità e coerenza:
 
 ```css
 font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Arial, sans-serif;
@@ -1209,7 +701,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Ar
 
 | Elemento | Dimensione | Peso |
 |---|---|---|
-| Titolo hero `h2` | 64px | 700 (grassetto) |
+| Titolo hero `h2` | 64px | 700 |
 | Titolo pagine `h2` | 56px | 600 |
 | Titolo articolo singolo `h3` | 48px | 600 |
 | Titolo in evidenza `h4` | 40px | 600 |
